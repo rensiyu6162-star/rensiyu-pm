@@ -429,6 +429,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 
 /* ===== PROFILE STAGE ===== */
 .profile-stage{position:relative;isolation:isolate;min-height:88vh;padding:clamp(1rem,2vw,1.5rem) 0 0}
+@media(max-width:760px){.profile-stage{min-height:auto}}
 .profile-layout{--profile-radius:26px;position:relative;display:grid;grid-template-columns:1fr;gap:1rem;grid-template-areas:"hero" "photo" "profile" "value" "about" "pillars";padding:clamp(1rem,2.2vw,1.6rem);border:0;border-radius:34px;background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(13,8,24,0.48) 48%,rgba(18,10,32,0.64)),radial-gradient(circle at 18% 8%,rgba(0,240,255,0.13),transparent 30%),radial-gradient(circle at 84% 18%,rgba(255,0,170,0.12),transparent 28%);box-shadow:0 34px 120px rgba(0,0,0,0.28);overflow:hidden}
 @media(min-width:1120px){.profile-layout{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto auto;grid-template-areas:"hero profile photo" "hero value photo" "about about pillars" "life life pillars";gap:1rem;align-items:stretch}}
 [data-theme="dark"] .profile-layout{background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(13,8,24,0.48) 48%,rgba(18,10,32,0.64)),radial-gradient(circle at 18% 8%,rgba(0,240,255,0.13),transparent 30%),radial-gradient(circle at 84% 18%,rgba(255,0,170,0.12),transparent 28%)}
@@ -526,6 +527,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 .ui-card{border-radius:var(--radius-xl);border:1px solid var(--color-border);padding:1.75rem 1.5rem;background:var(--color-surface);transition:all 0.3s}
 .ui-card:hover{background:var(--color-surface-elevated)}
 @media(min-width:768px){.ui-card{padding:2rem}}
+@media(max-width:480px){.ui-card{padding:1.1rem;border-radius:var(--radius-lg)}}
 .ui-card-quiet{border-radius:var(--radius-xl);border:1px solid var(--color-border);padding:1.75rem 1.5rem;background:transparent}
 .ui-panel{border-radius:var(--radius-lg);padding:0.8rem 1rem;background:var(--color-surface-elevated)}
 .ui-panel-muted{border-radius:var(--radius-lg);padding:0.8rem 1rem;background:transparent;border:1px solid var(--color-border)}
@@ -563,7 +565,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 .city-map-stage{position:relative;height:29rem;margin:0 clamp(0.75rem,2vw,1.3rem) 0.15rem}.city-route{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.route-line{fill:none;stroke:url(#routeGradient);stroke-width:3;stroke-dasharray:9 11;stroke-linecap:round;opacity:0.72}.route-arrow{fill:var(--color-magenta);filter:drop-shadow(0 0 8px rgba(255,0,170,0.36))}.map-cloud{position:absolute;width:5.5rem;height:2.2rem;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06));filter:blur(0.2px);opacity:0.45}.map-cloud::before,.map-cloud::after{content:'';position:absolute;border-radius:999px;background:inherit}.map-cloud::before{width:2rem;height:2rem;left:0.9rem;top:-0.8rem}.map-cloud::after{width:2.8rem;height:2.8rem;right:0.7rem;top:-1.1rem}.cloud-a{left:8%;top:18%}.cloud-b{right:9%;top:12%}.cloud-c{left:56%;bottom:16%;transform:scale(.74)}.travel-icon{position:absolute;z-index:1;display:grid;place-items:center;width:4.2rem;height:4.2rem;border:1px solid rgba(255,255,255,0.12);border-radius:999px;background:rgba(18,10,32,0.46);color:rgba(255,255,255,0.72);box-shadow:0 18px 36px rgba(0,0,0,0.22);backdrop-filter:blur(8px);pointer-events:none}.travel-icon svg{width:2.25rem;height:2.25rem;stroke-width:1.85}.travel-plane{left:23%;top:28%;transform:translate(-50%,-50%) rotate(-8deg);color:rgba(0,240,255,0.78)}.travel-train{left:53%;top:24%;transform:translate(-50%,-50%);color:rgba(255,255,255,0.74)}.travel-foot{left:71%;top:23%;transform:translate(-50%,-50%) rotate(8deg);color:rgba(255,0,170,0.74)}.travel-dot{position:absolute;z-index:1;width:0.42rem;height:0.42rem;border-radius:999px;background:rgba(255,255,255,0.38);box-shadow:0 0 12px rgba(0,240,255,0.22);pointer-events:none}.travel-dot-a{left:31%;top:55%}.travel-dot-b{left:46%;top:27%}.travel-dot-c{left:69%;top:30%}
 .city-node{position:absolute;width:13rem;min-height:12rem;transform:translate(-50%,-50%);display:grid;place-items:center;z-index:2}.city-node[data-index="1"]{left:13%;top:58%}.city-node[data-index="2"]{left:38%;top:32%}.city-node[data-index="3"]{left:62%;top:62%}.city-node[data-index="4"]{left:86%;top:36%}.city-node:hover,.city-node:focus-within{z-index:999}.city-number{position:absolute;left:50%;top:-4.05rem;z-index:6;width:2.15rem;height:2.15rem;transform:translateX(-50%);border-radius:999px;border:1px solid rgba(0,240,255,0.22);display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;color:var(--color-accent);background:rgba(18,10,32,0.74);box-shadow:0 0 20px rgba(0,240,255,0.12)}
 .city-base{position:relative;width:8.8rem;height:5.4rem;border-radius:50%;background:linear-gradient(145deg,rgba(0,240,255,0.12),rgba(255,0,170,0.10));box-shadow:0 22px 45px rgba(0,0,0,0.24);transform:rotateX(58deg) rotateZ(-18deg);z-index:1}.city-model{position:absolute;bottom:3.3rem;left:50%;transform:translateX(-50%);width:7rem;height:7.4rem;filter:drop-shadow(0 18px 20px rgba(0,0,0,0.24))}.city-name-chip{position:absolute;left:50%;bottom:0.2rem;z-index:5;transform:translateX(-50%);border:1px solid rgba(0,240,255,0.12);border-radius:14px;padding:0.34rem 0.58rem;background:rgba(13,8,24,0.50);backdrop-filter:blur(10px);box-shadow:0 4px 12px rgba(0,0,0,0.10);text-align:center;min-width:5.4rem}.city-node[data-index="4"] .city-name-chip{bottom:-1.85rem}.city-name-chip strong{display:block;font-size:0.76rem;line-height:1.15}.city-name-chip span{display:block;font-size:0.62rem;color:var(--color-text-soft);margin-top:0.08rem}.city-landmark{position:absolute;left:50%;bottom:4.25rem;z-index:1;transform:translateX(-50%);width:17rem;height:12.2rem;opacity:1;filter:drop-shadow(0 12px 10px rgba(0,0,0,.15))}
-[data-theme="light"] .city-landmark{filter:drop-shadow(0 8px 8px rgba(0,0,0,.08))}.city-landmark::before{content:'';position:absolute;left:50%;bottom:0.2rem;width:11rem;height:4.8rem;transform:translateX(-50%);border-radius:999px;background:radial-gradient(ellipse,rgba(0,240,255,.12),transparent 68%);filter:blur(6px)}.city-landmark img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:multiply;filter:saturate(1.08) contrast(.96) brightness(.96);opacity:1}.city-node[data-index="1"] .city-landmark{bottom:4.45rem;width:19rem;height:13.6rem}.city-node[data-index="3"] .city-landmark{bottom:4.6rem}.city-node[data-index="2"] .city-landmark,.city-node[data-index="4"] .city-landmark{bottom:3.4rem}
+[data-theme="light"] .city-landmark{filter:drop-shadow(0 8px 8px rgba(0,0,0,.08))}.city-landmark::before{content:'';position:absolute;left:50%;bottom:0.2rem;width:11rem;height:4.8rem;transform:translateX(-50%);border-radius:999px;background:radial-gradient(ellipse,rgba(0,240,255,.12),transparent 68%);filter:blur(6px)}.city-landmark img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:normal;filter:saturate(1.08) contrast(1.0) brightness(1.0);opacity:1}.city-node[data-index="1"] .city-landmark{bottom:4.45rem;width:19rem;height:13.6rem}.city-node[data-index="3"] .city-landmark{bottom:4.6rem}.city-node[data-index="2"] .city-landmark,.city-node[data-index="4"] .city-landmark{bottom:3.4rem}
 .company-icon{position:absolute;inset:0;display:block;transform-style:preserve-3d}.company-icon::before,.company-icon::after,.icon-piece{content:'';position:absolute;display:block}.company-svg{position:absolute;inset:-0.15rem;width:100%;height:100%;display:block;overflow:visible}
 .brand-3d{position:absolute;bottom:3.3rem;left:50%;z-index:4;transform:translateX(-50%);width:7rem;height:7.4rem;opacity:1;filter:saturate(1.35) contrast(1.16) drop-shadow(0 0 0.9px rgba(255,255,255,0.9)) drop-shadow(0 0 3px rgba(0,240,255,0.32)) drop-shadow(0 18px 20px rgba(0,0,0,0.26))}.brand-3d::before{content:'';position:absolute;left:0.6rem;right:0.6rem;bottom:0.25rem;height:1rem;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.34),transparent 68%);filter:blur(3px)}.brand-3d .mark{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) rotateX(8deg) rotateZ(-6deg);width:5.7rem;height:5.7rem;border-radius:1.45rem;display:grid;place-items:center;box-shadow:inset -0.65rem -0.8rem 0 rgba(0,0,0,0.14),inset 0.35rem 0.35rem 0 rgba(255,255,255,0.16),0 1.1rem 1.8rem rgba(0,0,0,0.20)}.brand-3d .mark::after{content:'';position:absolute;right:-0.42rem;top:0.42rem;width:0.44rem;height:4.82rem;border-radius:0 0.9rem 0.9rem 0;background:rgba(0,0,0,0.24);clip-path:polygon(0 0,100% 10%,100% 100%,0 90%)}.brand-3d .shine{position:absolute;left:1.5rem;top:1.18rem;width:2.6rem;height:0.55rem;border-radius:999px;background:rgba(255,255,255,0.24);transform:rotate(-16deg)}.brand-3d .label{position:relative;z-index:2;font-weight:800;letter-spacing:-0.04em;text-shadow:0 2px 10px rgba(0,0,0,0.22)}.brand-cas .mark{background:linear-gradient(145deg,#62617d,#26243f 58%,#121020);border-radius:0.7rem 0.7rem 0.35rem 0.35rem;opacity:1}.brand-cas .mark::before{content:'';position:absolute;left:0.75rem;right:0.75rem;top:0.9rem;height:0.35rem;border-radius:999px;background:#8df7ff;box-shadow:0 0.85rem 0 rgba(141,247,255,.58),0 1.7rem 0 rgba(255,106,213,.48),0 2.55rem 0 rgba(141,247,255,.38)}.brand-cas .label{align-self:end;margin-bottom:0.75rem;font-family:var(--font-mono);font-size:0.78rem;color:#dffbff}.mascot-3d{position:absolute;bottom:3.2rem;left:50%;transform:translateX(-50%);width:7.5rem;height:7.8rem;display:grid;place-items:center;filter:saturate(1.04) contrast(1.18) drop-shadow(0 0 0.8px rgba(255,255,255,1)) drop-shadow(0 22px 26px rgba(0,0,0,0.42));z-index:3}.mascot-3d::before{content:'';position:absolute;left:0.9rem;right:0.9rem;bottom:0.25rem;height:1rem;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.36),transparent 68%);filter:blur(3px)}.mascot-3d img{position:relative;z-index:1;max-width:100%;max-height:100%;object-fit:contain}.mascot-3d--light img{mix-blend-mode:multiply;filter:saturate(1.08) contrast(1.18)}.mascot-3d--dark img{mix-blend-mode:screen;filter:saturate(1.04) contrast(1.18)}.city-node[data-index="1"] .brand-3d,.city-node[data-index="3"] .mascot-3d{bottom:4rem}.city-node[data-index="2"] .mascot-3d{bottom:2.5rem}.city-node[data-index="4"] .mascot-3d{bottom:3.2rem}
 .software-lab .monitor{left:1.25rem;top:0.75rem;width:4.25rem;height:5.35rem;border-radius:0.8rem 0.8rem 0.35rem 0.35rem;background:linear-gradient(145deg,#4b466f,#17152b 62%,#0b0a15);border:1px solid rgba(0,240,255,0.18);box-shadow:inset -0.65rem -0.85rem 0 rgba(0,0,0,0.18),0 1.1rem 1.4rem rgba(0,0,0,0.22)}.software-lab .monitor::before{content:'';position:absolute;left:0.62rem;right:0.62rem;top:0.72rem;height:0.26rem;border-radius:999px;background:rgba(0,240,255,0.42);box-shadow:0 0.9rem 0 rgba(0,240,255,0.22),0 1.8rem 0 rgba(255,0,170,0.20),0 2.7rem 0 rgba(255,255,255,0.10)}.software-lab .monitor::after{content:'';position:absolute;right:-0.82rem;top:0.62rem;width:0.82rem;height:4.8rem;background:linear-gradient(145deg,#2b2949,#0f0d1e);clip-path:polygon(0 0,100% 14%,100% 100%,0 88%)}.software-lab .chip{left:0.62rem;bottom:0.42rem;width:5.3rem;height:0.55rem;border-radius:50%;background:rgba(0,240,255,0.15);box-shadow:0 0 24px rgba(0,240,255,0.14)}.software-lab .orbit{right:0.5rem;top:1.15rem;width:1.5rem;height:1.5rem;border-radius:999px;background:linear-gradient(145deg,var(--color-cyan),#725cff);box-shadow:0 0 18px rgba(0,240,255,0.32)}
@@ -639,6 +641,42 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 @media(min-width:1024px){.bottom-nav-wrapper{display:none}}
 .bottom-nav{pointer-events:auto;display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem;border-radius:999px;border:1px solid var(--color-border);background:color-mix(in oklab, var(--color-surface-elevated) 76%, transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 
+/* ===== EXTRA SMALL SCREEN OVERRIDES (≤480px) ===== */
+@media(max-width:480px){
+  .page-grid{padding:0 1rem 7rem;gap:2.5rem}
+  .mobile-header-inner{padding:0.75rem 1rem}
+  .mobile-name{font-size:1.1rem}
+  .bottom-nav-wrapper{padding:0 1rem;bottom:1rem}
+  .bottom-nav{gap:0.25rem}
+  /* Profile */
+  .profile-layout{padding:0.65rem;gap:0.75rem}
+  .profile-hero{min-height:26rem}
+  .profile-tags{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .profile-photo,.profile-photo img{min-height:26rem}
+  .profile-photo-dots{bottom:5rem}
+  /* Experience map city nodes */
+  .city-node{min-height:10rem}
+  .city-tooltip dl div{grid-template-columns:3rem 1fr}
+  /* Intern cards */
+  .intern-detail-card{padding:0.9rem;border-radius:18px}
+  .intern-detail-title{font-size:clamp(1.05rem,5.5vw,1.45rem)}
+  /* Education */
+  .education-panel{padding:0.85rem;border-radius:24px}
+  .edu-card{padding:0.85rem 0.9rem;grid-template-columns:2.1rem 1fr}
+  .edu-icon{width:2.1rem;height:2.1rem}
+  /* Section titles */
+  .section-title{font-size:clamp(1.3rem,6.5vw,1.9rem)}
+  /* Experience browser */
+  .experience-map{padding:0.85rem;border-radius:24px}
+}
+
+/* ===== MOBILE DRAWER ===== */
+.mobile-drawer{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(0,0,0,0.54);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.mobile-drawer.hidden{display:none!important}
+.mobile-drawer-panel{background:var(--color-bg);padding:1.5rem;border-radius:22px 22px 0 0;max-height:88vh;overflow-y:auto;border:1px solid var(--color-border);border-bottom:0}
+[data-theme="dark"] .mobile-drawer-panel{background:rgba(13,8,24,0.97);border-color:rgba(0,240,255,0.10)}
+@media(max-width:480px){.mobile-drawer-panel{padding:1rem}}
+
 /* ===== SCROLLBAR ===== */
 .scrollbar-none::-webkit-scrollbar{display:none}
 .scrollbar-none{-ms-overflow-style:none;scrollbar-width:none}
@@ -646,6 +684,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 /* ===== RESPONSIVE GAPS ===== */
 .main-content{display:flex;flex-direction:column;gap:4.5rem;padding-bottom:2.5rem}
 @media(min-width:1024px){.main-content{gap:7rem;padding-top:3.5rem}}
+@media(max-width:480px){.main-content{gap:2.5rem}}
 
 /* ===== PHOTO PLACEHOLDER BG ===== */
 .placeholder-img{background:linear-gradient(135deg, var(--color-surface-elevated) 0%, var(--color-surface) 100%);display:flex;align-items:center;justify-content:center;color:var(--color-text-soft);font-size:0.8rem}
@@ -932,28 +971,28 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 
         <div class="city-node" data-index="1" aria-label="中国科学院软件研究所">
           <span class="city-number">01</span>
-          <span class="city-landmark"><img src="南京2.jpg" alt="南京城市建筑" loading="lazy"></span>
+          <span class="city-landmark"><img src="南京2.png" alt="南京城市建筑" loading="lazy"></span>
           <span class="brand-3d brand-cas"><span class="mark"><span class="shine"></span><span class="label">LAB</span></span></span>
           <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip1_name">中科院软件所</strong><span data-i18n="tt1_city">南京</span></span>
           <div class="city-tooltip"><img class="city-tooltip-img" src="中科院.jpg" alt="中国科学院软件研究所配图" loading="lazy"><h3 data-i18n="tt1_name">中国科学院软件研究所</h3><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt1_city">南京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt1_role">AI设计师</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.03 - 2025.06</dd></div></dl><p data-i18n="tt1_desc">在软件部门参与 AI 设计相关工作，围绕智能产品体验与设计落地积累第一段 AI 实操经验。</p></div>
         </div>
         <div class="city-node" data-index="2" aria-label="vivo（维沃通信）">
           <span class="city-number">02</span>
-          <span class="city-landmark"><img src="深圳2.jpg" alt="深圳城市建筑" loading="lazy"></span>
+          <span class="city-landmark"><img src="深圳2.png" alt="深圳城市建筑" loading="lazy"></span>
           <span class="mascot-3d mascot-3d--light"><img src="vivo吉祥物.png" alt="vivo 吉祥物" loading="lazy"></span>
           <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip2_name">vivo互联网</strong><span data-i18n="tt2_city">深圳</span></span>
           <div class="city-tooltip"><img class="city-tooltip-img" src="vivo.jpg" alt="vivo 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt2_name">vivo（维沃通信）互联网</h3><a class="city-detail-link" href="#intern-vivo" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt2_city">深圳</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt2_role">中后台数据产品</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.06 - 2025.10</dd></div></dl><p data-i18n="tt2_desc">参与用户&amp;内容双圈选分析平台等数据产品工作，推进 0-1 数据工具与业务提效。</p></div>
         </div>
         <div class="city-node" data-index="3" aria-label="网易传媒">
           <span class="city-number">03</span>
-          <span class="city-landmark"><img src="北京2.jpg" alt="北京城市建筑" loading="lazy"></span>
-          <span class="mascot-3d mascot-3d--dark"><img src="网易吉祥物.png" alt="网易吉祥物" loading="lazy"></span>
+<span class="city-landmark"><img src="北京2.png" alt="北京城市建筑" loading="lazy"></span>
+          <span class="city-number">03</span>
           <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip3_name">网易传媒</strong><span data-i18n="tt3_city">北京</span></span>
           <div class="city-tooltip"><img class="city-tooltip-img" src="网易.jpg" alt="网易传媒配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt3_name">网易传媒北京有限公司</h3><a class="city-detail-link" href="#intern-netease" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt3_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt3_role">AI 产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.10 - 2026.01</dd></div></dl><p data-i18n="tt3_desc">围绕网易小蜜蜂 AI 记录项目，推进端云协同、多模态 AI 与社区产品的 0-1 落地。</p></div>
         </div>
         <div class="city-node" data-index="4" aria-label="美团 Keeta">
           <span class="city-number">04</span>
-          <span class="city-landmark"><img src="北京2.jpg" alt="北京城市建筑" loading="lazy"></span>
+          <span class="city-landmark"><img src="北京2.png" alt="北京城市建筑" loading="lazy"></span>
           <span class="mascot-3d mascot-3d--light"><img src="美团吉祥物.png" alt="美团吉祥物" loading="lazy"></span>
           <span class="city-base"></span><span class="city-name-chip"><strong>美团 Keeta</strong><span data-i18n="tt4_city">北京</span></span>
           <div class="city-tooltip"><img class="city-tooltip-img" src="美团.jpg" alt="美团 Keeta 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt4_name">美团Keeta（出海外卖）</h3><a class="city-detail-link" href="#intern-keeta" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt4_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt4_role">产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2026.02 - 2026.05</dd></div></dl><p data-i18n="tt4_desc">负责营销优惠券配置端、C 端交易侧、兑换码风控需求及营销平台搭建工作。</p></div>
@@ -1515,6 +1554,208 @@ const translations = {
     contact_phone_label: '微信 / 手机',
     contact_note: '也欢迎先查看简历与作品集，再决定是否安排进一步沟通。',
     footer: '© 2026 任思雨 · Built with Next.js, Tailwind, Framer Motion and Codex.',
+    // awards
+    aw1_prize: '二等奖',
+    aw1_title: '第9届米兰设计周·中国高校设计展（全国决赛）',
+    aw1_desc: '体现了我将概念表达、方案完整性与设计叙事整合为一个作品的能力。',
+    aw2_prize: '优秀奖',
+    aw2_title: '2025 home+ 国际服务设计大赛',
+    aw2_desc: '展示了我超越产品形态的思考——同时关注服务流程、触点与整体体验。',
+    aw3_prize: '入围奖',
+    aw3_title: 'DIA 第10届中国设计智造大奖（全国决赛）',
+    aw3_desc: '体现了我在设计创新、落地逻辑与产业相关性方面的综合能力。',
+    aw4_prize: '三等奖',
+    aw4_title: 'UXDA 第17届国际用户创新与体验设计大赛（全国决赛）',
+    aw4_desc: '在用户体验、交互逻辑与整体体验体系构建方面体现了一贯的设计判断力。',
+    aw_other_title: '其他奖项',
+    aw_other1: '第9届米兰设计周·中国高校设计展（江苏赛区）/ 一等奖',
+    aw_other2: '第13届未来设计师全国高校数字艺术设计大赛（江苏赛区）/ 一等奖',
+    aw_other3: '第13届未来设计师全国高校数字艺术设计大赛（浙江赛区）/ 三等奖',
+    aw_other4: '第10届海峡两岸青年设计大赛·华灿奖（全国决赛）/ 三等奖',
+    aw_other5: '第10届海峡两岸青年设计大赛·华灿奖（赛区）/ 二等奖',
+    // resume cards
+    res1_label: '下载完整简历',
+    res1_format: 'PDF · 完整版',
+    res1_desc: '完整 PDF 简历，适合作为正式求职投递附件或面试前快速预读。',
+    res1_btn: '下载简历',
+    res2_label: '在线查看简历',
+    res2_format: 'Web · 一页式',
+    res2_desc: '一页式在线简历，适合面试前快速了解我的教育背景、实习经历与技能结构。',
+    res2_btn: '在线查看',
+    // portfolio cards
+    pf1_fit: '适合：需求定义、活动策划、视觉设计',
+    pf1_desc: '系统呈现我的工业设计训练、产品思维与跨项目方法论。',
+    pf1_project: '盲健共创市集策划与视觉设计',
+    pf2_fit: '适合：设计与问题定义',
+    pf2_desc: '聚焦产品定义、体验设计与方案呈现的代表性项目资料。',
+    pf2_project: '单手用户游戏手柄概念设计',
+    pf3_fit: '适合：跨领域项目',
+    pf3_desc: '医疗与跨领域设计项目补充，展示我的场景迁移能力。',
+    pf3_project: 'ICU 模块化转运系统设计',
+    pf_view_btn: '查看资料',
+    // city chip
+    chip1_name: '中科院软件研究所',
+    // built with comate section
+    bwc_title: '个人品牌网站设计思路',
+    bwc_btn: '查看设计思路 →',
+    bwc1_title: '用户分析与定位',
+    bwc1_desc: '梳理了 HR、业务面试官、产品负责人三类核心受众的需求，围绕「AI产品 × 设计背景 × 真实项目」建立差异化定位。',
+    bwc2_title: '信息架构与层级',
+    bwc2_desc: '模块顺序按「建立信任 → 展示能力 → 表达个性」漏斗排列；细节拆分到子页面，避免首页信息过载。',
+    bwc3_title: '交互与体验细节',
+    bwc3_desc: 'Hover 框稳定驻留、子页回锚定位、照片轮播与侧导切换——每个交互决策都有对应的可用性依据。',
+    bwc4_title: '视觉语言决策',
+    bwc4_desc: '选择赛博朋克暗色调而非简约白，创造更强的记忆锚点，与 AI 产品方向和设计背景均相符。',
+    bwc5_title: 'AI 协作与持续迭代',
+    bwc5_desc: '我主导产品逻辑与文案，Comate 负责前端实现与细节调试。网站作为求职资产随求职进展持续更新。',
+    // contact form
+    btn_send: '发送消息',
+    placeholder_name: '你的名字',
+    placeholder_company: '公司或团队',
+    placeholder_message: '你的留言...',
+    // nav
+    nav_proj: '项目',
+    nav_resume: '简历',
+    nav_contact: '联系',
+    // city tooltip
+    tt_detail: '查看详情',
+    tt_time: '时间',
+    tt_city: '城市',
+    tt_role: '岗位',
+    // skills section
+    sk1_title: '产品',
+    sk1_1: '用户研究',
+    sk1_2: '需求分析',
+    sk1_4: '信息架构',
+    sk1_5: '高保真原型',
+    sk1_6: '项目执行',
+    sk2_title: 'AI 产品',
+    sk2_1: 'Agent 产品理解',
+    sk2_2: 'RAG 相关认知',
+    sk2_3: '多步骤任务设计',
+    sk2_4: 'Prompt 协作',
+    sk2_5: 'AI 功能测试',
+    sk2_6: '数据飞轮思维',
+    sk3_title: '数据',
+    sk3_1: 'SQL 数据处理',
+    sk3_2: '指标分析',
+    sk3_3: '绩效复盘',
+    sk4_title: '设计',
+    sk4_3: '交互设计',
+    sk4_4: '视觉系统',
+    sk5_title: 'AI 工具',
+    // experience - keeta
+    k_tag1: '营销平台',
+    k_tag2: '优惠券系统',
+    k_tag3: '风险控制',
+    k_tag4: '多语言',
+    k_tag3_pill: '兑换码风控',
+    k_proj_name: '营销平台优惠券系统',
+    k_desc: '独立负责优惠券后台配置、C 端核销流程、优惠券及兑换码风控，以及营销平台搭建。',
+    k_b1: '优惠券配置优化：新增滚动领取限制与按星期使用规则；上线后台配置与完整 C 端交互改版。',
+    k_b2: '风控：梳理全链路兑换码风险节点，定义接口校验规则与阈值，拦截异常调用。',
+    k_b3: '重点客户定制与平台搭建：打通双系统数据映射，重建营销首页，创建基于角色的场景入���并全量支持多语言。',
+    // selected projects - proj1 (keeta)
+    proj1_badge: '精选案例',
+    proj1_meta: 'Keeta｜2026.02 - 2026.05',
+    proj1_lead: '面向海外外卖的营销平台，涵盖优惠券后台管理、C 端核销流程、兑换码风控与重点客户定制。',
+    proj1_bg: '业务需要提升营销活动配置效率，并在 C 端建立稳定、安全的优惠券领取/使用/兑换链路。',
+    proj1_role: '作为 PM，独立负责优惠券后台配置、C 端核销流程、优惠券及兑换码风控，以及营销平台搭建。',
+    proj1_a1: '优化优惠券领取与使用规则配置，新增滚动限制与按星期规则。',
+    proj1_a2: '梳理兑换码风险节点，定义接口校验规则与风险阈值。',
+    proj1_a3: '打通重点客户数据映射，重建营销首页并设置基于角色的场景入口。',
+    proj1_r1: '上线后台配置与完整 C 端交互改版。',
+    proj1_r2: '拦截异常调用与参数错配，提升兑换码安全性。',
+    proj1_r3: '营销平台全量支持多语言，实现多市场复用。',
+    btn_view_case: '查看完整案例',
+    // selected projects - proj2 (netease)
+    proj2_badge: 'AI 记录工具',
+    proj2_meta: '网易传媒｜2025.10 - 2026.01',
+    proj2_lead: '打造核心 AI 记录工具，降低内容流失率、提升社区平台用户留存。',
+    proj2_bg: '平台需要降低用户发布门槛，减少内容流失，提升社区粘性。',
+    proj2_role: '担任 AI PM，在端侧小模型 + 云端大模型混合架构下，主导 AI 记录工具的 0-1 交付。',
+    proj2_a1: '设计结构化照片整理与轻量发布流程。',
+    proj2_a2: '构建标签体系提升内容分发，并搭建全链路数据监控。',
+    proj2_a3: '上线勋章与抽奖激励；设计兼顾体验与合规的隐私授权流程。',
+    proj2_r1: '月功能渗透率 28%，曝光发布率 22%。',
+    proj2_r2: '月留存提升 40%，带动 APP 大盘留存上涨 21 个百分点。',
+    proj2_r3: '验证低门槛 AI 工具提升用户粘性的落地路径。',
+    n_tag1: '端云协同',
+    n_tag2: '多模态 AI',
+    n_tag3: '0-1 落地',
+    n_tag4: '社区产品',
+    // selected projects - proj3 (spring breeze)
+    proj3_badge: '体验策划',
+    proj3_meta: '无锡荟聚｜2025.02 - 2025.05',
+    proj3_title: '春风好轻松｜盲健共创市集策划项目',
+    proj3_lead: '围绕盲健共创主题的市集策划项目，将品牌叙事、无障碍体验与线下执行组织在同一场景中。',
+    proj3_bg: '项目强调公共活动中的包容性体验，以及品牌表达与社会议题之间的连接方式。',
+    proj3_role: '作为项目核心成员，参与主题定义、场景设计、活动机制与现场落地协同。',
+    proj3_a1: '从盲健共创视角重组活动叙事与参与路径。',
+    proj3_a2: '兼顾品牌表达、参与者触点与无障碍体验细节。',
+    proj3_a3: '协同多方资源推进活动方案落地。',
+    proj3_r1: '提升活动的可理解性、参与感与现场体验完整度。',
+    proj3_r2: '让品牌表达与社会议题形成更清晰的连接。',
+    proj3_r3: '成为我作品集中较具代表性的社会创新项目之一。',
+    sp_tag1: '无障碍体验',
+    sp_tag2: '品牌叙事',
+    sp_tag3: '多方协同',
+    // section headers shared
+    proj_bg_label: '项目背景',
+    proj_role_label: '我的职责',
+    proj_action_label: '关键动作',
+    proj_result_label: '阶段结果',
+    n_proj_name: '网易蜂巢 · AI 记录',
+    // experience - vivo
+    tt2_name: 'vivo（维沃通信）互联网',
+    tt2_city: '深圳',
+    tt2_role: '中后台数据产品经理',
+    tt2_desc: '负责用户与内容双选平台及数据工具，推动 0-1 数据工具搭建与运营效率提升。',
+    chip2_name: 'vivo 互联网',
+    v_title: 'vivo（维沃通信）互联网内容分发事业部',
+    v_tag1: '用户与内容分析平台',
+    v_tag2: '0-1 数据工具',
+    v_tag3: '运营效率',
+    v_tag4: '内容质量',
+    v_proj_name: '用户与内容双选分析平台 | 自助数据工具',
+    v_desc: '针对用户留存偏弱、内容供给失衡、数据手工取数低效、迭代周期慢等问题，从零搭建覆盖浏览器、短视频、负屏生态的用户与内容双选分析工具。',
+    v_b1: '用户侧：Bitmap 异步架构支持多维自定义圈选（画像、城市、消费行为），自动化跨人群可视化报告。',
+    v_b2: '内容侧：批量 ID 与补货订单圈选模式；搭建「入库→分发→冷启→爆款」全链路漏斗与内容质量评分。',
+    v_b3: '设计异步任务处理降低服务器负载；统一各业务线指标；新增通知、自定义报告模板与批量下架功能。',
+    v_b4: '分析周期从数天压缩至分钟级；手工取数减少 80%+；年化 ROI 56%+；爆款内容率提升 18%。',
+    // experience - netease
+    tt3_name: '网易传媒（北京）有限公司',
+    tt3_city: '北京',
+    tt3_role: 'AI 产品经理',
+    tt3_desc: '主导网易蜂巢 AI 记录工具 0-1 交付，结合端侧小模型与云端大模型实现结构化照片整理与社区增长。',
+    chip3_name: '网易传媒',
+    n_desc: '为降低内容流失、提升留存——打造核心 AI 记录工具。端侧小模型 + 云端大模型混合架构，实现结构化照片整理、轻量发布与基于标签的内容分发。',
+    n_b1: '搭建全链路数据监控；上线勋章与抽奖激励，驱动用户活跃与内容创作。',
+    n_b2: '设计兼顾轻量记录体验与数据合规要求的隐私授权流程。',
+    n_b3: '月功能渗透 28%，曝光发布率 22%，月留存 +40%，带动 APP 大盘留存上涨 21 个百分点。',
+    // city tooltip - keeta
+    tt4_name: '美团 Keeta（海外外卖）',
+    tt4_city: '北京',
+    tt4_role: '产品经理',
+    tt4_desc: '负责海外外卖优惠券后台配置、C 端核销流程、兑换码风控与营销平台搭建。',
+    // education
+    edu1_school: '江南大学',
+    edu1_major: '设计学院 · 交互与体验设计 · 研究生',
+    edu1_course: '主修：交互设计，服务设计，产品设计，设计心理学，AI设计创新',
+    edu2_school: '南京林业大学',
+    edu2_tag: '双一流',
+    edu2_major: '家居与工业设计学院 · 工业设计（工学）· 本科',
+    edu2_course: '主修：智能交互设计，人机工程学，设计调研，Java，Arduino',
+    // city tooltip - CAS
+    tt1_name: '中国科学院软件研究所',
+    tt1_city: '南京',
+    tt1_role: 'AI 设计师',
+    tt1_desc: '在软件部门参与 AI 设计相关工作，围绕智能产品体验与设计落地积累第一段 AI 实操经验。',
+    // city tooltip labels (shared)
+    tt_city: '城市',
+    tt_role: '岗位',
+    tt_time: '时间',
+    tt_detail: '查看详情',
   },
   en: {
     role_zh: 'Product Manager｜AI Practitioner｜HCI Graduate Student',
@@ -2116,8 +2357,16 @@ function handleContactForm(event) {
 (function(){
   const c = document.getElementById('cyberBg');
   if(!c)return;
+  // Disable canvas on mobile to save GPU/CPU (screen width < 1024px)
+  if(window.innerWidth < 1024){
+    c.style.display = 'none';
+    return;
+  }
   const x = c.getContext('2d');
   let W, H, DPR = 1, theme = 'dark';
+  // Target 30fps instead of 60fps to halve GPU load
+  let lastTime = 0;
+  const FPS_INTERVAL = 1000 / 30;
 
   function resize(){
     DPR = Math.min(window.devicePixelRatio || 1, 2);
@@ -2200,6 +2449,10 @@ function handleContactForm(event) {
   }
 
   function draw(time){
+    // Throttle to 30fps
+    if(time - lastTime < FPS_INTERVAL){ requestAnimationFrame(draw); return; }
+    lastTime = time;
+
     const t = time * 0.001;
     const isDark = theme === 'dark';
     x.clearRect(0,0,W,H);
@@ -2225,8 +2478,8 @@ function handleContactForm(event) {
     x.translate(cx,cy);
     x.rotate(rot);
     x.globalCompositeOperation = 'lighter';
-    x.shadowBlur = 18 + 8 * pulse;
-    x.shadowColor = `rgba(0,240,255,${0.18 + pulse * 0.08})`;
+    // Disable shadowBlur — it's expensive and triples GPU composite cost
+    x.shadowBlur = 0;
 
     x.strokeStyle = `rgba(0,240,255,${alphaBase})`;
     x.lineWidth = 1.1;
@@ -2320,8 +2573,7 @@ function handleContactForm(event) {
     drawMoon(x,R*0.105,`rgba(255,63,205,${0.21 + pulse*0.08})`);
     x.restore();
 
-    x.shadowBlur = 26 + 10 * pulse;
-    x.shadowColor = `rgba(255,63,205,${0.13 + pulse*0.06})`;
+    x.shadowBlur = 0;
     x.beginPath();
     x.arc(0,0,R*0.18,0,TAU);
     x.strokeStyle = `rgba(255,63,205,${0.12 + pulse*0.05})`;
