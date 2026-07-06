@@ -699,6 +699,12 @@ html[data-nav-mode="side"] .top-navbar{display:none}
     </div>
   </div>
   <nav class="side-nav-sections" id="sideNav"></nav>
+  <div style="padding:1rem 0.75rem;border-top:1px solid var(--color-border);display:flex;gap:0.5rem;flex-wrap:wrap">
+    <div class="segmented-control" role="group" aria-label="Language switcher" data-compact="true">
+      <button class="segmented-button" data-active="true" data-lang-btn="zh" type="button">中文</button>
+      <button class="segmented-button" data-active="false" data-lang-btn="en" type="button">EN</button>
+    </div>
+  </div>
 </aside>
 <button class="side-rail-toggle" id="sideExpandBtn" type="button" aria-label="展开侧边导航">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
