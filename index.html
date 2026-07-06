@@ -447,7 +447,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
   border-color:rgba(51,130,246,0.08);
   box-shadow:0 1px 8px rgba(51,130,246,0.04)
 }
-.profile-hero{grid-area:hero;min-height:34rem;padding:clamp(1.35rem,3vw,2.4rem);display:flex;flex-direction:column;justify-content:space-between;border:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none;-webkit-backdrop-filter:none}
+.profile-hero{grid-area:hero;min-height:34rem;padding:clamp(1.35rem,3vw,2.4rem);display:flex;flex-direction:column;justify-content:space-between;border:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none;-webkit-backdrop-filter:none;overflow:hidden}
 [data-theme="light"] .profile-hero{border:0!important;background:transparent!important;box-shadow:none!important}
 /* Light mode: override all dark card/block backgrounds */
 [data-theme="light"] .pill{background:rgba(56,168,245,0.07);border-color:rgba(56,168,245,0.18);color:var(--color-text-secondary)}
@@ -489,10 +489,11 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 [data-theme="light"] .profile-photo-caption{background:rgba(252,250,248,0.90);border-color:rgba(123,110,232,0.10);box-shadow:0 4px 18px rgba(30,28,40,0.07)}
 [data-theme="light"] .profile-photo-nav{background:rgba(255,255,255,0.85);border-color:rgba(29,111,242,0.20);color:var(--color-text)}
 [data-theme="light"] .map-cloud{background:linear-gradient(180deg,rgba(123,110,232,0.06),rgba(123,110,232,0.02));opacity:0.55}
-.profile-hero::before{content:'任思雨';position:absolute;left:clamp(1rem,2.2vw,2rem);bottom:-0.75rem;font-size:clamp(4rem,8.4vw,7.8rem);line-height:0.82;font-weight:800;letter-spacing:-0.10em;color:var(--color-text);opacity:0.035;pointer-events:none;white-space:nowrap}
+.profile-hero::before{content:'任思雨';position:absolute;left:clamp(1rem,2.2vw,2rem);bottom:-0.75rem;font-size:clamp(4rem,8.4vw,7.8rem);line-height:0.82;font-weight:800;letter-spacing:-0.10em;color:var(--color-text);opacity:0.035;pointer-events:none;white-space:nowrap;overflow:hidden;max-width:100%}
 .profile-hero::after{display:none}
 .profile-label-row{position:relative;z-index:1;display:grid;gap:0.45rem;align-content:start}.profile-label-row::before,.profile-label-row::after{content:'';position:absolute;top:-1.55rem;width:2.7rem;height:0.72rem;transform:skewX(-22deg);border-radius:0.12rem;box-shadow:0 0 18px currentColor}.profile-label-row::before{left:0;color:rgba(255,0,170,0.62);background:linear-gradient(90deg,#ff2ac8,#ff79dc)}.profile-label-row::after{left:3.15rem;color:rgba(0,240,255,0.56);background:linear-gradient(90deg,#00f0ff,#4e8cff)}
 .profile-role{max-width:38rem;margin-top:0;font-size:clamp(0.62rem,0.72vw,0.7rem);line-height:1.55;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-soft)}.profile-role span{display:block}.profile-role-en{max-width:35rem;margin-top:0.06rem;font-size:clamp(0.56rem,0.64vw,0.64rem);line-height:1.48;letter-spacing:0.035em}
+@media(max-width:760px){.profile-role{font-size:0.68rem;letter-spacing:0.03em}.profile-role-en{font-size:0.62rem;letter-spacing:0.02em}}
 .profile-title{position:relative;z-index:1;margin-top:1.15rem;font-size:clamp(2.6rem,4.96vw,4.48rem);line-height:0.92;letter-spacing:0.08em;font-weight:650;text-shadow:0 0 32px rgba(0,240,255,0.12)}
 .profile-desc{position:relative;z-index:1;max-width:31ch;margin-top:1.25rem;font-size:clamp(1rem,1.35vw,1.22rem);line-height:1.7;letter-spacing:-0.012em;color:var(--color-text-secondary)}
 .profile-tags{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.55rem;margin-top:1.35rem}.pill{display:inline-flex;align-items:center;justify-content:center;gap:0.35rem;min-height:2.35rem;padding:0.35rem 0.7rem;border-radius:999px;font-size:clamp(0.68rem,0.8vw,0.76rem);border:1px solid var(--color-border);background:var(--color-surface-elevated);color:var(--color-text-secondary);backdrop-filter:blur(8px);white-space:nowrap}
