@@ -61,11 +61,24 @@ h1{margin-top:.75rem;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.1;letter-s
 .gap-box{border:1px solid rgba(255,0,170,.2);border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,0,170,.08),rgba(0,240,255,.05));padding:1rem 1.1rem;margin-top:.85rem}
 .gap-box .gap-label{color:var(--color-magenta);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
 .gap-box p{margin-top:.35rem;color:var(--color-text-secondary);font-size:.88rem;line-height:1.72}
-.model-grid{display:grid;gap:.65rem;margin-top:.85rem}
-.model-row{display:grid;grid-template-columns:9rem 1fr;gap:.8rem;border:1px solid rgba(0,240,255,.09);border-radius:var(--radius-lg);background:rgba(13,8,24,.36);padding:.8rem 1rem;align-items:start}
-.model-row-label{color:var(--color-cyan);font-size:.78rem;font-weight:700;padding-top:.1rem}
-.model-row-body{color:var(--color-text-secondary);font-size:.86rem;line-height:1.7}
-.model-row-body b{color:var(--color-text);font-weight:600}
+.h-table{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-top:.85rem}
+.h-col{border:1px solid rgba(0,240,255,.10);border-radius:var(--radius-lg);background:rgba(13,8,24,.36);overflow:hidden}
+.h-col-head{padding:.6rem .85rem;font-size:.75rem;font-weight:700;border-bottom:1px solid rgba(0,240,255,.08);background:rgba(0,240,255,.06)}
+.h-col-head.red{background:rgba(255,60,60,.07);border-bottom-color:rgba(255,60,60,.12);color:#ff6060}
+.h-col-head.blue{background:rgba(77,141,255,.07);border-bottom-color:rgba(77,141,255,.12);color:#4d8dff}
+.h-col-head.green{background:rgba(0,240,100,.07);border-bottom-color:rgba(0,240,100,.12);color:#00f064}
+.h-col-head.yellow{background:rgba(255,200,0,.07);border-bottom-color:rgba(255,200,0,.12);color:#ffc800}
+.h-col-body{padding:.75rem .85rem;display:flex;flex-direction:column;gap:.75rem}
+.h-item-title{font-size:.82rem;font-weight:600;color:var(--color-text);margin-bottom:.25rem}
+.h-item-desc{font-size:.8rem;color:var(--color-text-secondary);line-height:1.65}
+[data-theme="light"] .h-col{background:rgba(255,255,255,.68);border-color:rgba(77,61,200,.09)}
+[data-theme="light"] .h-col-head{background:rgba(77,61,200,.06);border-bottom-color:rgba(77,61,200,.10)}
+[data-theme="light"] .h-col-head.red{background:rgba(200,0,0,.05);color:#cc2200}
+[data-theme="light"] .h-col-head.blue{background:rgba(34,85,204,.06);color:#2255cc}
+[data-theme="light"] .h-col-head.green{background:rgba(0,140,60,.05);color:#007a30}
+[data-theme="light"] .h-col-head.yellow{background:rgba(160,120,0,.05);color:#8a6400}
+@media(max-width:700px){.h-table{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.h-table{grid-template-columns:1fr}}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
 .tag{border:1px solid rgba(0,240,255,.16);border-radius:999px;padding:.22rem .52rem;background:rgba(0,240,255,.06);color:var(--color-cyan);font-size:.7rem}
 .tag-pink{border-color:rgba(255,0,170,.2);background:rgba(255,0,170,.06);color:var(--color-magenta)}
@@ -194,31 +207,57 @@ h1{margin-top:.75rem;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.1;letter-s
       <div class="card">
         <p>新增使用时段与星期规则后，全交易链路涉及大量优惠券展示点位。改造的核心原则是：<b>根据用户在该场景下的心智状态</b>——是在"收券"还是"用券"、是模糊浏览还是明确下单——决定是否展示规则、以及展示到什么程度。梳理后分为四类：</p>
       </div>
-      <div class="model-grid">
-        <div class="model-row">
-          <div class="model-row-label">❌ 不改造</div>
-          <div class="model-row-body"><b>首页天降弹窗、投放弹窗：</b>用户心智是"意外收到奖励"，核心体验是惊喜感，此时堆砌规则会破坏领券情绪。用户有查看需求可自行前往个人中心券列表，无需在弹窗层处理。</div>
-        </div>
-        <div class="model-row">
-          <div class="model-row-label">⚙️ 后台逻辑改造</div>
-          <div class="model-row-body">
-            <b>Push 发券：</b>Push 每次只推送一张券，用户在通知里即可清晰感知"我收到了这张券"，领券路径短、心智明确。因此只需确保<b>在券可用时段内发出推送</b>，让用户收到时就能立刻去用，无需在 Push 层额外展示规则。<br/>
-            <b>门店页券浮层：</b>用户进入门店时已有明确下单意图，此时展示不可用的券会直接打断决策。浮层改为<b>只展示当前时段可用的券</b>，减少认知干扰。
+      <div class="h-table">
+        <div class="h-col">
+          <div class="h-col-head red">❌ 不改造</div>
+          <div class="h-col-body">
+            <div>
+              <div class="h-item-title">首页天降弹窗、投放弹窗</div>
+              <div class="h-item-desc">用户心智是"意外收到奖励"，核心体验是惊喜感，此时堆砌规则会破坏领券情绪。用户有查看需求可自行前往个人中心券列表。</div>
+            </div>
           </div>
         </div>
-        <div class="model-row">
-          <div class="model-row-label">✅ 展示使用规则</div>
-          <div class="model-row-body">
-            <b>高达活动会场（领券组件 → 用券引导）：</b>会场是用户主动来"领券并计划使用"的场景，领完券后组件会切换为用券引导，用户此时的心智是"我领了这张券，什么时候可以用"。因此必须在会场内告知可用时间，否则用户领了不知道何时能用，引导转化会断掉。<br/>但会场领券组件空间有限，无法展示完整规则文本（如"仅限周一至周五 11:00–14:00 可用"）。设计上采用<b>动态简化表达</b>：以用户当前时间为基准，计算出最近一次可用的时间点，直接告知结论。例如今天是周五 22:00，券仅限周六 12:00 起可用，则显示<b>"周六 12:00 可用"</b>，而非完整规则文本"周六至周日 12:00–14:00 可用"，降低阅读负担，同时给用户明确预期。<br/><br/>
-            <b>个人中心券列表 / 提单选券列表 / 券详情页：</b>用户主动查看券或选券下单，心智是"我要弄清楚这张券能不能用"，需要完整呈现限制规则。但若将时段、星期规则直接插入券面字段，会与面值、有效期、使用门槛等原有信息混排，打乱券面结构，用户扫视时理解成本增加，且文字拉长后视觉冗余感明显。因此采用<b>独立模块</b>的方式：在券卡下方单独追加一个区块（圆角、区分底色），专门承载使用限制说明（如"仅限 12:00–14:00 可用""仅限周一至周五"），与券面基础信息层级分离，各自清晰，互不干扰。
+        <div class="h-col">
+          <div class="h-col-head blue">⚙️ 后台逻辑改造</div>
+          <div class="h-col-body">
+            <div>
+              <div class="h-item-title">Push 发券</div>
+              <div class="h-item-desc">Push 每次只推一张券，用户心智明确。只需确保在券可用时段内发出，让用户收到时即可使用，无需额外展示规则。</div>
+            </div>
+            <div>
+              <div class="h-item-title">门店页券浮层</div>
+              <div class="h-item-desc">用户进入门店有明确下单意图，展示不可用的券会打断决策。改为只展示当前时段可用的券，减少认知干扰。</div>
+            </div>
           </div>
         </div>
-        <div class="model-row">
-          <div class="model-row-label">⚠️ 特殊不改造</div>
-          <div class="model-row-body">
-            <b>裂变领券 / 抽奖玩法：</b>奖励以通用券、金币为主，不涉及分时段/分星期券，暂不改造。<br/>
-            <b>用券推荐模块：</b>系统推荐的一定是当前可用的券，用户无需感知时间规则。<br/>
-            <b>订单详情页：</b>订单已完成，时间规则对用户无决策价值，不需要展示。
+        <div class="h-col">
+          <div class="h-col-head green">✅ 展示使用规则</div>
+          <div class="h-col-body">
+            <div>
+              <div class="h-item-title">高达活动会场</div>
+              <div class="h-item-desc">用户心智是"我领了这张券，什么时候可以用"。空间有限，采用动态简化表达：以当前时间推算最近可用时间点，如显示"周六 12:00 可用"，而非完整规则文本"周六至周日 12:00–14:00 可用"。</div>
+            </div>
+            <div>
+              <div class="h-item-title">个人中心券列表 / 提单选券列表 / 券详情页</div>
+              <div class="h-item-desc">用户主动查看券，心智是"这张券能不能用"。时段/星期规则不直接插入券面（会打乱原有字段结构、增加冗余），而是在券卡下方增加独立区块（圆角、区分底色）专门展示，层级清晰不干扰原布局。</div>
+            </div>
+          </div>
+        </div>
+        <div class="h-col">
+          <div class="h-col-head yellow">⚠️ 特殊不改造</div>
+          <div class="h-col-body">
+            <div>
+              <div class="h-item-title">裂变领券 / 抽奖玩法</div>
+              <div class="h-item-desc">奖励以通用券、金币为主，不涉及分时段/分星期券，暂不改造。</div>
+            </div>
+            <div>
+              <div class="h-item-title">用券推荐模块</div>
+              <div class="h-item-desc">系统推荐的一定是当前可用的券，用户无需感知时间规则。</div>
+            </div>
+            <div>
+              <div class="h-item-title">订单详情页</div>
+              <div class="h-item-desc">订单已完成，时间规则对用户无决策价值，不需要展示。</div>
+            </div>
           </div>
         </div>
       </div>
