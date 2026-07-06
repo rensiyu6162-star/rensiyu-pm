@@ -1634,11 +1634,12 @@ document.querySelectorAll('[data-lang-btn]').forEach(btn => {
   btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang-btn')));
 });
 
-// restore saved lang
+// restore saved lang, default to zh
 try {
   const saved = localStorage.getItem('lang');
   if (saved === 'en') applyLang('en');
-} catch(e) {}
+  else applyLang('zh');
+} catch(e) { applyLang('zh'); }
 })();
 (function(){
   const root = document.querySelector('.profile-photo');
