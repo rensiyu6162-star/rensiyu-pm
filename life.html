@@ -31,7 +31,8 @@
 <body>
 <div class="page">
   <header class="topbar">
-    <a class="ui-button" href="index.html#about-life-entry">返回 ABOUT</a>
+    <a class="ui-button" href="index.html#about-life-entry" data-i18n="back_btn">返回 ABOUT</a>
+    <button class="ui-button" id="lang-toggle" style="margin-left:.7rem" onclick="toggleLang()">EN</button>
   </header>
 
   <main>
@@ -39,27 +40,27 @@
       <section class="intro" aria-label="生活中的兴趣爱好介绍">
         <div class="intro-top">
           <div>
-            <h1>生活中的兴趣爱好</h1>
-            <p class="lead">本身具备设计专业学习背景，业余时间的核心爱好就是研究各类亚文化风格，深挖不同小众圈层的视觉体系、文化符号、情绪表达逻辑，同时尝试二次创作与风格内容传递，这也是我日常主要的休闲乐趣。</p>
+            <h1 data-i18n="life_title">生活中的兴趣爱好</h1>
+            <p class="lead" data-i18n="life_lead">本身具备设计专业学习背景，业余时间的核心爱好就是研究各类亚文化风格，深挖不同小众圈层的视觉体系、文化符号、情绪表达逻辑，同时尝试二次创作与风格内容传递，这也是我日常主要的休闲乐趣。</p>
           </div>
           <span class="eyebrow">ABOUT LIFE</span>
         </div>
         <div class="tag-line" aria-label="兴趣标签">
-          <p class="tag-title">兴趣标签</p>
+          <p class="tag-title" data-i18n="life_tag_label">兴趣标签</p>
           <div class="tags">
-            <span class="tag">设计基底</span>
-            <span class="tag">亚文化审美研究</span>
-            <span class="tag">圈层用户洞察</span>
-            <span class="tag">小众视觉解构</span>
-            <span class="tag">年轻化内容表达</span>
+            <span class="tag" data-i18n="life_tag1">设计基底</span>
+            <span class="tag" data-i18n="life_tag2">亚文化审美研究</span>
+            <span class="tag" data-i18n="life_tag3">圈层用户洞察</span>
+            <span class="tag" data-i18n="life_tag4">小众视觉解构</span>
+            <span class="tag" data-i18n="life_tag5">年轻化内容表达</span>
           </div>
         </div>
         <div class="enable">
-          <h2>爱好对产品工作的赋能</h2>
+          <h2 data-i18n="life_enable_title">爱好对产品工作的赋能</h2>
           <div class="enable-grid">
-            <article class="enable-card"><span class="num">01</span><p>审美层面：长期接触多元非主流风格，摆脱大众同质化审美局限，拥有差异化视觉判断力，可在产品界面、品牌视觉、活动视觉策划中打造辨识度，拒绝平庸化设计表达。</p></article>
-            <article class="enable-card"><span class="num">02</span><p>用户洞察层面：拆解亚文化圈层的沟通语境、价值偏好与群体诉求，能精准读懂年轻细分用户的情感需求，精准把握小众潮流风向，贴合目标人群心智做产品定位。</p></article>
-            <article class="enable-card"><span class="num">03</span><p>产品创意层面：借助亚文化的创意表达逻辑，为产品年轻化运营、特色功能策划、圈层场景搭建提供新颖思路，让产品兼具个性、温度与市场适配性，提升用户情感共鸣。</p></article>
+            <article class="enable-card"><span class="num">01</span><p data-i18n="life_e1">审美层面：长期接触多元非主流风格，摆脱大众同质化审美局限，拥有差异化视觉判断力，可在产品界面、品牌视觉、活动视觉策划中打造辨识度，拒绝平庸化设计表达。</p></article>
+            <article class="enable-card"><span class="num">02</span><p data-i18n="life_e2">用户洞察层面：拆解亚文化圈层的沟通语境、价值偏好与群体诉求，能精准读懂年轻细分用户的情感需求，精准把握小众潮流风向，贴合目标人群心智做产品定位。</p></article>
+            <article class="enable-card"><span class="num">03</span><p data-i18n="life_e3">产品创意层面：借助亚文化的创意表达逻辑，为产品年轻化运营、特色功能策划、圈层场景搭建提供新颖思路，让产品兼具个性、温度与市场适配性，提升用户情感共鸣。</p></article>
           </div>
         </div>
       </section>
@@ -86,5 +87,47 @@
     </section>
   </main>
 </div>
+<script>
+const L={
+  zh:{
+    back_btn:'返回 ABOUT',
+    life_title:'生活中的兴趣爱好',
+    life_lead:'本身具备设计专业学习背景，业余时间的核心爱好就是研究各类亚文化风格，深挖不同小众圈层的视觉体系、文化符号、情绪表达逻辑，同时尝试二次创作与风格内容传递，这也是我日常主要的休闲乐趣。',
+    life_tag_label:'兴趣标签',
+    life_tag1:'设计基底',life_tag2:'亚文化审美研究',life_tag3:'圈层用户洞察',life_tag4:'小众视觉解构',life_tag5:'年轻化内容表达',
+    life_enable_title:'爱好对产品工作的赋能',
+    life_e1:'审美层面：长期接触多元非主流风格，摆脱大众同质化审美局限，拥有差异化视觉判断力，可在产品界面、品牌视觉、活动视觉策划中打造辨识度，拒绝平庸化设计表达。',
+    life_e2:'用户洞察层面：拆解亚文化圈层的沟通语境、价值偏好与群体诉求，能精准读懂年轻细分用户的情感需求，精准把握小众潮流风向，贴合目标人群心智做产品定位。',
+    life_e3:'产品创意层面：借助亚文化的创意表达逻辑，为产品年轻化运营、特色功能策划、圈层场景搭建提供新颖思路，让产品兼具个性、温度与市场适配性，提升用户情感共鸣。'
+  },
+  en:{
+    back_btn:'← Back to About',
+    life_title:'Hobbies & Interests',
+    life_lead:'With a design academic background, my core hobby is studying all kinds of subculture aesthetics — deep-diving into the visual systems, cultural symbols, and emotional expression logic of niche communities, while experimenting with reinterpretation and style content creation.',
+    life_tag_label:'Interest Tags',
+    life_tag1:'Design Foundation',life_tag2:'Subculture Aesthetics',life_tag3:'Niche User Insight',life_tag4:'Visual Deconstruction',life_tag5:'Youth Content Expression',
+    life_enable_title:'How Hobbies Empower Product Work',
+    life_e1:'Aesthetics: Long-term exposure to diverse non-mainstream styles breaks free from homogenized taste — enabling differentiated visual judgment in product UI, brand visuals, and campaign design.',
+    life_e2:'User Insight: Decoding subculture communication norms, value preferences, and group needs enables precise reading of young niche users\' emotional demands and micro-trend positioning.',
+    life_e3:'Product Creativity: Subculture creative logic provides fresh angles for youth-oriented operations, feature planning, and community building — balancing personality, warmth, and market fit.'
+  }
+};
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(L[lang]&&L[lang][k]!==undefined)el.textContent=L[lang][k];
+  });
+  const btn=document.getElementById('lang-toggle');
+  if(btn)btn.textContent=lang==='zh'?'EN':'中文';
+  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+}
+function toggleLang(){
+  const cur=localStorage.getItem('lang')||'zh';
+  const next=cur==='zh'?'en':'zh';
+  localStorage.setItem('lang',next);
+  applyLang(next);
+}
+(function(){const l=localStorage.getItem('lang')||'zh';applyLang(l);})();
+</script>
 </body>
 </html>

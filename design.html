@@ -2,10 +2,36 @@
 <html lang="zh-CN" data-theme="dark">
 <head>
 <meta charset="utf-8"/>
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>产品设计思路 | 任思雨个人作品集网站</title>
 <style>
 :root{--color-bg:#0d0818;--color-text:#e8e4f0;--color-text-soft:#8a80a8;--color-text-secondary:#b0a8c8;--color-border:rgba(0,240,255,.10);--color-accent:#00f0ff;--color-magenta:#ff00aa;--radius-lg:18px}
+[data-theme="light"]{--color-bg:#f5f4ff;--color-text:#1a1333;--color-text-soft:#6b5fa8;--color-text-secondary:#4a3f7a;--color-border:rgba(77,61,200,.14);--color-accent:#3a3acb;--color-magenta:#b0006a}
+[data-theme="light"] body{background:#f5f4ff;color:#1a1333}
+[data-theme="light"] body::before{background-image:linear-gradient(rgba(77,61,200,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(77,61,200,.04) 1px,transparent 1px)}
+[data-theme="light"] body::after{background:radial-gradient(circle at 15% 8%,rgba(77,61,200,.10),transparent 28%),radial-gradient(circle at 85% 20%,rgba(176,0,106,.06),transparent 30%)}
+[data-theme="light"] .ui-button{background:rgba(255,255,255,.82);border-color:rgba(77,61,200,.22);color:#1a1333}
+[data-theme="light"] .ui-button:hover{background:rgba(77,61,200,.08);border-color:rgba(77,61,200,.42);color:var(--color-accent)}
+[data-theme="light"] .eyebrow{background:rgba(255,255,255,.6);border-color:rgba(77,61,200,.14)}
+[data-theme="light"] .card{background:rgba(255,255,255,.88);border-color:rgba(77,61,200,.10);box-shadow:0 4px 18px rgba(77,61,200,.07)}
+[data-theme="light"] .card::before{background:linear-gradient(180deg,var(--color-accent),var(--color-magenta))}
+[data-theme="light"] .card h3{color:#1a1333}
+[data-theme="light"] .card p,[data-theme="light"] .card li{color:var(--color-text-secondary)}
+[data-theme="light"] .section-num{background:rgba(77,61,200,.10);border-color:rgba(77,61,200,.22);color:var(--color-accent)}
+[data-theme="light"] .tag{background:rgba(77,61,200,.06);border-color:rgba(77,61,200,.18);color:var(--color-accent)}
+[data-theme="light"] .mq-must{background:linear-gradient(145deg,rgba(58,58,203,.10),rgba(0,50,200,.07));border-color:rgba(58,58,203,.18)}
+[data-theme="light"] .mq-must .mq-badge{background:rgba(58,58,203,.12);color:#3a3acb;border-color:rgba(58,58,203,.28)}
+[data-theme="light"] .mq-must .mq-title{color:#3a3acb}
+[data-theme="light"] .mq-must li::before{background:#3a3acb}
+[data-theme="light"] .mq li{color:rgba(0,0,0,.7)}
+[data-theme="light"] .persona-row-wrap{background:rgba(255,255,255,.7);border-color:rgba(77,61,200,.10)}
+[data-theme="light"] .persona-row-label{background:rgba(77,61,200,.05);color:var(--color-text-soft)}
+[data-theme="light"] .persona-cell{color:var(--color-text-secondary)}
+[data-theme="light"] .persona-cell-head{background:linear-gradient(180deg,rgba(77,61,200,.06),transparent)}
+[data-theme="light"] .ia-node-main{background:rgba(77,61,200,.07);border-color:rgba(77,61,200,.22)}
+[data-theme="light"] .ia-node-sub{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.10);color:var(--color-text-secondary)}
+[data-theme="light"] .lang-btn{background:rgba(255,255,255,.82);border-color:rgba(77,61,200,.22);color:#1a1333}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--color-bg);color:var(--color-text);line-height:1.7;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,240,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(176,0,255,.04) 1px,transparent 1px);background-size:48px 48px}
@@ -86,84 +112,86 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
 .ia-node-sub{padding:.35rem .85rem;font-size:.75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--color-text-secondary);font-weight:500}
 .ia-node svg{flex-shrink:0}
 @media(max-width:720px){.col2{grid-template-columns:1fr}.page{padding-top:.8rem}}
+.lang-btn{display:inline-flex;align-items:center;gap:.32rem;border:1px solid rgba(0,240,255,.22);border-radius:6px;padding:.42rem .82rem;background:rgba(18,10,32,.52);color:var(--color-text);font-size:.78rem;cursor:pointer;transition:all .2s}.lang-btn:hover{border-color:rgba(0,240,255,.42);color:var(--color-accent);background:rgba(0,240,255,.08)}
 </style>
 </head>
 <body>
 <div class="page">
   <header class="topbar">
-    <a class="ui-button" href="index.html#built-with-codex">返回网站</a>
+    <a class="ui-button" href="index.html#built-with-codex" data-i18n="back_btn">返回网站</a>
+    <button class="lang-btn" id="lang-toggle" style="margin-left:.7rem" onclick="toggleLang()">EN</button>
   </header>
   <main class="content">
 
     <section class="hero">
       <span class="eyebrow">PRODUCT DESIGN THINKING</span>
-      <h1>个人作品集网站 · 产品设计思路</h1>
-      <p class="lead" style="max-width:none">以产品经理视角，复盘这个个人品牌网站从用户分析、需求拆解到具体落地的完整工作流。本网站由我主导定义信息架构与产品逻辑，与 AI（Comate/Codex）协作完成前端实现与迭代优化。</p>
+      <h1 data-i18n="d_title">个人作品集网站 · 产品设计思路</h1>
+      <p class="lead" style="max-width:none" data-i18n="d_lead">以产品经理视角，复盘这个个人品牌网站从用户分析、需求拆解到具体落地的完整工作流。本网站由我主导定义信息架构与产品逻辑，与 AI（Comate/Codex）协作完成前端实现与迭代优化。</p>
     </section>
 
     <!-- 一 用户分析 -->
     <section class="section">
       <div class="section-label">
         <span class="section-num">01</span>
-        <h2>用户分析</h2>
+        <h2 data-i18n="d_s1">用户分析</h2>
       </div>
       <div class="divider"></div>
 
       <div class="persona-table">
         <!-- 头像行 -->
         <div class="persona-row-wrap">
-          <div class="persona-row-label">用户类型</div>
+          <div class="persona-row-label" data-i18n="d_p_type">用户类型</div>
           <div class="persona-cell persona-cell-head">
             <div class="persona-icon"><img src="hr.png" alt="HR"></div>
             <span class="persona-role">HR 初筛</span>
           </div>
           <div class="persona-cell persona-cell-head" style="border-left:1px solid rgba(255,0,170,.12)">
             <div class="persona-icon" style="border-color:rgba(255,0,170,.3)"><img src="业务面试官.png" alt="业务面试官"></div>
-            <span class="persona-role" style="color:var(--color-magenta)">业务面试官</span>
+            <span class="persona-role" style="color:var(--color-magenta)" data-i18n="d_p2_role">业务面试官</span>
           </div>
           <div class="persona-cell persona-cell-head" style="border-left:1px solid rgba(77,141,255,.12)">
             <div class="persona-icon" style="border-color:rgba(77,141,255,.35)"><img src="产品负责人.png" alt="产品负责人"></div>
-            <span class="persona-role" style="color:#4d8dff">产品负责人</span>
+            <span class="persona-role" style="color:#4d8dff" data-i18n="d_p3_role">产品负责人</span>
           </div>
         </div>
         <!-- 核心诉求行 -->
         <div class="persona-row-wrap">
-          <div class="persona-row-label">核心诉求</div>
-          <div class="persona-cell">快速判断背景与方向匹配度</div>
-          <div class="persona-cell">验证产品能力深度与项目真实性</div>
-          <div class="persona-cell">判断思维框架、AI 理解力与团队适配性</div>
+          <div class="persona-row-label" data-i18n="d_p_need">核心诉求</div>
+          <div class="persona-cell" data-i18n="d_p1_need">快速判断背景与方向匹配度</div>
+          <div class="persona-cell" data-i18n="d_p2_need">验证产品能力深度与项目真实性</div>
+          <div class="persona-cell" data-i18n="d_p3_need">判断思维框架、AI 理解力与团队适配性</div>
         </div>
         <!-- 决策场景行 -->
         <div class="persona-row-wrap">
-          <div class="persona-row-label">决策场景</div>
-          <div class="persona-cell">⏱ 30 秒内决定是否继续深看；从招聘平台点击链接，桌面端浏览首屏。</div>
-          <div class="persona-cell">🔍 面试前预习，重点扫描实习经历与项目细节；关注方法论是否扎实。</div>
-          <div class="persona-cell">🧠 关注方法论与定位清晰度；面试后主动回访，深度阅读 AI 能力与设计思路。</div>
+          <div class="persona-row-label" data-i18n="d_p_scene">决策场景</div>
+          <div class="persona-cell" data-i18n="d_p1_scene">⏱ 30 秒内决定是否继续深看；从招聘平台点击链接，桌面端浏览首屏。</div>
+          <div class="persona-cell" data-i18n="d_p2_scene">🔍 面试前预习，重点扫描实习经历与项目细节；关注方法论是否扎实。</div>
+          <div class="persona-cell" data-i18n="d_p3_scene">🧠 关注方法论与定位清晰度；面试后主动回访，深度阅读 AI 能力与设计思路。</div>
         </div>
         <!-- 关键词行 -->
         <div class="persona-row-wrap">
-          <div class="persona-row-label">关键词</div>
-          <div class="persona-cell"><div class="persona-tags"><span class="persona-tag">方向匹配</span><span class="persona-tag">背景可信</span><span class="persona-tag">信息清晰</span></div></div>
-          <div class="persona-cell"><div class="persona-tags"><span class="persona-tag" style="border-color:rgba(255,0,170,.2);color:var(--color-magenta)">项目细节</span><span class="persona-tag" style="border-color:rgba(255,0,170,.2);color:var(--color-magenta)">真实落地</span></div></div>
-          <div class="persona-cell"><div class="persona-tags"><span class="persona-tag" style="border-color:rgba(77,141,255,.25);color:#4d8dff">方法论</span><span class="persona-tag" style="border-color:rgba(77,141,255,.25);color:#4d8dff">AI理解</span><span class="persona-tag" style="border-color:rgba(77,141,255,.25);color:#4d8dff">团队适配</span></div></div>
+          <div class="persona-row-label" data-i18n="d_p_kw">关键词</div>
+          <div class="persona-cell"><div class="persona-tags"><span class="persona-tag" data-i18n="d_kw1a">方向匹配</span><span class="persona-tag" data-i18n="d_kw1b">背景可信</span><span class="persona-tag" data-i18n="d_kw1c">信息清晰</span></div></div>
+          <div class="persona-cell"><div class="persona-tags"><span class="persona-tag" style="border-color:rgba(255,0,170,.2);color:var(--color-magenta)" data-i18n="d_kw2a">项目细节</span><span class="persona-tag" style="border-color:rgba(255,0,170,.2);color:var(--color-magenta)" data-i18n="d_kw2b">真实落地</span></div></div>
+          <div class="persona-cell"><div class="persona-tags"><span class="persona-tag" style="border-color:rgba(77,141,255,.25);color:#4d8dff" data-i18n="d_kw3a">方法论</span><span class="persona-tag" style="border-color:rgba(77,141,255,.25);color:#4d8dff" data-i18n="d_kw3b">AI理解</span><span class="persona-tag" style="border-color:rgba(77,141,255,.25);color:#4d8dff" data-i18n="d_kw3c">团队适配</span></div></div>
         </div>
       </div>
 
       <div class="card-grid col2" style="margin-top:.85rem">
         <div class="card">
-          <h3>核心痛点</h3>
+          <h3 data-i18n="d_pain_title">核心痛点</h3>
           <ul>
-            <li>传统简历信息密度高但缺乏立体感，无法直观感知候选人的产品思维</li>
-            <li>面试官时间成本高，希望在最短路径内获取最高价值信息</li>
-            <li>AI产品方向候选人市场认知模糊，面试官难以快速判断真实能力</li>
+            <li data-i18n="d_pain1">传统简历信息密度高但缺乏立体感，无法直观感知候选人的产品思维</li>
+            <li data-i18n="d_pain2">面试官时间成本高，希望在最短路径内获取最高价值信息</li>
+            <li data-i18n="d_pain3">AI产品方向候选人市场认知模糊，面试官难以快速判断真实能力</li>
           </ul>
         </div>
         <div class="card">
-          <h3>使用场景假设</h3>
+          <h3 data-i18n="d_scene_title">使用场景假设</h3>
           <ul>
-            <li>HR 从 Boss/招聘平台点击链接，桌面端快速浏览首屏</li>
-            <li>面试官在面试前预习，重点查看实习经历与项目细节</li>
-            <li>面试结束后对方主动回访，深度阅读 AI 能力与设计思路</li>
+            <li data-i18n="d_scene1">HR 从 Boss/招聘平台点击链接，桌面端快速浏览首屏</li>
+            <li data-i18n="d_scene2">面试官在面试前预习，重点查看实习经历与项目细节</li>
+            <li data-i18n="d_scene3">面试结束后对方主动回访，深度阅读 AI 能力与设计思路</li>
           </ul>
         </div>
       </div>
@@ -173,69 +201,69 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
     <section class="section">
       <div class="section-label">
         <span class="section-num">02</span>
-        <h2>需求分析（MoSCoW 优先级）</h2>
+        <h2 data-i18n="d_s2">需求分析（MoSCoW 优先级）</h2>
       </div>
       <div class="divider"></div>
       <div class="moscow-wrap">
-        <div class="ax-top">高重要性 ↑</div>
-        <div class="ax-left">可缓</div>
+        <div class="ax-top" data-i18n="d_ax_top">高重要性 ↑</div>
+        <div class="ax-left" data-i18n="d_ax_left">可缓</div>
         <div class="moscow">
 
         <div class="mq mq-could">
           <span class="mq-badge">Could Have</span>
           <div class="mq-head">
-            <p class="mq-title">加分项</p>
-            <p class="mq-sub">可做 · 不影响核心体验</p>
+            <p class="mq-title" data-i18n="d_could_title">加分项</p>
+            <p class="mq-sub" data-i18n="d_could_sub">可做 · 不影响核心体验</p>
           </div>
           <ul>
-            <li>动效与视觉氛围强化个人风格记忆点</li>
-            <li>多页面深度内容（AI能力全景、生活中的我）</li>
-            <li>移动端适配</li>
+            <li data-i18n="d_could1">动效与视觉氛围强化个人风格记忆点</li>
+            <li data-i18n="d_could2">多页面深度内容（AI能力全景、生活中的我）</li>
+            <li data-i18n="d_could3">移动端适配</li>
           </ul>
         </div>
 
         <div class="mq mq-must">
           <span class="mq-badge">Must Have</span>
           <div class="mq-head">
-            <p class="mq-title">核心转化路径</p>
-            <p class="mq-sub">立刻做 · 不可缺失</p>
+            <p class="mq-title" data-i18n="d_must_title">核心转化路径</p>
+            <p class="mq-sub" data-i18n="d_must_sub">立刻做 · 不可缺失</p>
           </div>
           <ul>
-            <li>清晰的身份定位（AI产品 / 用户产品 / 平台产品经理）</li>
-            <li>可信度背书（教育背景、多段实习、真实项目成果）</li>
-            <li>零门槛访问，打开即可预览</li>
+            <li data-i18n="d_must1">清晰的身份定位（AI产品 / 用户产品 / 平台产品经理）</li>
+            <li data-i18n="d_must2">可信度背书（教育背景、多段实习、真实项目成果）</li>
+            <li data-i18n="d_must3">零门槛访问，打开即可预览</li>
           </ul>
         </div>
 
         <div class="mq mq-wont">
           <span class="mq-badge">Won't Have</span>
           <div class="mq-head">
-            <p class="mq-title">主动舍弃</p>
-            <p class="mq-sub">此版本不做 · 维护成本 > 收益</p>
+            <p class="mq-title" data-i18n="d_wont_title">主动舍弃</p>
+            <p class="mq-sub" data-i18n="d_wont_sub">此版本不做 · 维护成本 > 收益</p>
           </div>
           <ul>
-            <li>复杂后端逻辑（维护成本高于收益）</li>
-            <li>所有项目细节堆在首页</li>
-            <li>炫技式动效喧宾夺主</li>
+            <li data-i18n="d_wont1">复杂后端逻辑（维护成本高于收益）</li>
+            <li data-i18n="d_wont2">所有项目细节堆在首页</li>
+            <li data-i18n="d_wont3">炫技式动效喧宾夺主</li>
           </ul>
         </div>
 
         <div class="mq mq-should">
           <span class="mq-badge">Should Have</span>
           <div class="mq-head">
-            <p class="mq-title">深度体验</p>
-            <p class="mq-sub">重要 · 有条件优先实现</p>
+            <p class="mq-title" data-i18n="d_should_title">深度体验</p>
+            <p class="mq-sub" data-i18n="d_should_sub">重要 · 有条件优先实现</p>
           </div>
           <ul>
-            <li>差异化记忆点：工科设计背景 × AI 实战复合能力</li>
-            <li>非线性信息架构，面试官按需深挖</li>
-            <li>AI 能力具体化，有真实落地场景支撑</li>
+            <li data-i18n="d_should1">差异化记忆点：工科设计背景 × AI 实战复合能力</li>
+            <li data-i18n="d_should2">非线性信息架构，面试官按需深挖</li>
+            <li data-i18n="d_should3">AI 能力具体化，有真实落地场景支撑</li>
           </ul>
         </div>
 
         </div><!-- /moscow -->
-        <div class="ax-right">紧迫</div>
-        <div class="ax-bottom">↓ 低重要性</div>
+        <div class="ax-right" data-i18n="d_ax_right">紧迫</div>
+        <div class="ax-bottom" data-i18n="d_ax_bottom">↓ 低重要性</div>
       </div><!-- /moscow-wrap -->
     </section>
 
@@ -243,12 +271,12 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
     <section class="section">
       <div class="section-label">
         <span class="section-num">03</span>
-        <h2>产品定位与信息架构</h2>
+        <h2 data-i18n="d_s3">产品定位与信息架构</h2>
       </div>
       <div class="divider"></div>
       <div class="card" style="margin-top:1rem">
-        <h3>核心定位</h3>
-        <p>一个"会用AI、做过产品、有设计感"的复合型产品经理候选人立体展示工具——而非普通简历的数字化版本。核心差异：将设计专业背景、AI产品实战与项目推进能力整合进同一叙事框架，形成三位一体的能力定位。</p>
+        <h3 data-i18n="d_pos_title">核心定位</h3>
+        <p data-i18n="d_pos_desc">一个"会用AI、做过产品、有设计感"的复合型产品经理候选人立体展示工具——而非普通简历的数字化版本。核心差异：将设计专业背景、AI产品实战与项目推进能力整合进同一叙事框架，形成三位一体的能力定位。</p>
       </div>
 
       <!-- 树形信息架构图 -->
@@ -343,25 +371,25 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
     <section class="section">
       <div class="section-label">
         <span class="section-num">04</span>
-        <h2>关键交互设计决策</h2>
+        <h2 data-i18n="d_s4">关键交互设计决策</h2>
       </div>
       <div class="divider"></div>
       <div class="card-grid">
         <div class="card">
-          <h3>侧导航默认开启</h3>
-          <p>目标用户以桌面端为主，侧导航可持续提供页面锚点，同时不占用内容区域宽度。支持一键切换顶导 / 收起侧栏，满足不同浏览习惯。</p>
+          <h3 data-i18n="d_ux1_title">侧导航默认开启</h3>
+          <p data-i18n="d_ux1_desc">目标用户以桌面端为主，侧导航可持续提供页面锚点，同时不占用内容区域宽度。支持一键切换顶导 / 收起侧栏，满足不同浏览习惯。</p>
         </div>
         <div class="card">
-          <h3>实习地图 Hover 框稳定驻留</h3>
-          <p>解决"鼠标移到 tooltip 上卡片立即消失"的可用性问题。通过 CSS pointer-events 控制，只要鼠标未完全离开 hover 框，浮层就持续展示，避免反复触发造成的挫败感。</p>
+          <h3 data-i18n="d_ux2_title">实习地图 Hover 框稳定驻留</h3>
+          <p data-i18n="d_ux2_desc">解决"鼠标移到 tooltip 上卡片立即消失"的可用性问题。通过 CSS pointer-events 控制，只要鼠标未完全离开 hover 框，浮层就持续展示，避免反复触发造成的挫败感。</p>
         </div>
         <div class="card">
-          <h3>子页面回锚定位</h3>
-          <p>从 AI能力全景 / 生活页返回时，页面自动定位到进入时的来源卡片（通过 URL hash + 元素 id 实现），避免用户迷失在首页顶部重新查找。</p>
+          <h3 data-i18n="d_ux3_title">子页面回锚定位</h3>
+          <p data-i18n="d_ux3_desc">从 AI能力全景 / 生活页返回时，页面自动定位到进入时的来源卡片（通过 URL hash + 元素 id 实现），避免用户迷失在首页顶部重新查找。</p>
         </div>
         <div class="card">
-          <h3>个人照片轮播</h3>
-          <p>4 张生活照每 5 秒自动切换，支持手动前后翻页与点状指示器，平衡真实感与信息获取效率，避免静态单图的单薄感。</p>
+          <h3 data-i18n="d_ux4_title">个人照片轮播</h3>
+          <p data-i18n="d_ux4_desc">4 张生活照每 5 秒自动切换，支持手动前后翻页与点状指示器，平衡真实感与信息获取效率，避免静态单图的单薄感。</p>
         </div>
       </div>
     </section>
@@ -370,32 +398,32 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
     <section class="section">
       <div class="section-label">
         <span class="section-num">05</span>
-        <h2>视觉设计决策</h2>
+        <h2 data-i18n="d_s5">视觉设计决策</h2>
       </div>
       <div class="divider"></div>
       <div class="card" style="margin-top:1rem">
-        <h3>为什么选深色赛博朋克风格，而非常规极简白底？</h3>
-        <ul>
-          <li>差异化记忆点：同类候选人网站多为极简白底，暗色科技感在面试官浏览多份作品集后具有显著记忆优势</li>
-          <li>与 AI 产品方向高度契合：视觉语言传达"懂技术审美、有设计专业度"</li>
-          <li>设计背景的直接体现：工业设计 + 交互设计背景的候选人，视觉品质本身就是能力的一种展示</li>
-        </ul>
+        <h3 data-i18n="d_vis_title">为什么选深色赛博朋克风格，而非常规极简白底？</h3>
+          <ul>
+            <li data-i18n="d_vis1">差异化记忆点：同类候选人网站多为极简白底，暗色科技感在面试官浏览多份作品集后具有显著记忆优势</li>
+            <li data-i18n="d_vis2">与 AI 产品方向高度契合：视觉语言传达"懂技术审美、有设计专业度"</li>
+            <li data-i18n="d_vis3">设计背景的直接体现：工业设计 + 交互设计背景的候选人，视觉品质本身就是能力的一种展示</li>
+          </ul>
       </div>
       <div class="card-grid col2" style="margin-top:.75rem">
         <div class="card">
-          <h3>视觉语言系统</h3>
+          <h3 data-i18n="d_vl_title">视觉语言系统</h3>
           <ul>
-            <li>主色调：深紫黑背景 + 青色（#00f0ff）+ 品红（#ff00aa）双主色</li>
-            <li>材质感：毛玻璃卡片（backdrop-filter blur）+ 网格背景纹理</li>
-            <li>动态背景：魔法阵风格 Canvas 动画，增强科技氛围</li>
+            <li data-i18n="d_vl1">主色调：深紫黑背景 + 青色（#00f0ff）+ 品红（#ff00aa）双主色</li>
+            <li data-i18n="d_vl2">材质感：毛玻璃卡片（backdrop-filter blur）+ 网格背景纹理</li>
+            <li data-i18n="d_vl3">动态背景：魔法阵风格 Canvas 动画，增强科技氛围</li>
           </ul>
         </div>
         <div class="card">
-          <h3>排版策略</h3>
+          <h3 data-i18n="d_ty_title">排版策略</h3>
           <ul>
-            <li>信息层级通过字号、字重、颜色三维度区分，不依赖复杂装饰</li>
-            <li>关键数字和标签用 clamp() 响应式字号，保证不同屏幕比例一致</li>
-            <li>重要文案控制在 54ch 内，保证最佳阅读舒适度</li>
+            <li data-i18n="d_ty1">信息层级通过字号、字重、颜色三维度区分，不依赖复杂装饰</li>
+            <li data-i18n="d_ty2">关键数字和标签用 clamp() 响应式字号，保证不同屏幕比例一致</li>
+            <li data-i18n="d_ty3">重要文案控制在 54ch 内，保证最佳阅读舒适度</li>
           </ul>
         </div>
       </div>
@@ -405,32 +433,32 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
     <section class="section">
       <div class="section-label">
         <span class="section-num">06</span>
-        <h2>技术选型与落地路径</h2>
+        <h2 data-i18n="d_s6">技术选型与落地路径</h2>
       </div>
       <div class="divider"></div>
       <div class="card" style="margin-top:1rem">
-        <h3>为什么选纯静态 HTML/CSS/JS，不用框架？</h3>
-        <ul>
-          <li>部署门槛极低：本地 python3 -m http.server 即可预览，上线只需拖拽文件夹</li>
-          <li>维护成本低：内容调整直接编辑 HTML，无构建流程</li>
-          <li>加载速度快：面试官点开时零等待，首屏体验即决策体验</li>
-          <li>AI 协作友好：静态代码对 AI 工具透明，便于与 Comate/Codex 持续迭代</li>
-        </ul>
+        <h3 data-i18n="d_tech_title">为什么选纯静态 HTML/CSS/JS，不用框架？</h3>
+          <ul>
+            <li data-i18n="d_tech1">部署门槛极低：本地 python3 -m http.server 即可预览，上线只需拖拽文件夹</li>
+            <li data-i18n="d_tech2">维护成本低：内容调整直接编辑 HTML，无构建流程</li>
+            <li data-i18n="d_tech3">加载速度快：面试官点开时零等待，首屏体验即决策体验</li>
+            <li data-i18n="d_tech4">AI 协作友好：静态代码对 AI 工具透明，便于与 Comate/Codex 持续迭代</li>
+          </ul>
       </div>
       <div class="card-grid col2" style="margin-top:.75rem">
         <div class="card">
-          <h3>与 AI 的协作分工</h3>
+          <h3 data-i18n="d_collab_title">与 AI 的协作分工</h3>
           <ul>
-            <li><strong style="color:var(--color-text)">我主导：</strong>用户分析、信息架构、内容文案、设计语言决策、交互逻辑定义</li>
-            <li><strong style="color:var(--color-text)">AI 负责：</strong>CSS 实现、动效代码、布局微调、批量文案替换与 Bug 修复</li>
+            <li><strong style="color:var(--color-text)" data-i18n="d_collab_me">我主导：</strong><span data-i18n="d_collab_me_desc">用户分析、信息架构、内容文案、设计语言决策、交互逻辑定义</span></li>
+            <li><strong style="color:var(--color-text)" data-i18n="d_collab_ai">AI 负责：</strong><span data-i18n="d_collab_ai_desc">CSS 实现、动效代码、布局微调、批量文案替换与 Bug 修复</span></li>
           </ul>
         </div>
         <div class="card">
-          <h3>迭代方式</h3>
+          <h3 data-i18n="d_iter_title">迭代方式</h3>
           <ul>
-            <li>基于面试官真实反馈持续微调文案与信息层级</li>
-            <li>求职方向变化时同步更新定位文案与能力描述</li>
-            <li>网站本质是动态求职材料，非一次性交付物</li>
+            <li data-i18n="d_iter1">基于面试官真实反馈持续微调文案与信息层级</li>
+            <li data-i18n="d_iter2">求职方向变化时同步更新定位文案与能力描述</li>
+            <li data-i18n="d_iter3">网站本质是动态求职材料，非一次性交付物</li>
           </ul>
         </div>
       </div>
@@ -440,33 +468,115 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
     <section class="section" style="margin-bottom:2rem">
       <div class="section-label">
         <span class="section-num">07</span>
-        <h2>设计收益与反思</h2>
+        <h2 data-i18n="d_s7">设计收益与反思</h2>
       </div>
       <div class="divider"></div>
       <div class="card-grid col2" style="margin-top:1rem">
         <div class="card">
-          <h3>预期收益</h3>
+          <h3 data-i18n="d_gain_title">预期收益</h3>
           <ul>
-            <li>相比纯简历，信息传达更立体，减少面试前沟通成本</li>
-            <li>AI能力有具体落地案例支撑，减少面试官的信任成本</li>
-            <li>视觉差异化提升记忆留存率，增加主动回访可能性</li>
+            <li data-i18n="d_gain1">相比纯简历，信息传达更立体，减少面试前沟通成本</li>
+            <li data-i18n="d_gain2">AI能力有具体落地案例支撑，减少面试官的信任成本</li>
+            <li data-i18n="d_gain3">视觉差异化提升记忆留存率，增加主动回访可能性</li>
           </ul>
         </div>
         <div class="card">
-          <h3>局限与后续优化方向</h3>
+          <h3 data-i18n="d_limit_title">局限与后续优化方向</h3>
           <ul>
-            <li>内容较多，首屏信息密度仍可继续压缩</li>
-            <li>移动端体验有待进一步打磨</li>
-            <li>可加入访问统计，了解哪些模块被访问频率最高，指导下一轮迭代</li>
+            <li data-i18n="d_limit1">内容较多，首屏信息密度仍可继续压缩</li>
+            <li data-i18n="d_limit2">移动端体验有待进一步打磨</li>
+            <li data-i18n="d_limit3">可加入访问统计，了解哪些模块被访问频率最高，指导下一轮迭代</li>
           </ul>
         </div>
       </div>
       <div class="tag-row" style="margin-top:1.2rem">
-        <span class="tag">用户分析</span><span class="tag">需求拆解</span><span class="tag">信息架构</span><span class="tag">交互设计</span><span class="tag">视觉决策</span><span class="tag">AI协作开发</span><span class="tag">静态部署</span><span class="tag">持续迭代</span>
+        <span class="tag" data-i18n="d_tag1">用户分析</span><span class="tag" data-i18n="d_tag2">需求拆解</span><span class="tag" data-i18n="d_tag3">信息架构</span><span class="tag" data-i18n="d_tag4">交互设计</span><span class="tag" data-i18n="d_tag5">视觉决策</span><span class="tag" data-i18n="d_tag6">AI协作开发</span><span class="tag" data-i18n="d_tag7">静态部署</span><span class="tag" data-i18n="d_tag8">持续迭代</span>
       </div>
     </section>
 
   </main>
 </div>
+<script>
+const D={
+  zh:{
+    back_btn:'返回网站',
+    d_title:'个人作品集网站 · 产品设计思路',
+    d_lead:'以产品经理视角，复盘这个个人品牌网站从用户分析、需求拆解到具体落地的完整工作流。本网站由我主导定义信息架构与产品逻辑，与 AI（Comate/Codex）协作完成前端实现与迭代优化。',
+    d_s1:'用户分析',d_s2:'需求分析（MoSCoW 优先级）',d_s3:'产品定位与信息架构',d_s4:'关键交互设计决策',d_s5:'视觉设计决策',d_s6:'技术选型与落地路径',d_s7:'设计收益与反思',
+    d_p_type:'用户类型',d_p2_role:'业务面试官',d_p3_role:'产品负责人',
+    d_p_need:'核心诉求',d_p1_need:'快速判断背景与方向匹配度',d_p2_need:'验证产品能力深度与项目真实性',d_p3_need:'判断思维框架、AI 理解力与团队适配性',
+    d_p_scene:'决策场景',d_p1_scene:'⏱ 30 秒内决定是否继续深看；从招聘平台点击链接，桌面端浏览首屏。',d_p2_scene:'🔍 面试前预习，重点扫描实习经历与项目细节；关注方法论是否扎实。',d_p3_scene:'🧠 关注方法论与定位清晰度；面试后主动回访，深度阅读 AI 能力与设计思路。',
+    d_p_kw:'关键词',d_kw1a:'方向匹配',d_kw1b:'背景可信',d_kw1c:'信息清晰',d_kw2a:'项目细节',d_kw2b:'真实落地',d_kw3a:'方法论',d_kw3b:'AI理解',d_kw3c:'团队适配',
+    d_pain_title:'核心痛点',d_pain1:'传统简历信息密度高但缺乏立体感，无法直观感知候选人的产品思维',d_pain2:'面试官时间成本高，希望在最短路径内获取最高价值信息',d_pain3:'AI产品方向候选人市场认知模糊，面试官难以快速判断真实能力',
+    d_scene_title:'使用场景假设',d_scene1:'HR 从 Boss/招聘平台点击链接，桌面端快速浏览首屏',d_scene2:'面试官在面试前预习，重点查看实习经历与项目细节',d_scene3:'面试结束后对方主动回访，深度阅读 AI 能力与设计思路',
+    d_ax_top:'高重要性 ↑',d_ax_left:'可缓',d_ax_right:'紧迫',d_ax_bottom:'↓ 低重要性',
+    d_could_title:'加分项',d_could_sub:'可做 · 不影响核心体验',d_could1:'动效与视觉氛围强化个人风格记忆点',d_could2:'多页面深度内容（AI能力全景、生活中的我）',d_could3:'移动端适配',
+    d_must_title:'核心转化路径',d_must_sub:'立刻做 · 不可缺失',d_must1:'清晰的身份定位（AI产品 / 用户产品 / 平台产品经理）',d_must2:'可信度背书（教育背景、多段实习、真实项目成果）',d_must3:'零门槛访问，打开即可预览',
+    d_wont_title:'主动舍弃',d_wont_sub:'此版本不做 · 维护成本 > 收益',d_wont1:'复杂后端逻辑（维护成本高于收益）',d_wont2:'所有项目细节堆在首页',d_wont3:'炫技式动效喧宾夺主',
+    d_should_title:'深度体验',d_should_sub:'重要 · 有条件优先实现',d_should1:'差异化记忆点：工科设计背景 × AI 实战复合能力',d_should2:'非线性信息架构，面试官按需深挖',d_should3:'AI 能力具体化，有真实落地场景支撑',
+    d_pos_title:'核心定位',d_pos_desc:'一个"会用AI、做过产品、有设计感"的复合型产品经理候选人立体展示工具——而非普通简历的数字化版本。核心差异：将设计专业背景、AI产品实战与项目推进能力整合进同一叙事框架，形成三位一体的能力定位。',
+    d_ux1_title:'侧导航默认开启',d_ux1_desc:'目标用户以桌面端为主，侧导航可持续提供页面锚点，同时不占用内容区域宽度。支持一键切换顶导 / 收起侧栏，满足不同浏览习惯。',
+    d_ux2_title:'实习地图 Hover 框稳定驻留',d_ux2_desc:'解决"鼠标移到 tooltip 上卡片立即消失"的可用性问题。通过 CSS pointer-events 控制，只要鼠标未完全离开 hover 框，浮层就持续展示，避免反复触发造成的挫败感。',
+    d_ux3_title:'子页面回锚定位',d_ux3_desc:'从 AI能力全景 / 生活页返回时，页面自动定位到进入时的来源卡片（通过 URL hash + 元素 id 实现），避免用户迷失在首页顶部重新查找。',
+    d_ux4_title:'个人照片轮播',d_ux4_desc:'4 张生活照每 5 秒自动切换，支持手动前后翻页与点状指示器，平衡真实感与信息获取效率，避免静态单图的单薄感。',
+    d_vis_title:'为什么选深色赛博朋克风格，而非常规极简白底？',d_vis1:'差异化记忆点：同类候选人网站多为极简白底，暗色科技感在面试官浏览多份作品集后具有显著记忆优势',d_vis2:'与 AI 产品方向高度契合：视觉语言传达"懂技术审美、有设计专业度"',d_vis3:'设计背景的直接体现：工业设计 + 交互设计背景的候选人，视觉品质本身就是能力的一种展示',
+    d_vl_title:'视觉语言系统',d_vl1:'主色调：深紫黑背景 + 青色（#00f0ff）+ 品红（#ff00aa）双主色',d_vl2:'材质感：毛玻璃卡片（backdrop-filter blur）+ 网格背景纹理',d_vl3:'动态背景：魔法阵风格 Canvas 动画，增强科技氛围',
+    d_ty_title:'排版策略',d_ty1:'信息层级通过字号、字重、颜色三维度区分，不依赖复杂装饰',d_ty2:'关键数字和标签用 clamp() 响应式字号，保证不同屏幕比例一致',d_ty3:'重要文案控制在 54ch 内，保证最佳阅读舒适度',
+    d_tech_title:'为什么选纯静态 HTML/CSS/JS，不用框架？',d_tech1:'部署门槛极低：本地 python3 -m http.server 即可预览，上线只需拖拽文件夹',d_tech2:'维护成本低：内容调整直接编辑 HTML，无构建流程',d_tech3:'加载速度快：面试官点开时零等待，首屏体验即决策体验',d_tech4:'AI 协作友好：静态代码对 AI 工具透明，便于与 Comate/Codex 持续迭代',
+    d_collab_title:'与 AI 的协作分工',d_collab_me:'我主导：',d_collab_me_desc:'用户分析、信息架构、内容文案、设计语言决策、交互逻辑定义',d_collab_ai:'AI 负责：',d_collab_ai_desc:'CSS 实现、动效代码、布局微调、批量文案替换与 Bug 修复',
+    d_iter_title:'迭代方式',d_iter1:'基于面试官真实反馈持续微调文案与信息层级',d_iter2:'求职方向变化时同步更新定位文案与能力描述',d_iter3:'网站本质是动态求职材料，非一次性交付物',
+    d_gain_title:'预期收益',d_gain1:'相比纯简历，信息传达更立体，减少面试前沟通成本',d_gain2:'AI能力有具体落地案例支撑，减少面试官的信任成本',d_gain3:'视觉差异化提升记忆留存率，增加主动回访可能性',
+    d_limit_title:'局限与后续优化方向',d_limit1:'内容较多，首屏信息密度仍可继续压缩',d_limit2:'移动端体验有待进一步打磨',d_limit3:'可加入访问统计，了解哪些模块被访问频率最高，指导下一轮迭代',
+    d_tag1:'用户分析',d_tag2:'需求拆解',d_tag3:'信息架构',d_tag4:'交互设计',d_tag5:'视觉决策',d_tag6:'AI协作开发',d_tag7:'静态部署',d_tag8:'持续迭代'
+  },
+  en:{
+    back_btn:'← Back',
+    d_title:'Portfolio Website · Product Design Thinking',
+    d_lead:'A PM-perspective retrospective of the complete workflow behind this personal brand site — from user research and requirements to final implementation. I led the information architecture and product logic, collaborating with AI (Comate/Codex) for frontend implementation and iteration.',
+    d_s1:'User Research',d_s2:'Requirements (MoSCoW Priority)',d_s3:'Positioning & Information Architecture',d_s4:'Key Interaction Design Decisions',d_s5:'Visual Design Decisions',d_s6:'Tech Stack & Delivery Path',d_s7:'Design Outcomes & Reflection',
+    d_p_type:'User Type',d_p2_role:'Business Interviewer',d_p3_role:'Product Lead',
+    d_p_need:'Core Need',d_p1_need:'Quickly assess background and role fit',d_p2_need:'Verify depth of product skills and project authenticity',d_p3_need:'Evaluate thinking frameworks, AI fluency, and team fit',
+    d_p_scene:'Decision Context',d_p1_scene:'⏱ Decides in 30s whether to read further; clicks from job platform on desktop.',d_p2_scene:'🔍 Pre-interview prep, scans internships and project details; checks methodology rigor.',d_p3_scene:'🧠 Focuses on clarity of positioning; revisits after interview to read AI & design pages in depth.',
+    d_p_kw:'Keywords',d_kw1a:'Role Fit',d_kw1b:'Credibility',d_kw1c:'Clarity',d_kw2a:'Project Detail',d_kw2b:'Real Delivery',d_kw3a:'Methodology',d_kw3b:'AI Fluency',d_kw3c:'Team Fit',
+    d_pain_title:'Core Pain Points',d_pain1:'Traditional resumes lack dimensionality — hard to sense product thinking from text alone',d_pain2:'Interviewers have limited time; want highest-value info in the shortest path',d_pain3:'AI PM candidates are hard to evaluate quickly due to fuzzy market perception',
+    d_scene_title:'Usage Scenario Assumptions',d_scene1:'HR clicks from Boss/job board, skims the first screen on desktop',d_scene2:'Interviewer pre-reads before the meeting, focusing on internships and project depth',d_scene3:'After the interview, they revisit to read the AI capability and design thinking pages',
+    d_ax_top:'High Importance ↑',d_ax_left:'Deferrable',d_ax_right:'Urgent',d_ax_bottom:'↓ Low Importance',
+    d_could_title:'Nice to Have',d_could_sub:'Do if possible · Does not affect core experience',d_could1:'Motion and visual atmosphere to reinforce personal style',d_could2:'Deep sub-pages (AI capability map, life page)',d_could3:'Mobile responsiveness',
+    d_must_title:'Core Conversion Path',d_must_sub:'Do now · Non-negotiable',d_must1:'Clear identity positioning (AI / User / Platform PM)',d_must2:'Credibility proof (education, multiple internships, real project outcomes)',d_must3:'Zero-barrier access — opens immediately without setup',
+    d_wont_title:'Deliberately Excluded',d_wont_sub:'Not in this version · Maintenance cost > benefit',d_wont1:'Complex backend logic (maintenance cost outweighs value)',d_wont2:'All project details crammed onto the homepage',d_wont3:'Flashy animations that overshadow content',
+    d_should_title:'Deep Experience',d_should_sub:'Important · Prioritize when resources allow',d_should1:'Differentiated recall: STEM design background × AI hands-on composite skill',d_should2:'Non-linear IA so interviewers can drill down on demand',d_should3:'Concrete AI capability examples backed by real delivery',
+    d_pos_title:'Core Positioning',d_pos_desc:'A 3D showcase tool for a composite PM candidate who "uses AI, ships products, and has design sensibility" — not just a digital resume. The key differentiator: integrating a design background, AI product experience, and project execution into a single unified narrative.',
+    d_ux1_title:'Side Nav On by Default',d_ux1_desc:'Primary users are on desktop, where persistent side nav provides anchor links without consuming content width. One-click toggle to top nav or collapse sidebar for different browsing preferences.',
+    d_ux2_title:'Hover Card Stable Hover',d_ux2_desc:'Solves the usability issue of "card disappearing when mouse moves to tooltip". CSS pointer-events ensures the overlay persists as long as the mouse stays within the hover zone, preventing frustrating repeated triggers.',
+    d_ux3_title:'Sub-page Return Anchor',d_ux3_desc:'When returning from the AI or life sub-pages, the page auto-scrolls to the originating card (via URL hash + element id), so users don\'t get lost at the top of the homepage.',
+    d_ux4_title:'Personal Photo Carousel',d_ux4_desc:'4 lifestyle photos rotate every 5 seconds with manual prev/next and dot indicators, balancing authenticity with efficient information delivery.',
+    d_vis_title:'Why Dark Cyberpunk, Not Minimal White?',d_vis1:'Differentiated recall: most peers use minimal white; dark sci-fi aesthetic stands out after reviewing multiple portfolios',d_vis2:'Highly aligned with AI product direction: visual language communicates "design-literate with technical taste"',d_vis3:'Direct proof of design background: for a candidate with industrial + interaction design training, visual quality is itself a capability signal',
+    d_vl_title:'Visual Language System',d_vl1:'Color: deep purple-black + cyan (#00f0ff) + magenta (#ff00aa) dual accent palette',d_vl2:'Texture: frosted glass cards (backdrop-filter blur) + grid background pattern',d_vl3:'Dynamic background: magic-circle-style canvas animation to reinforce tech atmosphere',
+    d_ty_title:'Typography Strategy',d_ty1:'Information hierarchy differentiated through font size, weight, and color — no complex decoration needed',d_ty2:'Key numbers and labels use clamp() responsive sizing for consistent proportions across screen sizes',d_ty3:'Key body copy kept within 54ch for optimal reading comfort',
+    d_tech_title:'Why Pure Static HTML/CSS/JS, No Framework?',d_tech1:'Zero deployment friction: preview with python3 -m http.server, deploy by dragging a folder',d_tech2:'Low maintenance: edit content directly in HTML, no build step',d_tech3:'Instant load: interviewer sees it immediately — first-screen experience is the decision experience',d_tech4:'AI-collaboration friendly: transparent static code is easy to iterate with Comate/Codex',
+    d_collab_title:'Collaboration Division with AI',d_collab_me:'I led:',d_collab_me_desc:'User research, information architecture, copywriting, design language decisions, interaction logic definition',d_collab_ai:'AI handled:',d_collab_ai_desc:'CSS implementation, animation code, layout tweaks, bulk copy replacement, and bug fixes',
+    d_iter_title:'Iteration Approach',d_iter1:'Continuously refine copy and hierarchy based on real interviewer feedback',d_iter2:'Update positioning copy and capability descriptions when job target changes',d_iter3:'The site is a living job-search asset, not a one-time deliverable',
+    d_gain_title:'Expected Outcomes',d_gain1:'More dimensional than a resume alone — reduces pre-interview communication overhead',d_gain2:'AI capabilities backed by concrete delivery cases — reduces interviewer trust cost',d_gain3:'Visual differentiation improves recall rate and increases chances of proactive revisits',
+    d_limit_title:'Limitations & Next Optimization',d_limit1:'Content-heavy; first-screen density can be compressed further',d_limit2:'Mobile experience needs further polish',d_limit3:'Add analytics to learn which sections get most visits and guide the next iteration',
+    d_tag1:'User Research',d_tag2:'Requirements',d_tag3:'Information Architecture',d_tag4:'Interaction Design',d_tag5:'Visual Decisions',d_tag6:'AI-Assisted Dev',d_tag7:'Static Deploy',d_tag8:'Continuous Iteration'
+  }
+};
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(D[lang]&&D[lang][k]!==undefined)el.textContent=D[lang][k];
+  });
+  const btn=document.getElementById('lang-toggle');
+  if(btn)btn.textContent=lang==='zh'?'EN':'中文';
+  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+}
+function toggleLang(){
+  const cur=localStorage.getItem('lang')||'zh';
+  const next=cur==='zh'?'en':'zh';
+  localStorage.setItem('lang',next);
+  applyLang(next);
+}
+(function(){const l=localStorage.getItem('lang')||'zh';applyLang(l);})();
+</script>
 </body>
 </html>
