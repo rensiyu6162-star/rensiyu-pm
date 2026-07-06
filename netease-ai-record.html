@@ -332,6 +332,60 @@ h1{margin-top:.75rem;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.1;letter-s
       </div>
     </section>
 
+    <!-- 补充目标人群 & 信息流时间设计 -->
+    <section class="section" id="target-users">
+      <div class="gap-box">
+        <div class="gap-label">目标人群定位</div>
+        <p>不是已有记录习惯的重度用户，而是<b>潜在记录欲望尚未被唤醒的普通用户</b>。他们不会每天主动打开 App 记录，而是攒了一段时间后打开，发现 AI 已帮他们整理好，便捷发布，偶尔回顾——通过这种低门槛方式在平台积累结构化情感资产，自然提升留存。</p>
+      </div>
+    </section>
+
+    <!-- 07 信息流时间排序设计 -->
+    <section class="section" id="timeline">
+      <div class="section-label">
+        <div class="section-num">07</div>
+        <div>
+          <div class="section-title-text">信息流时间排序设计</div>
+          <div class="section-sub">TIMELINE DESIGN CHALLENGE</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">核心矛盾</div>
+        <p>每条记录存在两个时间：<b>照片拍摄时间</b>（事件真实发生的那天）和<b>发布时间</b>（用户整理发出的那刻）。两种使用场景都真实存在，无法偏废——有人想按事件发生时间结构化回顾成长，也有人想按发布顺序找到刚发的内容。</p>
+      </div>
+
+      <div class="model-grid" style="margin-top:.85rem">
+        <div class="model-row">
+          <div class="model-row-label" style="color:rgba(255,120,120,.9)">✗ 方案一<br/><span style="font-size:.7rem;opacity:.6;font-weight:400">仅按发布时间</span></div>
+          <div class="model-row-body">无法按事件发生时间回顾，记录感和情感资产的结构化意义丧失。时间线混乱，缺少「成长回顾」的体验。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label" style="color:rgba(255,120,120,.9)">✗ 方案二<br/><span style="font-size:.7rem;opacity:.6;font-weight:400">仅按拍摄时间</span></div>
+          <div class="model-row-body">
+            ①<b>新发内容沉底</b>：刚发布的一个月前的记录被埋在信息流深处，用户找不到刚发的内容；②<b>无拍摄时间的内容无法归位</b>：纯文字记录、p图后丢失元数据的照片、用户自选跨日期图片均无法判断拍摄时间，强行归位导致错误和用户疑惑。
+          </div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label" style="color:rgba(255,120,120,.9)">✗ 方案三<br/><span style="font-size:.7rem;opacity:.6;font-weight:400">主流发布时间 + 副流照片墙</span></div>
+          <div class="model-row-body">照片墙按绝对拍摄时间排列，用户编辑时混入不同日期的图片后，同一条记录的照片会被打散到照片墙不同位置，体验割裂。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label" style="color:var(--color-cyan)">✓ 最终方案<br/><span style="font-size:.7rem;opacity:.6;font-weight:400">双时间轴</span></div>
+          <div class="model-row-body">
+            引入「<b>记录时间</b>」与「<b>发生时间</b>」两个概念，双轨并行：<br/><br/>
+            <b>主信息流 → 记录时间（发布时间）：</b>保证用户发完内容能立即在信息流顶部找到，消除「内容去哪了」的疑惑。<br/><br/>
+            <b>副信息流 → 发生时间（自定义规则）：</b>
+            <ul style="margin:.4rem 0 0 1.1rem;color:var(--color-text-secondary);font-size:.86rem;line-height:1.8">
+              <li>AI 聚合的照片：无论用户如何增删编辑，均取 AI 最初聚合的照片组日期作为发生时间，锁定稳定不变</li>
+              <li>用户自发内容 / 纯文字 / 无法判断拍摄时间的图片：以发布时间作为发生时间</li>
+            </ul>
+            <br/>两种使用场景完全覆盖：用户既可在主流按发布顺序找到刚发的内容，也可在副流按事件发生时间结构化回顾成长轨迹。
+          </div>
+        </div>
+      </div>
+    </section>
+
     <hr class="divider"/>
 
     <!-- 尾部 -->
