@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>优惠券券包领取使用优化 | 美团 Keeta · 任思雨</title>
+<style>
+:root{--color-bg:#0d0818;--color-text:#e8e4f0;--color-text-soft:#8a80a8;--color-text-secondary:#b0a8c8;--color-border:rgba(0,240,255,.13);--color-cyan:#00f0ff;--color-magenta:#ff00aa;--color-blue:#4d8dff;--radius-sm:6px;--radius-lg:18px;--radius-xl:24px}
+[data-theme="light"]{--color-bg:#f5f4ff;--color-text:#1a1333;--color-text-soft:#6b5fa8;--color-text-secondary:#4a3f7a;--color-border:rgba(77,61,200,.14);--color-cyan:#3a3acb;--color-magenta:#b0006a;--color-blue:#2255cc}
+[data-theme="light"] body{background:#f5f4ff;color:#1a1333}
+[data-theme="light"] body::before{background-image:linear-gradient(rgba(77,61,200,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(77,61,200,.03) 1px,transparent 1px)}
+[data-theme="light"] body::after{background:radial-gradient(circle at 8% 10%,rgba(77,61,200,.08),transparent 28%),radial-gradient(circle at 90% 20%,rgba(34,85,204,.06),transparent 30%),radial-gradient(circle at 50% 92%,rgba(176,0,106,.05),transparent 34%)}
+[data-theme="light"] .ui-button{background:rgba(255,255,255,.82);border-color:rgba(77,61,200,.22);color:#1a1333}
+[data-theme="light"] .ui-button:hover{background:rgba(77,61,200,.07);border-color:rgba(77,61,200,.40);color:var(--color-cyan)}
+[data-theme="light"] .eyebrow{background:rgba(255,255,255,.6);border-color:rgba(77,61,200,.14)}
+[data-theme="light"] .card{background:linear-gradient(135deg,rgba(255,255,255,.90),rgba(240,238,255,.78));border-color:rgba(77,61,200,.12);box-shadow:0 4px 24px rgba(77,61,200,.08)}
+[data-theme="light"] .card::before{background:linear-gradient(90deg,var(--color-cyan),var(--color-blue),transparent)}
+[data-theme="light"] .section-num{background:linear-gradient(135deg,rgba(77,61,200,.18),rgba(34,85,204,.14));color:var(--color-cyan)}
+[data-theme="light"] .gap-box{background:linear-gradient(135deg,rgba(176,0,106,.06),rgba(77,61,200,.04));border-color:rgba(176,0,106,.18)}
+[data-theme="light"] .model-row{background:rgba(255,255,255,.68);border-color:rgba(77,61,200,.09)}
+[data-theme="light"] .tag{background:rgba(77,61,200,.07);border-color:rgba(77,61,200,.16);color:var(--color-cyan)}
+[data-theme="light"] .tag-pink{background:rgba(176,0,106,.06);border-color:rgba(176,0,106,.18);color:var(--color-magenta)}
+[data-theme="light"] .divider{border-color:rgba(77,61,200,.10)}
+[data-theme="light"] .insight-dot{background:var(--color-cyan);box-shadow:none}
+[data-theme="light"] .path-step{background:rgba(255,255,255,.7);border-color:rgba(77,61,200,.10)}
+[data-theme="light"] .stat-box{background:rgba(255,255,255,.72);border-color:rgba(77,61,200,.12)}
+[data-theme="light"] .stat-num{color:var(--color-cyan)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--color-bg);color:var(--color-text);line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,240,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(176,0,255,.035) 1px,transparent 1px);background-size:48px 48px}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 8% 10%,rgba(0,240,255,.14),transparent 28%),radial-gradient(circle at 90% 20%,rgba(77,141,255,.13),transparent 30%),radial-gradient(circle at 50% 92%,rgba(255,0,170,.09),transparent 34%)}
+a{color:inherit;text-decoration:none}
+.page{position:relative;z-index:1;min-height:100vh;padding:1rem 0 4rem}
+.topbar{display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:0 auto 1.5rem;padding:0 clamp(1rem,4vw,3rem)}
+.content{max-width:900px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)}
+.ui-button{display:inline-flex;align-items:center;justify-content:center;gap:.42rem;border:1px solid rgba(0,240,255,.22);border-radius:var(--radius-sm);padding:.46rem .88rem;background:rgba(18,10,32,.58);color:var(--color-text);font-size:.78rem;transition:all .2s ease;cursor:pointer}
+.ui-button:hover{border-color:rgba(0,240,255,.42);color:var(--color-cyan);background:rgba(0,240,255,.08)}
+.eyebrow{display:inline-flex;align-items:center;gap:.42rem;border:1px solid var(--color-border);border-radius:999px;padding:.32rem .72rem;background:rgba(28,18,48,.46);color:var(--color-text-soft);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase}
+.eyebrow::before{content:'';width:.36rem;height:.36rem;border-radius:999px;background:var(--color-cyan);box-shadow:0 0 12px var(--color-cyan)}
+.hero{margin-bottom:2.5rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.meta-chip{border:1px solid rgba(0,240,255,.16);border-radius:999px;padding:.24rem .64rem;background:rgba(0,240,255,.06);color:var(--color-text-soft);font-size:.72rem}
+h1{margin-top:.75rem;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.03em}
+.lead{max-width:72ch;margin-top:.85rem;color:var(--color-text-secondary);font-size:clamp(.9rem,1.05vw,1rem);line-height:1.8}
+.section{margin-top:2.4rem}
+.section-label{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.section-num{display:grid;place-items:center;width:1.8rem;height:1.8rem;border-radius:999px;background:linear-gradient(135deg,rgba(0,240,255,.22),rgba(77,141,255,.18));color:var(--color-cyan);font-size:.7rem;font-weight:800;flex-shrink:0}
+.section-title-text{font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:600;letter-spacing:-.01em}
+.section-sub{margin-top:.2rem;color:var(--color-text-soft);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase}
+.card{position:relative;overflow:hidden;border:1px solid rgba(0,240,255,.10);border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(18,10,32,.72),rgba(13,8,24,.48));box-shadow:0 16px 48px rgba(0,0,0,.18);padding:1.2rem 1.35rem;margin-top:.85rem}
+.card::before{content:'';position:absolute;left:1.2rem;right:1.2rem;top:0;height:1px;background:linear-gradient(90deg,var(--color-cyan),var(--color-blue),transparent);opacity:.65}
+.card p{color:var(--color-text-secondary);font-size:.9rem;line-height:1.78}
+.card p+p{margin-top:.6rem}
+.card-title{font-size:clamp(.92rem,1.3vw,1.05rem);font-weight:600;margin-bottom:.6rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:.85rem}
+.insight-row{display:grid;grid-template-columns:2rem 1fr;gap:.6rem;align-items:start;margin-top:.65rem}
+.insight-dot{width:.42rem;height:.42rem;margin-top:.56rem;border-radius:999px;background:var(--color-cyan);box-shadow:0 0 10px rgba(0,240,255,.45);justify-self:center}
+.insight-row p{color:var(--color-text-secondary);font-size:.88rem;line-height:1.7}
+.gap-box{border:1px solid rgba(255,0,170,.2);border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,0,170,.08),rgba(0,240,255,.05));padding:1rem 1.1rem;margin-top:.85rem}
+.gap-box .gap-label{color:var(--color-magenta);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.gap-box p{margin-top:.35rem;color:var(--color-text-secondary);font-size:.88rem;line-height:1.72}
+.model-grid{display:grid;gap:.65rem;margin-top:.85rem}
+.model-row{display:grid;grid-template-columns:9rem 1fr;gap:.8rem;border:1px solid rgba(0,240,255,.09);border-radius:var(--radius-lg);background:rgba(13,8,24,.36);padding:.8rem 1rem;align-items:start}
+.model-row-label{color:var(--color-cyan);font-size:.78rem;font-weight:700;padding-top:.1rem}
+.model-row-body{color:var(--color-text-secondary);font-size:.86rem;line-height:1.7}
+.model-row-body b{color:var(--color-text);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.tag{border:1px solid rgba(0,240,255,.16);border-radius:999px;padding:.22rem .52rem;background:rgba(0,240,255,.06);color:var(--color-cyan);font-size:.7rem}
+.tag-pink{border-color:rgba(255,0,170,.2);background:rgba(255,0,170,.06);color:var(--color-magenta)}
+.divider{border:none;border-top:1px solid rgba(0,240,255,.08);margin:2rem 0}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.85rem;margin-top:.85rem}
+.stat-box{border:1px solid rgba(0,240,255,.12);border-radius:var(--radius-lg);background:rgba(13,8,24,.4);padding:1rem 1.1rem;text-align:center}
+.stat-num{font-size:1.8rem;font-weight:800;color:var(--color-cyan);line-height:1}
+.stat-label{margin-top:.35rem;color:var(--color-text-soft);font-size:.75rem;line-height:1.4}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}.model-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <a class="ui-button" href="index.html">← 返回主页</a>
+    <span class="eyebrow">CASE STUDY · 完整案例</span>
+  </header>
+  <main class="content">
+
+    <section class="hero">
+      <span class="eyebrow">美团 Keeta · 产品经理 · 2026.02–2026.05</span>
+      <h1>优惠券券包<br/>领取使用优化需求</h1>
+      <p class="lead">针对运营后台优惠券领取限制僵化、使用限制缺乏时段与周期规则的问题，通过增加滚动周期限领与分时段/分星期可用规则，降低运营人力成本，支撑专场活动转化提升。</p>
+      <div class="hero-meta">
+        <span class="meta-chip">营销平台</span>
+        <span class="meta-chip">优惠券系统</span>
+        <span class="meta-chip">C端交易链路</span>
+        <span class="meta-chip">运营效率</span>
+        <span class="meta-chip">多国家适配</span>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <section class="section">
+      <div class="section-label">
+        <div class="section-num">01</div>
+        <div>
+          <div class="section-title-text">需求背景</div>
+          <div class="section-sub">WHY THIS PROJECT</div>
+        </div>
+      </div>
+      <div class="card">
+        <p>美团 Keeta 出海外卖业务的优惠券由运营后台配置，配置时需同时设置<b>领取限制</b>和<b>使用限制</b>。然而当前两类规则都存在明显短板：</p>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">领取限制的问题</div>
+          <div class="insight-row"><div class="insight-dot"></div><p>当前仅支持"每日限领 X 张"，缺少"X 日限领一张"的滚动周期设定。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p>长周期活动（如月度券包）运营只能配置 30 天活动，到期后需<b>手动续期</b>，造成人力浪费。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p>若用户在第 30 天才领券，次日周期重置后又可再领，导致<b>多领问题</b>。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p>前几十天的活动宣传曝光因用户未及时领券而<b>效果浪费</b>。</p></div>
+        </div>
+        <div class="card">
+          <div class="card-title">使用限制的问题</div>
+          <div class="insight-row"><div class="insight-dot"></div><p>当前仅支持"领取后 N 天可用"，缺少<b>分周期可用</b>和<b>分时段可用</b>规则。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p>运营无法针对"工作日午餐专场""周末专场"等活动推送定向券。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p>策略迭代慢，活动针对性弱，转化率难以提升。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">
+        <div class="section-num">02</div>
+        <div>
+          <div class="section-title-text">竞品调研与需求筛选</div>
+          <div class="section-sub">RESEARCH &amp; SCOPING</div>
+        </div>
+      </div>
+      <div class="card">
+        <p>调研了美团境内发券系统及多个后台运营软件的领取/使用限制规则，列出所有可能新增的维度，与运营团队逐条对齐优先级。</p>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">领取限制候选 → 筛选结论</div>
+          <div class="insight-row"><div class="insight-dot"></div><p><b>分时段领取</b>：用户认知成本高，pass。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p><b>X 日限领一张（滚动周期）</b>：核心痛点，<b>重点落地</b>。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p><b>分析可领</b>：当前阶段无需求，pass。</p></div>
+        </div>
+        <div class="card">
+          <div class="card-title">使用限制候选 → 筛选结论</div>
+          <div class="insight-row"><div class="insight-dot"></div><p><b>分时段可用</b>：匹配午餐/晚餐专场，<b>落地</b>。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p><b>分星期可用</b>：匹配工作日/周末专场，<b>落地</b>。</p></div>
+          <div class="insight-row"><div class="insight-dot"></div><p><b>领取后隔 N 天才可用</b>：海外用户理解成本高，当前增长阶段暂不做，pass。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">
+        <div class="section-num">03</div>
+        <div>
+          <div class="section-title-text">方案设计与关键决策</div>
+          <div class="section-sub">SOLUTION DESIGN</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">领取规则：滚动周期 vs 固定周期</div>
+        <p>最终选择<b>滚动 30 天周期</b>而非固定自然月，原因：</p>
+        <p>① 固定周期若用户周期末才领，下个周期初又可领，多领问题依然存在。</p>
+        <p>② 按自然月计算技术实现复杂（不同月份天数不同），工期紧张（需在世界杯前上线）。</p>
+        <p>③ 滚动周期：用户 1 月 16 日领券，下次可领时间为 2 月 15 日起，<b>避免多领、避免曝光浪费</b>，实现简单。</p>
+      </div>
+      <div class="card">
+        <div class="card-title">使用规则：分时段 + 分星期可用</div>
+        <div class="insight-row"><div class="insight-dot"></div><p><b>分时段可用</b>：以 1 小时为最小单位，支持跨小时连续时段，最多配置 3 个时段（对应早/中/晚餐场景）。可单独使用，也可与分星期结合。</p></div>
+        <div class="insight-row"><div class="insight-dot"></div><p><b>分星期可用</b>：提供周一至周日 7 个独立勾选项，<b>拒绝了研发"工作日/周末两选一"的快捷方案</b>。原因：① 后续规则可能扩展；② 出海面向多国家，阿拉伯地区工作日为周日～周四，固定选项无法适配。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">
+        <div class="section-num">04</div>
+        <div>
+          <div class="section-title-text">C 端展示规则改造</div>
+          <div class="section-sub">CONSUMER-SIDE DISPLAY RULES</div>
+        </div>
+      </div>
+      <div class="card">
+        <p>新增使用时段与星期规则后，全交易链路涉及大量优惠券展示点位，需逐一判断是否需要改造及改造方式。梳理后分为三类：</p>
+      </div>
+      <div class="model-grid">
+        <div class="model-row">
+          <div class="model-row-label">❌ 不改造</div>
+          <div class="model-row-body"><b>首页天降弹窗、投放弹窗：</b>一次性发券，用户感知是"得到了一批券"，不需要在当下了解每张券的详细规则。如需查看可到个人中心券列表。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">⚙️ 后台逻辑改造</div>
+          <div class="model-row-body">
+            <b>Push 发券：</b>仅在券可用时段发出，发券时机与可用时段统一。<br/>
+            <b>门店页券浮层：</b>用户进入门店有明确下单意图，浮层<b>只展示当前时段可用的券</b>，避免领了却不能用的困惑。
+          </div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">✅ 展示使用规则</div>
+          <div class="model-row-body">
+            <b>高达活动会场（领券组件 → 用券引导）：</b>固定模块，用户经历"可领 → 已领 → 用券引导"完整流程。针对空间有限问题，设计<b>简化时间表达</b>：今天是周五、券周六 12:00 起可用，则显示"周六 12:00 可用"。<br/><br/>
+            <b>个人中心券列表 / 提单选券列表 / 券详情页：</b>在券卡下方增加独立模块（圆角、不同底色），专门展示不可用规则（如"仅限 12:00–14:00 可用""仅限周一至周五"），层级清晰，不打乱原有字段布局。
+          </div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">⚠️ 特殊不改造</div>
+          <div class="model-row-body">
+            <b>裂变领券 / 抽奖玩法：</b>主要奖励为通用券、金币，不涉及分时段/分星期券，暂不改造。<br/>
+            <b>用券推荐模块：</b>推荐的一定是当前可用券，无需额外展示规则。<br/>
+            <b>订单详情页：</b>不需要着重展示券的时间规则。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">
+        <div class="section-num">05</div>
+        <div>
+          <div class="section-title-text">上线结果</div>
+          <div class="section-sub">OUTCOMES</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">7.6%</div>
+          <div class="stat-label">工作日午餐专场<br/>转化率提升</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">8.3%</div>
+          <div class="stat-label">月度券包专场<br/>转化率提升</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">0</div>
+          <div class="stat-label">手动续期操作<br/>运营人力成本归零</div>
+        </div>
+      </div>
+      <div class="gap-box">
+        <div class="gap-label">核心价值</div>
+        <p>通过滚动周期限领机制解决了长周期活动手动续期和用户多领问题；通过分时段/分星期使用规则使运营能精准匹配专场活动场景，两个专场活动转化率分别提升 7.6% 和 8.3%。</p>
+      </div>
+      <div class="tags">
+        <span class="tag">世界杯活动支撑</span>
+        <span class="tag">运营效率提升</span>
+        <span class="tag tag-pink">多国家适配（阿拉伯/巴西等）</span>
+        <span class="tag tag-pink">C端体验优化</span>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+    <section style="text-align:center;padding:1.5rem 0 .5rem">
+      <p style="color:var(--color-text-soft);font-size:.85rem;margin-bottom:1rem">感谢阅读完整案例 · 欢迎交流</p>
+      <a class="ui-button" href="index.html" style="margin:0 auto">← 返回主页</a>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
