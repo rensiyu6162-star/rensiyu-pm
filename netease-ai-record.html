@@ -386,6 +386,128 @@ h1{margin-top:.75rem;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.1;letter-s
       </div>
     </section>
 
+    <!-- 08 数据指标体系 -->
+    <section class="section" id="metrics">
+      <div class="section-label">
+        <div class="section-num">08</div>
+        <div>
+          <div class="section-title-text">上线效果数据指标体系</div>
+          <div class="section-sub">METRICS DESIGN</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">核心行为定义</div>
+        <p>「记录核心行为」= 当前周期进入「我的记录」Tab 查看，或在 AI 随心记 / 发布器中成功发布至少一篇记录。所有指标均以此为基准口径。</p>
+      </div>
+
+      <div class="section-sub" style="margin:1.2rem 0 .5rem">活跃 · 内容生产</div>
+      <div class="model-grid">
+        <div class="model-row">
+          <div class="model-row-label">记录用户数<br/><span style="color:var(--color-cyan);font-size:.68rem">P0 · KPI</span></div>
+          <div class="model-row-body">当前周期完成记录核心行为的用户数。<b>直接衡量功能活跃用户规模。</b></div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">记录功能使用率<br/><span style="color:var(--color-cyan);font-size:.68rem">P0 · KPI</span></div>
+          <div class="model-row-body">记录用户数 / 小蜜蜂总用户数。<b>渗透率指标</b>，衡量功能在整体产品中的普及程度。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">记录发布率<br/><span style="color:var(--color-cyan);font-size:.68rem">P0 · KPI</span></div>
+          <div class="model-row-body">记录发布用户数 / 记录 Tab 访问用户数。访问到发布的关键漏斗转化率。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">核心用户数 & 占比<br/><span style="color:var(--color-cyan);font-size:.68rem">P0</span></div>
+          <div class="model-row-body">一周发布量 ≥ X 篇的用户数及其占比。<b>深度用户指标</b>，占比稳定或提升说明功能有持续吸引力。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">AI 功能使用率<br/><span style="color:var(--color-cyan);font-size:.68rem">P0</span></div>
+          <div class="model-row-body">应用 AI 随心记 / 灵感文案发布的记录数 / 记录发布总数。衡量 AI 能力对记录功能的整体渗透贡献。</div>
+        </div>
+      </div>
+
+      <div class="section-sub" style="margin:1.2rem 0 .5rem">留存</div>
+      <div class="model-grid">
+        <div class="model-row">
+          <div class="model-row-label">记录留存率<br/><span style="color:var(--color-cyan);font-size:.68rem">P0 · KPI</span></div>
+          <div class="model-row-body">D 日访问记录 Tab，D+N 日再次访问的用户比例。<b>核心健康度指标</b>，衡量功能长期粘性。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">记录用户整体 App 留存率<br/><span style="color:var(--color-cyan);font-size:.68rem">P0</span></div>
+          <div class="model-row-body">D 日完成记录核心行为，D+N 日有访问 App 的比例。若显著高于大盘，直接验证记录功能对提升 App 整体粘性的贡献。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">AI 随心记留存率<br/><span style="color:var(--color-cyan);font-size:.68rem">P0 · KPI</span></div>
+          <div class="model-row-body">D 日使用 AI 随心记发布，D+N 日再次使用发布的比例。衡量 AI 随心记功能对用户的长期吸引力。</div>
+        </div>
+      </div>
+
+      <div class="section-sub" style="margin:1.2rem 0 .5rem">回顾行为（我的记录）</div>
+      <div class="model-grid">
+        <div class="model-row">
+          <div class="model-row-label">我的记录访问率<br/><span style="color:var(--color-cyan);font-size:.68rem">P0</span></div>
+          <div class="model-row-body">我的记录用户数 / 记录用户数。反映用户发布后是否会回顾，过低说明「情感资产」价值未体现。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">人均停留时长<br/><span style="color:var(--color-cyan);font-size:.68rem">P0</span></div>
+          <div class="model-row-body">进入「我的记录」列表页的平均停留秒数。衡量内容吸引力和用户回顾深度。</div>
+        </div>
+      </div>
+
+      <div class="section-sub" style="margin:1.2rem 0 .5rem">AI 随心记核心漏斗</div>
+      <div class="path-steps" style="margin-top:0">
+        <div class="path-step">
+          <div class="path-step-num">漏斗 01</div>
+          <b>进入随心记</b>
+          <span>AI 随心记用户数 / 记录用户数（使用率）</span>
+        </div>
+        <div class="path-step">
+          <div class="path-step-num">漏斗 02</div>
+          <b>聚类卡片曝光率</b>
+          <span>被查看卡片数 / 聚类卡片总数，衡量推荐内容吸引力</span>
+        </div>
+        <div class="path-step">
+          <div class="path-step-num">漏斗 03</div>
+          <b>曝光 → 发布</b>
+          <span><b>核心指标</b>：曝光发布率 = 发布数 / 被查看卡片数，直接衡量推荐相关性</span>
+        </div>
+        <div class="path-step">
+          <div class="path-step-num">漏斗 04</div>
+          <b>直发 vs 编辑发布</b>
+          <span>直接发布率高 → AI 内容质量好；编辑率高 → 需优化文案 / 图片模型</span>
+        </div>
+        <div class="path-step">
+          <div class="path-step-num">漏斗 05</div>
+          <b>随心记完成率</b>
+          <span>发布次数 / 进入次数。低完成率说明卡片加载慢或推荐不相关</span>
+        </div>
+      </div>
+
+      <div class="section-sub" style="margin:1.2rem 0 .5rem">灵感文案漏斗</div>
+      <div class="path-steps" style="margin-top:0">
+        <div class="path-step">
+          <div class="path-step-num">漏斗 01</div>
+          <b>调起率</b>
+          <span>调起次数 / 发布器调起次数。入口有效性</span>
+        </div>
+        <div class="path-step">
+          <div class="path-step-num">漏斗 02</div>
+          <b>生成率</b>
+          <span>生成次数 / 调起次数。模型响应和提示词质量</span>
+        </div>
+        <div class="path-step">
+          <div class="path-step-num">漏斗 03</div>
+          <b>应用率</b>
+          <span><b>核心指标</b>：应用次数 / 生成次数，低采纳率说明 AI 文案不够贴切</span>
+        </div>
+        <div class="path-step">
+          <div class="path-step-num">漏斗 04</div>
+          <b>修改率</b>
+          <span>修改后发布 / 应用后发布总数。过高说明文案质量需优化</span>
+        </div>
+      </div>
+
+    </section>
+
     <hr class="divider"/>
 
     <!-- 尾部 -->
