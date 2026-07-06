@@ -126,7 +126,7 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
     <section class="hero">
       <span class="eyebrow">PRODUCT DESIGN THINKING</span>
       <h1 data-i18n="d_title">个人作品集网站 · 产品设计思路</h1>
-      <p class="lead" style="max-width:none" data-i18n="d_lead">以产品经理视角，复盘这个个人品牌网站从用户分析、需求拆解到具体落地的完整工作流。本网站由我主导定义信息架构与产品逻辑，与 AI（Comate/Codex）协作完成前端实现与迭代优化。</p>
+      <p class="lead" style="max-width:none" data-i18n="d_lead">以产品经理视角，复盘这个个人品牌网站从用户分析、需求拆解到具体落地的完整工作流。本网站由我主导定义信息架构与产品逻辑，与 AI（Comate/Comate）协作完成前端实现与迭代优化。</p>
     </section>
 
     <!-- 一 用户分析 -->
@@ -146,11 +146,11 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
             <span class="persona-role">HR 初筛</span>
           </div>
           <div class="persona-cell persona-cell-head" style="border-left:1px solid rgba(255,0,170,.12)">
-            <div class="persona-icon" style="border-color:rgba(255,0,170,.3)"><img src="业务面试官.png" alt="业务面试官"></div>
+            <div class="persona-icon" style="border-color:rgba(255,0,170,.3)"><img src="interviewer.png" alt="业务面试官"></div>
             <span class="persona-role" style="color:var(--color-magenta)" data-i18n="d_p2_role">业务面试官</span>
           </div>
           <div class="persona-cell persona-cell-head" style="border-left:1px solid rgba(77,141,255,.12)">
-            <div class="persona-icon" style="border-color:rgba(77,141,255,.35)"><img src="产品负责人.png" alt="产品负责人"></div>
+            <div class="persona-icon" style="border-color:rgba(77,141,255,.35)"><img src="product-owner.png" alt="产品负责人"></div>
             <span class="persona-role" style="color:#4d8dff" data-i18n="d_p3_role">产品负责人</span>
           </div>
         </div>
@@ -442,7 +442,7 @@ h2{font-size:clamp(1rem,1.65vw,1.35rem);letter-spacing:-.015em}
             <li data-i18n="d_tech1">部署门槛极低：本地 python3 -m http.server 即可预览，上线只需拖拽文件夹</li>
             <li data-i18n="d_tech2">维护成本低：内容调整直接编辑 HTML，无构建流程</li>
             <li data-i18n="d_tech3">加载速度快：面试官点开时零等待，首屏体验即决策体验</li>
-            <li data-i18n="d_tech4">AI 协作友好：静态代码对 AI 工具透明，便于与 Comate/Codex 持续迭代</li>
+            <li data-i18n="d_tech4">AI 协作友好：静态代码对 AI 工具透明，便于与 Comate/Comate 持续迭代</li>
           </ul>
       </div>
       <div class="card-grid col2" style="margin-top:.75rem">
@@ -501,7 +501,7 @@ const D={
   zh:{
     back_btn:'返回网站',
     d_title:'个人作品集网站 · 产品设计思路',
-    d_lead:'以产品经理视角，复盘这个个人品牌网站从用户分析、需求拆解到具体落地的完整工作流。本网站由我主导定义信息架构与产品逻辑，与 AI（Comate/Codex）协作完成前端实现与迭代优化。',
+    d_lead:'以产品经理视角，复盘这个个人品牌网站从用户分析、需求拆解到具体落地的完整工作流。本网站由我主导定义信息架构与产品逻辑，与 AI（Comate/Comate）协作完成前端实现与迭代优化。',
     d_s1:'用户分析',d_s2:'需求分析（MoSCoW 优先级）',d_s3:'产品定位与信息架构',d_s4:'关键交互设计决策',d_s5:'视觉设计决策',d_s6:'技术选型与落地路径',d_s7:'设计收益与反思',
     d_p_type:'用户类型',d_p2_role:'业务面试官',d_p3_role:'产品负责人',
     d_p_need:'核心诉求',d_p1_need:'快速判断背景与方向匹配度',d_p2_need:'验证产品能力深度与项目真实性',d_p3_need:'判断思维框架、AI 理解力与团队适配性',
@@ -522,7 +522,7 @@ const D={
     d_vis_title:'为什么选深色赛博朋克风格，而非常规极简白底？',d_vis1:'差异化记忆点：同类候选人网站多为极简白底，暗色科技感在面试官浏览多份作品集后具有显著记忆优势',d_vis2:'与 AI 产品方向高度契合：视觉语言传达"懂技术审美、有设计专业度"',d_vis3:'设计背景的直接体现：工业设计 + 交互设计背景的候选人，视觉品质本身就是能力的一种展示',
     d_vl_title:'视觉语言系统',d_vl1:'主色调：深紫黑背景 + 青色（#00f0ff）+ 品红（#ff00aa）双主色',d_vl2:'材质感：毛玻璃卡片（backdrop-filter blur）+ 网格背景纹理',d_vl3:'动态背景：魔法阵风格 Canvas 动画，增强科技氛围',
     d_ty_title:'排版策略',d_ty1:'信息层级通过字号、字重、颜色三维度区分，不依赖复杂装饰',d_ty2:'关键数字和标签用 clamp() 响应式字号，保证不同屏幕比例一致',d_ty3:'重要文案控制在 54ch 内，保证最佳阅读舒适度',
-    d_tech_title:'为什么选纯静态 HTML/CSS/JS，不用框架？',d_tech1:'部署门槛极低：本地 python3 -m http.server 即可预览，上线只需拖拽文件夹',d_tech2:'维护成本低：内容调整直接编辑 HTML，无构建流程',d_tech3:'加载速度快：面试官点开时零等待，首屏体验即决策体验',d_tech4:'AI 协作友好：静态代码对 AI 工具透明，便于与 Comate/Codex 持续迭代',
+    d_tech_title:'为什么选纯静态 HTML/CSS/JS，不用框架？',d_tech1:'部署门槛极低：本地 python3 -m http.server 即可预览，上线只需拖拽文件夹',d_tech2:'维护成本低：内容调整直接编辑 HTML，无构建流程',d_tech3:'加载速度快：面试官点开时零等待，首屏体验即决策体验',d_tech4:'AI 协作友好：静态代码对 AI 工具透明，便于与 Comate/Comate 持续迭代',
     d_collab_title:'与 AI 的协作分工',d_collab_me:'我主导：',d_collab_me_desc:'用户分析、信息架构、内容文案、设计语言决策、交互逻辑定义',d_collab_ai:'AI 负责：',d_collab_ai_desc:'CSS 实现、动效代码、布局微调、批量文案替换与 Bug 修复',
     d_iter_title:'迭代方式',d_iter1:'基于面试官真实反馈持续微调文案与信息层级',d_iter2:'求职方向变化时同步更新定位文案与能力描述',d_iter3:'网站本质是动态求职材料，非一次性交付物',
     d_gain_title:'预期收益',d_gain1:'相比纯简历，信息传达更立体，减少面试前沟通成本',d_gain2:'AI能力有具体落地案例支撑，减少面试官的信任成本',d_gain3:'视觉差异化提升记忆留存率，增加主动回访可能性',
@@ -532,7 +532,7 @@ const D={
   en:{
     back_btn:'← Back',
     d_title:'Portfolio Website · Product Design Thinking',
-    d_lead:'A PM-perspective retrospective of the complete workflow behind this personal brand site — from user research and requirements to final implementation. I led the information architecture and product logic, collaborating with AI (Comate/Codex) for frontend implementation and iteration.',
+    d_lead:'A PM-perspective retrospective of the complete workflow behind this personal brand site — from user research and requirements to final implementation. I led the information architecture and product logic, collaborating with AI (Comate/Comate) for frontend implementation and iteration.',
     d_s1:'User Research',d_s2:'Requirements (MoSCoW Priority)',d_s3:'Positioning & Information Architecture',d_s4:'Key Interaction Design Decisions',d_s5:'Visual Design Decisions',d_s6:'Tech Stack & Delivery Path',d_s7:'Design Outcomes & Reflection',
     d_p_type:'User Type',d_p2_role:'Business Interviewer',d_p3_role:'Product Lead',
     d_p_need:'Core Need',d_p1_need:'Quickly assess background and role fit',d_p2_need:'Verify depth of product skills and project authenticity',d_p3_need:'Evaluate thinking frameworks, AI fluency, and team fit',
@@ -553,7 +553,7 @@ const D={
     d_vis_title:'Why Dark Cyberpunk, Not Minimal White?',d_vis1:'Differentiated recall: most peers use minimal white; dark sci-fi aesthetic stands out after reviewing multiple portfolios',d_vis2:'Highly aligned with AI product direction: visual language communicates "design-literate with technical taste"',d_vis3:'Direct proof of design background: for a candidate with industrial + interaction design training, visual quality is itself a capability signal',
     d_vl_title:'Visual Language System',d_vl1:'Color: deep purple-black + cyan (#00f0ff) + magenta (#ff00aa) dual accent palette',d_vl2:'Texture: frosted glass cards (backdrop-filter blur) + grid background pattern',d_vl3:'Dynamic background: magic-circle-style canvas animation to reinforce tech atmosphere',
     d_ty_title:'Typography Strategy',d_ty1:'Information hierarchy differentiated through font size, weight, and color — no complex decoration needed',d_ty2:'Key numbers and labels use clamp() responsive sizing for consistent proportions across screen sizes',d_ty3:'Key body copy kept within 54ch for optimal reading comfort',
-    d_tech_title:'Why Pure Static HTML/CSS/JS, No Framework?',d_tech1:'Zero deployment friction: preview with python3 -m http.server, deploy by dragging a folder',d_tech2:'Low maintenance: edit content directly in HTML, no build step',d_tech3:'Instant load: interviewer sees it immediately — first-screen experience is the decision experience',d_tech4:'AI-collaboration friendly: transparent static code is easy to iterate with Comate/Codex',
+    d_tech_title:'Why Pure Static HTML/CSS/JS, No Framework?',d_tech1:'Zero deployment friction: preview with python3 -m http.server, deploy by dragging a folder',d_tech2:'Low maintenance: edit content directly in HTML, no build step',d_tech3:'Instant load: interviewer sees it immediately — first-screen experience is the decision experience',d_tech4:'AI-collaboration friendly: transparent static code is easy to iterate with Comate/Comate',
     d_collab_title:'Collaboration Division with AI',d_collab_me:'I led:',d_collab_me_desc:'User research, information architecture, copywriting, design language decisions, interaction logic definition',d_collab_ai:'AI handled:',d_collab_ai_desc:'CSS implementation, animation code, layout tweaks, bulk copy replacement, and bug fixes',
     d_iter_title:'Iteration Approach',d_iter1:'Continuously refine copy and hierarchy based on real interviewer feedback',d_iter2:'Update positioning copy and capability descriptions when job target changes',d_iter3:'The site is a living job-search asset, not a one-time deliverable',
     d_gain_title:'Expected Outcomes',d_gain1:'More dimensional than a resume alone — reduces pre-interview communication overhead',d_gain2:'AI capabilities backed by concrete delivery cases — reduces interviewer trust cost',d_gain3:'Visual differentiation improves recall rate and increases chances of proactive revisits',
