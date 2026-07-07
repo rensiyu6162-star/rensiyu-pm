@@ -437,7 +437,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 .profile-layout{--profile-radius:26px;position:relative;display:grid;grid-template-columns:1fr;gap:1rem;grid-template-areas:"hero" "photo" "profile" "value" "about" "pillars";padding:clamp(1rem,2.2vw,1.6rem);border:0;border-radius:34px;background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(13,8,24,0.48) 48%,rgba(18,10,32,0.64)),radial-gradient(circle at 18% 8%,rgba(0,240,255,0.13),transparent 30%),radial-gradient(circle at 84% 18%,rgba(255,0,170,0.12),transparent 28%);box-shadow:0 34px 120px rgba(0,0,0,0.28)}
 @media(min-width:1120px){.profile-layout{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto auto;grid-template-areas:"hero profile photo" "hero value photo" "about about pillars" "life life pillars";gap:1rem;align-items:stretch}}
 [data-theme="dark"] .profile-layout{background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(13,8,24,0.48) 48%,rgba(18,10,32,0.64)),radial-gradient(circle at 18% 8%,rgba(0,240,255,0.13),transparent 30%),radial-gradient(circle at 84% 18%,rgba(255,0,170,0.12),transparent 28%)}
-.profile-card{position:relative;overflow:hidden;border:1px solid rgba(0,240,255,0.10);border-radius:var(--profile-radius);background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(28,18,48,0.46));box-shadow:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}.profile-hero.profile-card{overflow:visible}
+.profile-card{position:relative;overflow:hidden;border:1px solid rgba(0,240,255,0.10);border-radius:var(--profile-radius);background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(28,18,48,0.46));box-shadow:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 [data-theme="light"] .profile-layout{
   background:
     linear-gradient(145deg,rgba(255,254,252,0.97),rgba(242,246,255,0.65)),
@@ -451,7 +451,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
   border-color:rgba(51,130,246,0.08);
   box-shadow:0 1px 8px rgba(51,130,246,0.04)
 }
-.profile-hero{grid-area:hero;position:relative;box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-height:34rem;padding:clamp(1.35rem,3vw,2.4rem);display:block;border:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none;-webkit-backdrop-filter:none;overflow:visible}
+.profile-hero{grid-area:hero;position:relative;box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-height:34rem;padding:clamp(1.35rem,3vw,2.4rem);display:flex;flex-direction:column;justify-content:space-between;border:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none;-webkit-backdrop-filter:none;overflow:visible}
 [data-theme="light"] .profile-hero{border:0!important;background:transparent!important;box-shadow:none!important}
 /* Light mode: override all dark card/block backgrounds */
 [data-theme="light"] .pill{background:rgba(56,168,245,0.07);border-color:rgba(56,168,245,0.18);color:var(--color-text-secondary)}
@@ -516,7 +516,23 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 [data-theme="dark"] .profile-pillar{background:linear-gradient(135deg,rgba(18,10,32,0.66),rgba(28,18,48,0.46));border:none}
 .profile-pillar:hover{transform:translateY(-4px);border-color:var(--color-border-strong);box-shadow:0 18px 60px rgba(0,0,0,0.12)}.profile-pillar::before{content:'';position:absolute;left:1.1rem;right:1.1rem;top:0;height:1px;background:linear-gradient(90deg,var(--color-cyan),var(--color-magenta));opacity:0.65}.profile-pillar .stat-value{display:block;color:var(--color-accent);font-size:clamp(2.15rem,3.4vw,3rem);line-height:0.9;letter-spacing:-0.06em;font-weight:700}.profile-pillar h3{font-size:clamp(1rem,1.18vw,1.1rem);font-weight:600;margin-top:0.7rem;color:var(--color-text)}.profile-pillar p{margin-top:0.45rem;font-size:0.86rem;line-height:1.62;color:var(--color-text-secondary)}
 @keyframes aboutPulse{0%,100%{transform:scale(1);opacity:0.75}50%{transform:scale(1.55);opacity:1}}
-@media(max-width:760px){.profile-layout{padding:0.85rem;border-radius:26px}.profile-hero{min-height:30rem;overflow:visible}.profile-hero::before{display:none!important}.profile-title{font-size:clamp(2.72rem,14.4vw,4.32rem)}.profile-tags,.profile-actions{grid-template-columns:1fr}.profile-photo,.profile-photo img{min-height:32rem}.profile-stage::after{display:none}.profile-about-title{font-size:clamp(1.12rem,5.4vw,1.42rem);line-height:1.48}.profile-life-card{grid-template-columns:1fr}.profile-life-link{justify-self:end}}
+@media(max-width:760px){
+  .profile-layout{padding:0.85rem;border-radius:26px}
+  .profile-hero{min-height:auto!important;padding:1.2rem!important;overflow:visible!important;display:block!important;width:100%!important;box-sizing:border-box!important}
+  .profile-hero::before,.profile-hero::after{display:none!important;content:none!important}
+  .profile-label-row{padding-top:0.5rem!important}
+  .profile-label-row::before,.profile-label-row::after{display:none!important;content:none!important}
+  .profile-role,.profile-role-en{display:block!important;width:100%!important;min-width:0!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important;letter-spacing:0!important;font-size:0.78rem!important;line-height:1.6!important}
+  .profile-title{font-size:clamp(2.72rem,14.4vw,4.32rem);width:100%;display:block}
+  .profile-desc{font-size:0.95rem!important;width:100%!important;display:block!important;max-width:100%!important}
+  .profile-tags{display:flex;flex-wrap:wrap;gap:0.4rem;width:100%}
+  .profile-actions{grid-template-columns:1fr!important;width:100%}
+  .profile-photo,.profile-photo img{min-height:32rem}
+  .profile-stage::after{display:none}
+  .profile-about-title{font-size:clamp(1.12rem,5.4vw,1.42rem);line-height:1.48}
+  .profile-life-card{grid-template-columns:1fr}
+  .profile-life-link{justify-self:end}
+}
 @media(prefers-reduced-motion:reduce){.about-signal::before{animation:none}.profile-photo-slide,.profile-pillar{transition:none}}
 
 /* ===== BUTTONS ===== */
@@ -803,24 +819,22 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 <!-- ===== ABOUT ===== -->
 <section class="section-shell profile-stage" id="about">
   <div class="profile-layout" data-reveal>
-    <article class="profile-card profile-hero" style="display:block;box-sizing:border-box;width:100%;min-width:0;overflow:visible">
-      <div style="display:block;box-sizing:border-box;width:100%;min-width:0">
-        <div class="profile-label-row">
-        <p class="profile-role" style="display:block;box-sizing:border-box;width:100%;min-width:0;white-space:normal;word-break:break-word;overflow-wrap:anywhere;letter-spacing:0.02em;font-size:0.72rem">产品经理 · AI实践者 · 交互与体验设计研究生</p>
-        <p class="profile-role-en" style="display:block;box-sizing:border-box;width:100%;min-width:0;white-space:normal;word-break:break-word;overflow-wrap:anywhere;letter-spacing:0.02em;font-size:0.62rem;margin-top:0.2rem;color:var(--color-text-soft)">PRODUCT MANAGER · AI PRACTITIONER</p>
+    <article class="profile-card profile-hero">
+      <div class="profile-label-row">
+        <p class="profile-role">产品经理 · AI实践者 · 交互与体验设计研究生</p>
+        <p class="profile-role-en">PRODUCT MANAGER · AI PRACTITIONER</p>
       </div>
       <h1 class="profile-title">任思雨</h1>
       <p class="profile-desc" data-i18n="hero_desc">依托本科工科基底与研究生系统体验思维，同时叠加AI产品实习落地经验，我能够兼顾技术可行性与用户真实需求。</p>
       <div class="profile-tags">
-          <span class="pill">AI Product</span>
-          <span class="pill">Design x Product</span>
-          <span class="pill">Built with Comate</span>
-        </div>
-        <div class="profile-actions">
-          <button class="ui-button ui-button-primary" onclick="document.getElementById('selected-projects').scrollIntoView({behavior:'smooth'})" data-i18n="btn_view_projects">查看项目</button>
-          <a class="ui-button ui-button-secondary" href="个人简历.pdf" download="个人简历.pdf" data-i18n="btn_download_resume">下载简历</a>
-          <button class="ui-button ui-button-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="btn_contact">联系我</button>
-        </div>
+        <span class="pill">AI Product</span>
+        <span class="pill">Design x Product</span>
+        <span class="pill">Built with Comate</span>
+      </div>
+      <div class="profile-actions">
+        <button class="ui-button ui-button-primary" onclick="document.getElementById('selected-projects').scrollIntoView({behavior:'smooth'})" data-i18n="btn_view_projects">查看项目</button>
+        <a class="ui-button ui-button-secondary" href="个人简历.pdf" download="个人简历.pdf" data-i18n="btn_download_resume">下载简历</a>
+        <button class="ui-button ui-button-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="btn_contact">联系我</button>
       </div>
     </article>
 
