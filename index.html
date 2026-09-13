@@ -434,7 +434,9 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 /* ===== PROFILE STAGE ===== */
 .profile-stage{position:relative;isolation:isolate;min-height:88vh;padding:clamp(1rem,2vw,1.5rem) 0 0}
 @media(max-width:760px){.profile-stage{min-height:auto}}
-.profile-layout{--profile-radius:26px;position:relative;display:grid;grid-template-columns:1fr;gap:1rem;grid-template-areas:"hero" "photo" "profile" "value" "about" "pillars";padding:clamp(1rem,2.2vw,1.6rem);border:0;border-radius:34px;background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(13,8,24,0.48) 48%,rgba(18,10,32,0.64)),radial-gradient(circle at 18% 8%,rgba(0,240,255,0.13),transparent 30%),radial-gradient(circle at 84% 18%,rgba(255,0,170,0.12),transparent 28%);box-shadow:0 34px 120px rgba(0,0,0,0.28)}
+.profile-layout{--profile-radius:26px;position:relative;display:grid;grid-template-columns:1fr;gap:1rem;padding:clamp(1rem,2.2vw,1.6rem);border:0;border-radius:34px;background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(13,8,24,0.48) 48%,rgba(18,10,32,0.64)),radial-gradient(circle at 18% 8%,rgba(0,240,255,0.13),transparent 30%),radial-gradient(circle at 84% 18%,rgba(255,0,170,0.12),transparent 28%);box-shadow:0 34px 120px rgba(0,0,0,0.28)}
+/* 中间断点 760~1119px：2 列，避免单列太宽/3 列太挤 */
+@media(min-width:761px) and (max-width:1119px){.profile-layout{grid-template-columns:1fr 1fr;grid-template-areas:"hero hero" "photo photo" "profile value" "about about" "life life" "pillars pillars";align-items:stretch}}
 @media(min-width:1120px){.profile-layout{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto auto;grid-template-areas:"hero profile photo" "hero value photo" "about about pillars" "life life pillars";gap:1rem;align-items:stretch}}
 [data-theme="dark"] .profile-layout{background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(13,8,24,0.48) 48%,rgba(18,10,32,0.64)),radial-gradient(circle at 18% 8%,rgba(0,240,255,0.13),transparent 30%),radial-gradient(circle at 84% 18%,rgba(255,0,170,0.12),transparent 28%)}
 .profile-card{position:relative;overflow:hidden;border:1px solid rgba(0,240,255,0.10);border-radius:var(--profile-radius);background:linear-gradient(135deg,rgba(18,10,32,0.72),rgba(28,18,48,0.46));box-shadow:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -611,7 +613,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 .experience-browser-bar{height:2.7rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 1rem;border-bottom:1px solid var(--color-border);background:rgba(255,255,255,0.035)}
 .browser-dots{display:flex;gap:0.45rem}.browser-dots span{width:0.62rem;height:0.62rem;border-radius:999px;background:var(--color-cyan);opacity:0.8}.browser-dots span:nth-child(2){background:var(--color-magenta)}.browser-dots span:nth-child(3){background:#8d7bff}.browser-code{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.16em;color:var(--color-text-soft);text-transform:uppercase}
 .experience-map-head{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:clamp(1.05rem,2.2vw,1.55rem) clamp(1.2rem,3vw,2.4rem) 0}.experience-map-title{font-size:clamp(1.55rem,3vw,2.2rem);line-height:1.3;letter-spacing:-0.03em;font-weight:800}.experience-map-sub{margin-top:0.32rem;font-size:clamp(0.78rem,0.92vw,0.88rem);color:var(--color-text-secondary)}.experience-map-badge{display:inline-flex;align-items:center;gap:0.45rem;border:1px solid var(--color-border);border-radius:999px;padding:0.36rem 0.68rem;color:var(--color-text-soft);font-size:0.68rem;letter-spacing:0.10em;text-transform:uppercase;background:rgba(28,18,48,0.46);white-space:nowrap}.experience-map-badge::before{content:'';width:0.42rem;height:0.42rem;border-radius:999px;background:var(--color-accent);box-shadow:0 0 14px var(--color-accent)}
-.city-map-stage{position:relative;height:29rem;margin:0 clamp(0.75rem,2vw,1.3rem) 0.15rem}.city-route{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.route-line{fill:none;stroke:url(#routeGradient);stroke-width:3;stroke-dasharray:9 11;stroke-linecap:round;opacity:0.72}.route-arrow{fill:var(--color-magenta);filter:drop-shadow(0 0 8px rgba(255,0,170,0.36))}.map-cloud{position:absolute;width:5.5rem;height:2.2rem;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06));filter:blur(0.2px);opacity:0.45}.map-cloud::before,.map-cloud::after{content:'';position:absolute;border-radius:999px;background:inherit}.map-cloud::before{width:2rem;height:2rem;left:0.9rem;top:-0.8rem}.map-cloud::after{width:2.8rem;height:2.8rem;right:0.7rem;top:-1.1rem}.cloud-a{left:8%;top:18%}.cloud-b{right:9%;top:12%}.cloud-c{left:56%;bottom:16%;transform:scale(.74)}.travel-icon{position:absolute;z-index:1;display:grid;place-items:center;width:4.2rem;height:4.2rem;border:1px solid rgba(255,255,255,0.12);border-radius:999px;background:rgba(18,10,32,0.46);color:rgba(255,255,255,0.72);box-shadow:0 18px 36px rgba(0,0,0,0.22);backdrop-filter:blur(8px);pointer-events:none}.travel-icon svg{width:2.25rem;height:2.25rem;stroke-width:1.85}.travel-plane{left:23%;top:28%;transform:translate(-50%,-50%) rotate(-8deg);color:rgba(0,240,255,0.78)}.travel-train{left:53%;top:24%;transform:translate(-50%,-50%);color:rgba(255,255,255,0.74)}.travel-foot{left:71%;top:23%;transform:translate(-50%,-50%) rotate(8deg);color:rgba(255,0,170,0.74)}.travel-dot{position:absolute;z-index:1;width:0.42rem;height:0.42rem;border-radius:999px;background:rgba(255,255,255,0.38);box-shadow:0 0 12px rgba(0,240,255,0.22);pointer-events:none}.travel-dot-a{left:31%;top:55%}.travel-dot-b{left:46%;top:27%}.travel-dot-c{left:69%;top:30%}
+.city-map-stage{position:relative;height:29rem;margin:clamp(2.2rem,5vw,4.2rem) clamp(0.75rem,2vw,1.3rem) 0.15rem}.city-route{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.route-line{fill:none;stroke:url(#routeGradient);stroke-width:3;stroke-dasharray:9 11;stroke-linecap:round;opacity:0.72}.route-arrow{fill:var(--color-magenta);filter:drop-shadow(0 0 8px rgba(255,0,170,0.36))}.map-cloud{position:absolute;width:5.5rem;height:2.2rem;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06));filter:blur(0.2px);opacity:0.45}.map-cloud::before,.map-cloud::after{content:'';position:absolute;border-radius:999px;background:inherit}.map-cloud::before{width:2rem;height:2rem;left:0.9rem;top:-0.8rem}.map-cloud::after{width:2.8rem;height:2.8rem;right:0.7rem;top:-1.1rem}.cloud-a{left:8%;top:18%}.cloud-b{right:9%;top:12%}.cloud-c{left:56%;bottom:16%;transform:scale(.74)}.travel-icon{position:absolute;z-index:1;display:grid;place-items:center;width:4.2rem;height:4.2rem;border:1px solid rgba(255,255,255,0.12);border-radius:999px;background:rgba(18,10,32,0.46);color:rgba(255,255,255,0.72);box-shadow:0 18px 36px rgba(0,0,0,0.22);backdrop-filter:blur(8px);pointer-events:none}.travel-icon svg{width:2.25rem;height:2.25rem;stroke-width:1.85}.travel-plane{left:23%;top:28%;transform:translate(-50%,-50%) rotate(-8deg);color:rgba(0,240,255,0.78)}.travel-train{left:53%;top:24%;transform:translate(-50%,-50%);color:rgba(255,255,255,0.74)}.travel-foot{left:71%;top:23%;transform:translate(-50%,-50%) rotate(8deg);color:rgba(255,0,170,0.74)}.travel-dot{position:absolute;z-index:1;width:0.42rem;height:0.42rem;border-radius:999px;background:rgba(255,255,255,0.38);box-shadow:0 0 12px rgba(0,240,255,0.22);pointer-events:none}.travel-dot-a{left:31%;top:55%}.travel-dot-b{left:46%;top:27%}.travel-dot-c{left:69%;top:30%}
 .city-node{position:absolute;width:13rem;min-height:12rem;transform:translate(-50%,-50%);display:grid;place-items:center;z-index:2}.city-node[data-index="1"]{left:13%;top:58%}.city-node[data-index="2"]{left:38%;top:32%}.city-node[data-index="3"]{left:62%;top:62%}.city-node[data-index="4"]{left:86%;top:36%}.city-node:hover,.city-node:focus-within{z-index:999}.city-number{position:absolute;left:50%;top:-4.05rem;z-index:6;width:2.15rem;height:2.15rem;transform:translateX(-50%);border-radius:999px;border:1px solid rgba(0,240,255,0.22);display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;color:var(--color-accent);background:rgba(18,10,32,0.74);box-shadow:0 0 20px rgba(0,240,255,0.12)}
 .city-base{position:relative;width:8.8rem;height:5.4rem;border-radius:50%;background:linear-gradient(145deg,rgba(0,240,255,0.12),rgba(255,0,170,0.10));box-shadow:0 22px 45px rgba(0,0,0,0.24);transform:rotateX(58deg) rotateZ(-18deg);z-index:1}.city-model{position:absolute;bottom:3.3rem;left:50%;transform:translateX(-50%);width:7rem;height:7.4rem;filter:drop-shadow(0 18px 20px rgba(0,0,0,0.24))}.city-name-chip{position:absolute;left:50%;bottom:0.2rem;z-index:5;transform:translateX(-50%);border:1px solid rgba(0,240,255,0.12);border-radius:14px;padding:0.34rem 0.58rem;background:rgba(13,8,24,0.50);backdrop-filter:blur(10px);box-shadow:0 4px 12px rgba(0,0,0,0.10);text-align:center;min-width:5.4rem}.city-node[data-index="4"] .city-name-chip{bottom:-1.85rem}.city-name-chip strong{display:block;font-size:0.76rem;line-height:1.15}.city-name-chip span{display:block;font-size:0.62rem;color:var(--color-text-soft);margin-top:0.08rem}.city-landmark{position:absolute;left:50%;bottom:4.25rem;z-index:1;transform:translateX(-50%);width:17rem;height:12.2rem;opacity:1;filter:drop-shadow(0 12px 10px rgba(0,0,0,.15))}
 [data-theme="light"] .city-landmark{filter:drop-shadow(0 8px 8px rgba(0,0,0,.08))}.city-landmark::before{content:'';position:absolute;left:50%;bottom:0.2rem;width:11rem;height:4.8rem;transform:translateX(-50%);border-radius:999px;background:radial-gradient(ellipse,rgba(0,240,255,.12),transparent 68%);filter:blur(6px)}.city-landmark img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:normal;filter:saturate(1.08) contrast(1.0) brightness(1.0);opacity:1}.city-node[data-index="1"] .city-landmark{bottom:4.45rem;width:19rem;height:13.6rem}.city-node[data-index="3"] .city-landmark{bottom:4.6rem}.city-node[data-index="2"] .city-landmark,.city-node[data-index="4"] .city-landmark{bottom:3.4rem}
@@ -622,7 +624,9 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 .netease-media .logo{left:1.05rem;top:0.95rem;width:4.35rem;height:4.8rem;border-radius:2.2rem 2.2rem 1.4rem 1.4rem;background:linear-gradient(145deg,#ff4b4f,#b90f22 62%,#70101a);border:1px solid rgba(255,255,255,0.16);box-shadow:inset -0.55rem -0.75rem 0 rgba(0,0,0,0.14),0 1rem 1.5rem rgba(185,15,34,0.22)}.netease-media .logo::before{content:'';position:absolute;left:0.82rem;top:-0.25rem;width:0.9rem;height:1.25rem;border-radius:999px;background:#ff6468;transform:rotate(-28deg);box-shadow:1.8rem 0.05rem 0 #ff6468}.netease-media .logo::after{content:'';position:absolute;left:1.15rem;right:1.15rem;top:1.72rem;height:0.42rem;border-radius:999px;background:#fff;box-shadow:0 0.88rem 0 #fff}.netease-media .feed{right:0.4rem;bottom:0.92rem;width:2.3rem;height:1.55rem;border-radius:0.8rem;background:linear-gradient(145deg,#fff,#ffc7ca);border:1px solid rgba(255,255,255,0.28);box-shadow:0 0.9rem 1.3rem rgba(0,0,0,0.18)}.netease-media .feed::before{content:'';position:absolute;left:0.62rem;top:0.48rem;width:0.28rem;height:0.28rem;border-radius:999px;background:#8d0c18;box-shadow:0.78rem 0 0 #8d0c18}.netease-media .bubble{right:1.1rem;top:1.15rem;width:1.2rem;height:1.2rem;border-radius:999px;background:#ff9aa0;box-shadow:0 0 14px rgba(255,75,79,0.25)}
 .meituan-keeta .roo{left:0.7rem;top:0.55rem;width:4.15rem;height:5.75rem}.meituan-keeta .roo::before{content:'';position:absolute;left:1.05rem;top:1.15rem;width:2.05rem;height:3.05rem;border-radius:54% 54% 42% 42%;background:linear-gradient(145deg,#ffe66d,#ffc52c 60%,#c98912);box-shadow:inset -0.38rem -0.55rem 0 rgba(0,0,0,0.10),0 1rem 1.4rem rgba(255,197,44,0.18)}.meituan-keeta .roo::after{content:'';position:absolute;left:1.75rem;top:0.2rem;width:1.25rem;height:1.55rem;border-radius:58% 58% 42% 42%;background:linear-gradient(145deg,#fff07a,#ffc52c);transform:rotate(16deg)}.meituan-keeta .ear{left:2.7rem;top:0;width:0.55rem;height:1.35rem;border-radius:999px;background:#ffe66d;transform:rotate(34deg)}.meituan-keeta .tail{left:0.12rem;top:3.1rem;width:1.65rem;height:0.55rem;border-radius:999px;background:#d69018;transform:rotate(-28deg)}.meituan-keeta .bag{right:0.28rem;top:2rem;width:3rem;height:3.05rem;border-radius:0.8rem;background:linear-gradient(145deg,#ffe56a,#f4b51e 62%,#b8740d);border:1px solid rgba(255,255,255,0.16);box-shadow:inset -0.36rem -0.45rem 0 rgba(0,0,0,0.10),0 1rem 1.4rem rgba(244,181,30,0.15)}.meituan-keeta .bag::before{content:'';position:absolute;left:0.78rem;right:0.78rem;top:-0.55rem;height:1rem;border:0.24rem solid #ffe56a;border-bottom:0;border-radius:1rem 1rem 0 0}.meituan-keeta .bag::after{content:'外卖';position:absolute;inset:0;display:grid;place-items:center;font-size:0.78rem;font-weight:800;color:#4b2c00}.meituan-keeta .meal{right:2.65rem;bottom:0.58rem;width:1.35rem;height:0.85rem;border-radius:0.45rem;background:#fff3b0;box-shadow:0 0.75rem 1rem rgba(0,0,0,0.16)}
 .city-tooltip{position:absolute;left:50%;top:2.65rem;z-index:1000;width:min(20rem,84vw);transform:translate(-50%,0.8rem);opacity:0;pointer-events:none;border:1px solid rgba(0,240,255,0.16);border-radius:22px;background:rgba(15,10,28,0.86);backdrop-filter:blur(16px);box-shadow:0 24px 70px rgba(0,0,0,0.32);padding:1rem;transition:opacity .22s ease,transform .22s ease}.city-node[data-index="2"] .city-tooltip,.city-node[data-index="4"] .city-tooltip{top:2.85rem}.city-node[data-index="1"] .city-tooltip{top:-3.45rem}.city-node[data-index="3"] .city-tooltip{top:-5.25rem}.city-node:hover .city-tooltip,.city-node:focus-within .city-tooltip{opacity:1;transform:translate(-50%,0);pointer-events:auto}.city-tooltip-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid rgba(0,240,255,0.12);margin-bottom:0.85rem;box-shadow:0 14px 34px rgba(0,0,0,0.24)}.city-tooltip-title-row{display:flex;align-items:center;gap:0.5rem}.city-tooltip h3{font-size:1.04rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}.city-detail-link{flex:0 0 auto;display:inline-flex;align-items:center;border:1px solid rgba(0,240,255,0.22);border-radius:999px;padding:0.26rem 1.13rem;background:rgba(0,240,255,0.08);color:var(--color-cyan);font-size:0.68rem;font-weight:700;white-space:nowrap;width:auto}.city-detail-link:hover{background:rgba(0,240,255,0.15);border-color:rgba(0,240,255,0.34)}.city-tooltip dl{display:grid;gap:0.4rem;margin-top:0.65rem}.city-tooltip dl div{display:grid;grid-template-columns:3.7rem 1fr;gap:0.6rem}.city-tooltip dt{font-size:0.72rem;color:var(--color-text-soft)}.city-tooltip dd{font-size:0.78rem;color:var(--color-text-secondary);line-height:1.55}.city-tooltip p{font-size:0.8rem;color:var(--color-text-secondary);line-height:1.65;margin-top:0.65rem;border-top:1px solid var(--color-border);padding-top:0.65rem}.city-detail-link:hover{background:rgba(0,240,255,0.15);border-color:rgba(0,240,255,0.34)}
-@media(max-width:960px){.experience-map-head{flex-direction:column}.city-map-stage{height:auto;display:grid;gap:1rem;margin-top:1.2rem}.city-route,.map-cloud{display:none}.city-node{position:relative;left:auto!important;top:auto!important;transform:none;width:100%;min-height:13rem}.city-tooltip{position:relative;left:auto;bottom:auto;transform:none;opacity:1;pointer-events:auto;width:100%;margin-top:0.8rem}.city-name-chip{left:1rem}}
+.city-tooltip-close{display:none;position:absolute;top:0.55rem;right:0.55rem;z-index:3;width:1.75rem;height:1.75rem;place-items:center;padding:0;border:1px solid rgba(255,255,255,0.22);border-radius:999px;background:rgba(10,8,20,0.58);color:#fff;font-size:0.78rem;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .18s,border-color .18s}
+.city-tooltip-close:hover{background:rgba(255,72,110,0.85);border-color:rgba(255,140,165,0.7)}
+@media(max-width:960px){.experience-map-head{flex-direction:column}.city-map-stage{height:auto;display:grid;gap:1rem;margin-top:1.2rem}.city-route,.map-cloud{display:none}.city-node{position:relative;left:auto!important;top:auto!important;transform:none;width:100%;min-height:13rem;cursor:pointer}.city-number{left:1rem;top:1rem;transform:none}.city-tooltip{position:relative;left:auto;top:auto;bottom:auto;transform:none;opacity:1;pointer-events:none;display:none;width:100%;margin-top:0.8rem}.city-node.open .city-tooltip{display:block;pointer-events:auto}.city-name-chip{left:1rem}.city-tooltip-close{display:grid}}
 .experience-detail-stack{display:grid;gap:1.2rem;margin-top:1.25rem}
 .intern-detail-card{position:relative;overflow:hidden;border:1px solid var(--color-border-strong);border-radius:26px;background:var(--color-surface);box-shadow:0 22px 72px rgba(0,0,0,0.10);padding:clamp(1.35rem,3vw,2.35rem)}
 [data-theme="dark"] .intern-detail-card{background:linear-gradient(135deg,rgba(18,10,32,0.76),rgba(13,8,24,0.58) 58%,rgba(22,13,38,0.72));border-color:rgba(255,0,170,0.12);box-shadow:inset 0 0 34px rgba(255,0,170,0.035),0 22px 72px rgba(0,0,0,0.22)}
@@ -745,6 +749,52 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 /* ===== DYNAMIC CYBERPUNK BG CANVAS ===== */
 #cyberBg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.94}
 [data-theme="light"] #cyberBg{opacity:0.32}
+
+/* ===== ORBIT HERO (城市环绕) ===== */
+#orbit-hero{position:relative;width:100%;max-width:100%;aspect-ratio:3/2;height:auto;margin:1.2rem 0 .4rem;background:transparent;overflow:hidden;z-index:1;box-sizing:border-box}
+#orbit-hero canvas{display:block;width:100%;height:100%;object-fit:cover;background:transparent}
+#orbit-hero video{display:none!important;width:0!important;height:0!important;position:absolute!important;pointer-events:none!important;opacity:0!important}
+#orbit-hero .tabs{position:absolute;right:14px;top:14px;z-index:10;display:flex;align-items:stretch;gap:0;padding:0;height:30px;box-sizing:border-box;border-radius:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);overflow:hidden}
+#orbit-hero .tabs button{height:100%;padding:0 12px;border:0;background:transparent;color:#fff;opacity:.55;font-size:12px;line-height:1;cursor:pointer;font-weight:500;display:inline-flex;align-items:center}
+#orbit-hero .tabs button:first-child{border-radius:10px 0 0 10px}
+#orbit-hero .tabs button:last-child{border-radius:0 10px 10px 0}
+#orbit-hero .tabs button:hover{opacity:.85}
+#orbit-hero .tabs button.on{background:#fff;color:#000;opacity:1;font-weight:700}
+#orbit-hero #pano-btn{position:absolute;top:14px;left:14px;z-index:10;display:flex;align-items:center;gap:8px;height:30px;box-sizing:border-box;padding:0 12px 0 8px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:rgba(255,255,255,.85);font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+#orbit-hero #pano-btn span{line-height:1}
+#orbit-hero #pano-btn .pano-hint{display:none;font-style:normal;font-size:11px;font-weight:400;opacity:.75;line-height:1}
+#orbit-hero #pano-btn .pano-hint::before{content:'';display:inline-block;width:1px;height:10px;margin:0 8px;vertical-align:-1px;background:rgba(255,255,255,.28)}
+#orbit-hero #pano-btn.on .pano-hint{display:inline-block}
+#orbit-hero #pano-btn i{position:relative;flex:none;width:34px;height:18px;border-radius:999px;background:rgba(255,255,255,.25);transition:background .2s,box-shadow .2s}
+#orbit-hero #pano-btn i::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:999px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.4);transition:transform .22s cubic-bezier(.3,.8,.4,1)}
+#orbit-hero #pano-btn:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+#orbit-hero #pano-btn.on{background:rgba(0,240,255,.14);border-color:rgba(0,240,255,.55);color:#bff6ff}
+#orbit-hero #pano-btn.on i{background:rgba(0,240,255,.85);box-shadow:0 0 8px rgba(0,240,255,.45)}
+#orbit-hero #pano-btn.on i::after{transform:translateX(16px)}
+#orbit-hero .loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px 24px;background:rgba(10,10,20,.68);border:1px solid rgba(255,255,255,.14);border-radius:14px;color:#fff;font-size:13px;font-family:system-ui,sans-serif;white-space:nowrap;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:100;transition:opacity .3s}
+#orbit-hero .loading.hide{opacity:0;pointer-events:none}
+#orbit-hero .loading .bar{width:150px;height:3px;border-radius:999px;background:rgba(255,255,255,.15);overflow:hidden}
+#orbit-hero .loading .bar i{display:block;height:100%;width:0%;background:#fff;transition:width .15s}
+#orbit-hero .loading .bar.indet i{width:40%;animation:orbitindet 1s ease-in-out infinite alternate}
+@keyframes orbitindet{from{transform:translateX(-100%)}to{transform:translateX(250%)}}
+/* 地标定位针（仅静态模式显示） */
+#orbit-hero .pins{position:absolute;inset:0;z-index:8;pointer-events:none}
+#orbit-hero.pano .pins{display:none}
+#orbit-hero .pin{position:absolute;left:0;top:0;transform:translate(-50%,-100%);pointer-events:auto;cursor:pointer}
+#orbit-hero .pin .mk{position:relative;width:22px;height:22px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.55))}
+#orbit-hero .pin .mk::before{content:'';position:absolute;inset:0;border-radius:50% 50% 50% 0;background:linear-gradient(135deg,#27f4ff,#00b8d4);transform:rotate(-45deg);border:1.5px solid rgba(255,255,255,.85)}
+#orbit-hero .pin .mk::after{content:'';position:absolute;left:50%;top:44%;width:7px;height:7px;margin:-3px 0 0 -3.5px;border-radius:50%;background:#fff}
+#orbit-hero .pin .ring{position:absolute;left:50%;bottom:0;width:22px;height:22px;margin-left:-11px;border-radius:50%;border:2px solid rgba(0,240,255,.7);animation:pinpulse 2.2s ease-out infinite}
+@keyframes pinpulse{0%{transform:scale(.7);opacity:.9}100%{transform:scale(2.8);opacity:0}}
+#orbit-hero .pin .tip{position:absolute;bottom:30px;left:0;width:max-content;max-width:228px;padding:10px 13px;border-radius:12px;background:rgba(10,14,26,.92);border:1px solid rgba(0,240,255,.4);color:#d6f4ff;font-size:12px;line-height:1.55;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 12px 32px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none;text-align:left;white-space:normal}
+#orbit-hero .pin .tip b{display:block;color:#33eaff;font-size:13.5px;margin-bottom:3px;font-weight:700;letter-spacing:.5px}
+#orbit-hero .pin:hover .tip,#orbit-hero .pin.open .tip{opacity:1;visibility:visible;transform:translateY(0)}
+#orbit-hero .pin.flip-x .tip{left:auto;right:0}
+#orbit-hero .pin.below{transform:translate(-50%,-100%)}
+#orbit-hero .pin.below .tip{bottom:auto;top:30px}
+@media(max-width:960px){#orbit-hero .pin .tip{max-width:184px;font-size:11px;padding:9px 11px}#orbit-hero .pin .mk,#orbit-hero .pin .ring{width:19px;height:19px}#orbit-hero .pin .ring{margin-left:-9.5px}}
+@media(max-width:960px){#orbit-hero{margin:.8rem 0;max-height:none}#orbit-hero #pano-btn{top:10px;left:10px;height:28px;padding:0 10px 0 7px}#orbit-hero .tabs{top:10px;right:10px;height:28px}#orbit-hero .tabs button{height:28px;padding:0 10px}}
+@media(max-width:520px){#orbit-hero #pano-btn{gap:4px;padding:0 6px 0 7px}#orbit-hero #pano-btn i{width:26px}#orbit-hero #pano-btn.on i::after{transform:translateX(8px)}#orbit-hero #pano-btn .pano-hint{font-size:10px;letter-spacing:-0.03em}#orbit-hero #pano-btn .pano-hint::before{display:none}#orbit-hero .tabs{right:8px}#orbit-hero .tabs button{padding:0 5px}}
 </style>
 </head>
 <body>
@@ -1007,6 +1057,20 @@ html[data-nav-mode="side"] .top-navbar{display:none}
         <span class="experience-map-badge">Hover points</span>
       </div>
 
+      <!-- ORBIT: 城市环绕，插入在标题与地图内容之间，上下10%渐隐；默认静态图，开启全景模式才抽帧转动 -->
+      <section id="orbit-hero" aria-label="城市环绕效果">
+        <canvas id="c"></canvas>
+        <button id="pano-btn" type="button" aria-pressed="false"><i></i><span>全景模式</span><em class="pano-hint">试试鼠标转圈</em></button>
+        <div class="tabs" role="tablist">
+          <button data-city="nanjing" class="on">南京</button>
+          <button data-city="beijing">北京</button>
+          <button data-city="shanghai">上海</button>
+          <button data-city="guangzhou">广州</button>
+        </div>
+        <div class="loading hide" id="loading"><div id="ltxt">加载中…</div><div class="bar" id="lbarwrap"><i id="lbar"></i></div></div>
+        <div class="pins" id="pins"></div>
+      </section>
+
       <div class="city-map-stage" aria-label="实习成长轨迹地图">
         <svg class="city-route" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
           <defs><linearGradient id="routeGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--color-cyan)"/><stop offset="1" stop-color="var(--color-magenta)"/></linearGradient></defs>
@@ -1026,28 +1090,28 @@ html[data-nav-mode="side"] .top-navbar{display:none}
           <span class="city-landmark"><img src="nanjing2.png" alt="南京城市建筑" loading="eager"></span>
           <span class="brand-3d brand-cas"><span class="mark"><span class="shine"></span><span class="label">LAB</span></span></span>
           <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip1_name">中科院软件所</strong><span data-i18n="tt1_city">南京</span></span>
-          <div class="city-tooltip"><img class="city-tooltip-img" src="cas.jpg" alt="中国科学院软件研究所配图" loading="lazy"><h3 data-i18n="tt1_name">中国科学院软件研究所</h3><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt1_city">南京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt1_role">AI设计师</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.03 - 2025.06</dd></div></dl><p data-i18n="tt1_desc">在软件部门参与 AI 设计相关工作，围绕智能产品体验与设计落地积累第一段 AI 实操经验。</p></div>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="cas.jpg" alt="中国科学院软件研究所配图" loading="lazy"><h3 data-i18n="tt1_name">中国科学院软件研究所</h3><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt1_city">南京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt1_role">AI设计师</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.03 - 2025.06</dd></div></dl><p data-i18n="tt1_desc">在软件部门参与 AI 设计相关工作，围绕智能产品体验与设计落地积累第一段 AI 实操经验。</p></div>
         </div>
         <div class="city-node" data-index="2" aria-label="vivo（维沃通信）">
           <span class="city-number">02</span>
           <span class="city-landmark"><img src="shenzhen2.png" alt="深圳城市建筑" loading="eager"></span>
           <span class="mascot-3d mascot-3d--light"><img src="vivo-mascot.png" alt="vivo 吉祥物" loading="eager"></span>
           <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip2_name">vivo互联网</strong><span data-i18n="tt2_city">深圳</span></span>
-          <div class="city-tooltip"><img class="city-tooltip-img" src="vivo.jpg" alt="vivo 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt2_name">vivo（维沃通信）互联网</h3><a class="city-detail-link" href="#intern-vivo" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt2_city">深圳</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt2_role">中后台数据产品</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.06 - 2025.10</dd></div></dl><p data-i18n="tt2_desc">参与用户&amp;内容双圈选分析平台等数据产品工作，推进 0-1 数据工具与业务提效。</p></div>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="vivo.jpg" alt="vivo 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt2_name">vivo（维沃通信）互联网</h3><a class="city-detail-link" href="#intern-vivo" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt2_city">深圳</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt2_role">中后台数据产品</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.06 - 2025.10</dd></div></dl><p data-i18n="tt2_desc">参与用户&amp;内容双圈选分析平台等数据产品工作，推进 0-1 数据工具与业务提效。</p></div>
         </div>
         <div class="city-node" data-index="3" aria-label="网易传媒">
           <span class="city-number">03</span>
 <span class="city-landmark"><img src="beijing2.png" alt="北京城市建筑" loading="eager"></span>
           <span class="mascot-3d mascot-3d--light"><img src="netease-mascot.png" alt="网易吉祥物" loading="eager"></span>
           <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip3_name">网易传媒</strong><span data-i18n="tt3_city">北京</span></span>
-          <div class="city-tooltip"><img class="city-tooltip-img" src="netease.jpg" alt="网易传媒配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt3_name">网易传媒北京有限公司</h3><a class="city-detail-link" href="#intern-netease" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt3_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt3_role">AI 产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.10 - 2026.01</dd></div></dl><p data-i18n="tt3_desc">围绕网易小蜜蜂 AI 记录项目，推进端云协同、多模态 AI 与社区产品的 0-1 落地。</p></div>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="netease.jpg" alt="网易传媒配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt3_name">网易传媒北京有限公司</h3><a class="city-detail-link" href="#intern-netease" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt3_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt3_role">AI 产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.10 - 2026.01</dd></div></dl><p data-i18n="tt3_desc">围绕网易小蜜蜂 AI 记录项目，推进端云协同、多模态 AI 与社区产品的 0-1 落地。</p></div>
         </div>
         <div class="city-node" data-index="4" aria-label="美团 Keeta">
           <span class="city-number">04</span>
           <span class="city-landmark"><img src="beijing2.png" alt="北京城市建筑" loading="eager"></span>
           <span class="mascot-3d mascot-3d--light"><img src="meituan-mascot.png" alt="美团吉祥物" loading="eager"></span>
           <span class="city-base"></span><span class="city-name-chip"><strong>美团 Keeta</strong><span data-i18n="tt4_city">北京</span></span>
-          <div class="city-tooltip"><img class="city-tooltip-img" src="meituan.jpg" alt="美团 Keeta 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt4_name">美团Keeta（出海外卖）</h3><a class="city-detail-link" href="#intern-keeta" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt4_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt4_role">产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2026.02 - 2026.05</dd></div></dl><p data-i18n="tt4_desc">负责营销优惠券配置端、C 端交易侧、兑换码风控需求及营销平台搭建工作。</p></div>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="meituan.jpg" alt="美团 Keeta 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt4_name">美团Keeta（出海外卖）</h3><a class="city-detail-link" href="#intern-keeta" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt4_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt4_role">产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2026.02 - 2026.05</dd></div></dl><p data-i18n="tt4_desc">负责营销优惠券配置端、C 端交易侧、兑换码风控需求及营销平台搭建工作。</p></div>
         </div>
       </div>
     </div>
@@ -1305,7 +1369,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
       </div>
     </div>
     <div style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-      <a class="ui-card" href="/files/yuhang-resume.pdf" download style="display:flex;flex-direction:column;gap:1rem">
+      <a class="ui-card" href="个人简历.pdf" download="个人简历.pdf" style="display:flex;flex-direction:column;gap:1rem">
         <div style="display:flex;align-items:start;justify-content:space-between;gap:1rem">
           <div>
             <div style="display:inline-flex;align-items:center;gap:0.75rem">
@@ -1538,7 +1602,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
       <span data-i18n="nav_proj">项目</span>
     </button>
-    <a class="ui-button ui-button-ghost ui-button-compact" href="/files/yuhang-resume.pdf" download>
+    <a class="ui-button ui-button-ghost ui-button-compact" href="个人简历.pdf" download="个人简历.pdf">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
       <span data-i18n="nav_resume">简历</span>
     </a>
@@ -2648,6 +2712,567 @@ function handleContactForm(event) {
     requestAnimationFrame(draw);
   }
   requestAnimationFrame(draw);
+})();
+</script>
+
+<!-- ORBIT HERO script (城市环绕，独立作用域) -->
+<script>
+(function(){
+  const FRAMES = 60;
+  // 视觉顺时针活跃帧环：索引=视觉帧偏移（0=正景），值=雪碧图实际帧号。
+  // 剔除源视频开头/结尾人物已回正、几乎静止的帧（否则弹簧 -1 次过头取到准正面帧，看不见回弹）；
+  // 广州源视频反向，故环顺序为帧号递减。
+  const CW_RING = {
+    nanjing:   [0].concat([...Array(54)].map((_, i) => i + 1)),            // 1..54，去 55-59（回正后的准静止段）
+    beijing:   [0].concat([...Array(58)].map((_, i) => i + 1)),            // 去 59
+    shanghai:  [0].concat([...Array(58)].map((_, i) => i + 2)),            // 去 1
+    guangzhou: [0].concat([...Array(50)].map((_, i) => 54 - i))            // 54..5，去 1-4,55-59（头尾弱帧，保证接缝两侧≈22）
+  };
+  function actualFrame(c, theta) {
+    const ring = CW_RING[c] || CW_RING.nanjing;
+    const i = Math.round(theta);
+    return ring[((i % ring.length) + ring.length) % ring.length];
+  }
+  const canvas = document.getElementById('c');
+  if (!canvas) return; // 不在 orbit 页就跳过
+  const ctx = canvas.getContext('2d');
+  const loading = document.getElementById('loading');
+  const ltxt = document.getElementById('ltxt');
+  const lbar = document.getElementById('lbar');
+  const lbarwrap = document.getElementById('lbarwrap');
+  const tabs = document.querySelectorAll('#orbit-hero .tabs button');
+  const panoBtn = document.getElementById('pano-btn');
+  const pinsEl = document.getElementById('pins');
+
+  // 渲染当前城市的地标定位针
+  function renderPins(c) {
+    pinsEl.innerHTML = '';
+    (LANDMARKS[c] || []).forEach(L => {
+      const pin = document.createElement('div');
+      pin.className = 'pin' + (L.x > 70 ? ' flip-x' : '') + (L.y < 26 ? ' below' : '');
+      pin.style.left = L.x + '%';
+      pin.style.top = L.y + '%';
+      pin.innerHTML = '<div class="ring"></div><div class="mk"></div><div class="tip"><b>' + L.n + '</b>' + L.d + '</div>';
+      pin.addEventListener('click', e => {
+        e.stopPropagation(); // 手机端点按展开，桌面端 hover 即可
+        pinsEl.querySelectorAll('.pin.open').forEach(o => { if (o !== pin) o.classList.remove('open'); });
+        pin.classList.toggle('open');
+      });
+      pinsEl.appendChild(pin);
+    });
+  }
+  document.addEventListener('click', () => pinsEl.querySelectorAll('.pin.open').forEach(o => o.classList.remove('open')));
+  const CITY_NAME = { nanjing:'南京', beijing:'北京', shanghai:'上海', guangzhou:'广州' };
+  const ASSET_V = '20260913b';
+  // 离线预抽好的 60 帧雪碧图（10列×6行，每格 1024×768），本地加载一张图即可，无需浏览器 seek 视频
+  const SPRITE = {
+    nanjing:'assets/pano_nanjing.jpg?v='+ASSET_V,
+    beijing:'assets/pano_beijing.jpg?v='+ASSET_V,
+    shanghai:'assets/pano_shanghai.jpg?v='+ASSET_V,
+    guangzhou:'assets/pano_guangzhou.jpg?v='+ASSET_V
+  };
+  const TILE_W = 1024, TILE_H = 768, COLS = 10;
+  const STATIC = {
+    nanjing:'assets/static_nanjing.jpg',
+    beijing:'assets/static_beijing.jpg',
+    shanghai:'assets/static_shanghai.jpg',
+    guangzhou:'assets/static_guangzhou.jpg'
+  };
+  const hero = document.getElementById('orbit-hero');
+
+  // 四城静态图地标（坐标为图内百分比，x 从左、y 从上）
+  const LANDMARKS = {
+    nanjing: [
+      { x: 7,  y: 45, n: '鸡鸣寺', d: '始建于西晋，南京最古老的梵刹之一，寺前的樱花大道是春日南京的名片。' },
+      { x: 38, y: 14, n: '南京眼步行桥', d: '长江上首座观光步行桥，双环相望如一双巨眼，是南京的新地标。' },
+      { x: 83, y: 22.5, n: '南京长江大桥', d: '1968 年通车，长江上第一座由中国自行设计建造的双层式铁路、公路两用桥。' },
+      { x: 26, y: 46, n: '青奥中心双子塔', d: '扎哈·哈迪德设计的南京国际青年文化中心，两座流线型玻璃塔楼并肩而立，是河西的新地标。' },
+      { x: 70, y: 27, n: '紫峰大厦', d: '高 450 米，落成时为世界第七高楼，现代摩天楼与鼓楼老城相映成趣。' },
+      { x: 88, y: 33, n: '阅江楼', d: '明太祖朱元璋下诏始建，登楼远眺，长江与整座南京城尽收眼底。' },
+      { x: 33, y: 85, n: '中华门城堡', d: '明代南京城南门，中国现存规模最大的城堡式瓮城，城墙界的天花板。' }
+    ],
+    beijing: [
+      { x: 23, y: 54, n: '中央电视台总部', d: '2012 年建成，环形悬挑结构被昵称为"大裤衩"，北京 CBD 最具辨识度的建筑。' },
+      { x: 66, y: 28, n: '中国尊', d: '北京第一高楼（528 米），造型取自古代礼器"尊"，是中信集团总部大楼。' },
+      { x: 79, y: 33, n: '国贸三期', d: '曾长期保持北京最高楼纪录，与中国尊并肩撑起 CBD 的核心天际线。' },
+      { x: 93, y: 40, n: '国家体育场·鸟巢', d: '2008 年奥运会开闭幕式场馆，钢网编织如鸟巢，现已成为双奥之城的象征。' },
+      { x: 16, y: 78, n: '天坛·祈年殿', d: '明清两代皇帝祭天祈谷的场所，三重蓝色琉璃瓦圆顶，北京的文化图腾。' },
+      { x: 80, y: 72, n: '鼓楼', d: '元代始建的城市报时中心，与钟楼并坐于老城南北中轴线北端。' }
+    ],
+    shanghai: [
+      { x: 35, y: 40, n: '东方明珠', d: '高 468 米，1994 年落成，浦东陆家嘴最早的天际线标志，串联十一颗"明珠"。' },
+      { x: 62, y: 30, n: '上海中心大厦', d: '中国第一高楼（632 米），螺旋上升的玻璃幕墙，118 层有世界最高观景台。' },
+      { x: 74, y: 28, n: '环球金融中心', d: '高 492 米，顶部梯形风洞被市民亲切地称为"开瓶器"。' },
+      { x: 80, y: 40, n: '金茂大厦', d: '1999 年建成，以中国古塔为设计原型，中国第一代超高层建筑的代表。' },
+      { x: 89, y: 55, n: '豫园·城隍庙', d: '明代私家园林与老城厢商圈，九曲桥、湖心亭茶楼藏着最市井的上海味。' },
+      { x: 72, y: 70, n: '外滩海关大楼', d: '1927 年建成，外滩万国建筑群的代表，钟楼大钟与伦敦大本钟同源。' }
+    ],
+    guangzhou: [
+      { x: 32, y: 35, n: '广州塔·小蛮腰', d: '高 600 米，中部扭转收窄的网格塔身，2010 年亚运会前落成的城市名片。' },
+      { x: 59, y: 35, n: '周大福金融中心', d: '人称"东塔"，高 530 米，与西塔隔江呼应，珠江新城最高楼之一。' },
+      { x: 66, y: 30, n: '广州国际金融中心', d: '人称"西塔"（IFC），高 440 米，通透的菱形网格幕墙极具未来感。' },
+      { x: 85, y: 46, n: '猎德大桥', d: '独塔双索面自锚式悬索桥，白色贝壳形桥塔被誉为"珠江之贝"。' },
+      { x: 17, y: 70, n: '五羊石像', d: '广州"羊城"别称的由来，五位仙人骑五羊赠稻的传说就凝在这座雕塑里。' },
+      { x: 82, y: 80, n: '陈家祠', d: '陈氏书院，清代岭南宗祠建筑巅峰，三雕两塑一铸铁的工艺博物馆。' }
+    ]
+  };
+
+  let city = 'nanjing';        // 当前城市
+  let panorama = false;        // 全景模式开关（默认关 → 静态图）
+  let sprite = null, showF = 0, ready = false; // 当前全景雪碧图
+  let spriteCity = null;      // 当前 sprite 实际对应城市（加载等待期 city 可能已提前切走，以此为准绘制）
+  let staticImg = null;        // 当前城市静态图
+  const staticCache = {};      // 四城静态图缓存
+  let paused = false;
+  let rafId = null;
+  // 打圈旋转：依据鼠标运动方向（低通滤波后的速度朝向）的转角，而非相对某固定圆心的方位角。
+  // 因此在画面任意位置、画任意大小的圆，转一整圈人物就转固定角度；只有过小/过慢的挪动不响应。
+  let sx = null, sy = null;       // 低通滤波后的位置
+  let psx = 0, psy = 0, ptm = 0;  // 上一次滤波位置与时间（用于求速度）
+  let lastAngle = null;          // 上一次运动方向角
+  let accumulatedDelta = 0;      // 累积方向角变化（弧度）
+  const RADIANS_PER_FRAME = 0.16;// 灵敏度：鼠标转 2π 约推进 39 帧（人物转 0.65 圈）
+  const SMOOTH_TAU = 45;         // 位置低通时间常数（ms），越大越稳、滞后越大
+  const MIN_SPEED = 0.12;        // 速度阈值 px/ms（低于此视为停顿，过小的圆不响应）
+
+  function onMove(clientX, clientY) {
+    const now = performance.now();
+    if (sx === null) { sx = clientX; sy = clientY; psx = clientX; psy = clientY; ptm = now; return; }
+    const dt = Math.min(100, now - ptm);
+    if (dt <= 0) return;
+    const a = 1 - Math.exp(-dt / SMOOTH_TAU);
+    sx += (clientX - sx) * a;
+    sy += (clientY - sy) * a;
+    const vx = (sx - psx) / dt, vy = (sy - psy) / dt;
+    psx = sx; psy = sy; ptm = now;
+    if (Math.hypot(vx, vy) < MIN_SPEED) return; // 过慢/过小：冻结方向，不产生跳变
+    const angle = Math.atan2(vy, vx);
+    if (lastAngle !== null) {
+      let delta = angle - lastAngle;
+      // 处理 ±PI 跳变
+      if (delta > Math.PI) delta -= Math.PI * 2;
+      if (delta < -Math.PI) delta += Math.PI * 2;
+      accumulatedDelta -= delta; // 取反：鼠标顺时针 → 帧号正向（人物顺时针）
+    }
+    lastAngle = angle;
+  }
+  function resetAngle() { lastAngle = null; sx = sy = null; }
+
+  // 画布固定为静态图尺寸（3:2 基准区域）。帧率图（4:3）在绘制时按宽度等比、垂直居中，
+  // 上下超出基准区域的部分被画布裁掉 → 天然全透明；区域内统一走 10% 渐隐。
+  function resize() {
+    const b = staticImg;
+    if (!b || !b.naturalWidth) return;
+    canvas.width = b.naturalWidth;
+    canvas.height = b.naturalHeight;
+    fadeGrad = null;
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+  }
+  window.addEventListener('resize', resize);
+
+  // 按宽度等比铺满、垂直居中。静态图(3:2)恰好填满；帧图(4:3)上下溢出即透明。
+  // 每个城市的全景帧图单独上移（相对画布高度比例）：渐隐遮罩位置不变，
+  // 顶部全透明区变多、底部全透明区变少，用来让帧图人物和静态图人物重合。
+  const FRAME_LIFTS = { nanjing: 0.05, beijing: -0.01, shanghai: 0.05, guangzhou: -0.01 };
+  function drawCoverWidth(img, lift) {
+    const scale = canvas.width / img.naturalWidth;
+    const dh = img.naturalHeight * scale;
+    let dy = (canvas.height - dh) / 2;
+    if (lift) dy -= canvas.height * lift;
+    ctx.drawImage(img, 0, dy, canvas.width, dh);
+  }
+
+  function loadStatic(c) {
+    return new Promise(res => {
+      const img = new Image();
+      img.onload = () => res(img.naturalWidth > 0 ? img : null);
+      img.onerror = () => res(null);
+      img.src = STATIC[c];
+    });
+  }
+
+  // 只在 orbit 区块内打圈才旋转，避免阅读页面其它内容时误触发
+  // 鼠标 / 触摸统一走 PointerEvent；老浏览器（无 PointerEvent）才退回 mousemove + touchmove
+  const supportsPointer = window.PointerEvent !== undefined;
+  if (supportsPointer) {
+    hero.addEventListener('pointermove', e => onMove(e.clientX, e.clientY), { passive: true });
+    hero.addEventListener('pointerleave', resetAngle);
+  } else {
+    hero.addEventListener('mousemove', e => onMove(e.clientX, e.clientY));
+    hero.addEventListener('mouseleave', resetAngle);
+    hero.addEventListener('touchmove', e => { if (e.touches[0]) onMove(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+  }
+  let _resetTimer = null;
+  const armReset = () => {
+    clearTimeout(_resetTimer);
+    _resetTimer = setTimeout(resetAngle, 1000);
+  };
+  if (supportsPointer) hero.addEventListener('pointermove', armReset);
+  else hero.addEventListener('mousemove', armReset);
+
+  // 雪碧图缓存：只保留最近 2 座城市（每张解码后约 370MB，不能四城全留）
+  const spriteCache = {};
+  const spriteLRU = [];
+  const loadPromises = {};  // 同一城市只加载一次（被淘汰后清除，允许重新加载）
+
+  function forgetSprite(c) {
+    if (spriteCache[c]) { spriteCache[c].src = ''; delete spriteCache[c]; }
+    delete loadPromises[c]; // 关键：连同 Promise 一起清，否则切回时拿到"已成功"的旧 Promise 却没有图，永久转圈
+  }
+
+  function rememberSprite(c, img) {
+    const i = spriteLRU.indexOf(c);
+    if (i > -1) spriteLRU.splice(i, 1);
+    spriteLRU.unshift(c);
+    spriteCache[c] = img;
+    while (spriteLRU.length > 2) {
+      const old = spriteLRU.pop();
+      if (old !== city) forgetSprite(old);
+    }
+  }
+
+  function showLoading(c) {
+    ltxt.textContent = CITY_NAME[c] + '全景加载中…';
+    lbar.style.width = '0%';
+    lbarwrap.classList.add('indet');
+    loading.classList.remove('hide');
+  }
+  function hideLoading() {
+    lbarwrap.classList.remove('indet');
+    loading.classList.add('hide');
+  }
+
+  function activateCity(c) {
+    if (panorama && spriteCache[c]) {
+      sprite = spriteCache[c];
+      spriteCity = c;
+      ready = true;
+      showF = 0; accumulatedDelta = 0; lastAngle = null;
+      hideLoading();
+      return true;
+    }
+    return false;
+  }
+
+  // 加载一张普通 JPEG 雪碧图（本地毫秒级），不再 seek 视频
+  function loadSprite(c) {
+    if (loadPromises[c]) return loadPromises[c];
+    loadPromises[c] = new Promise(resolve => {
+      const img = new Image();
+      const done = ok => {
+        if (!ok) delete loadPromises[c]; // 失败允许重试
+        resolve(ok);
+      };
+      img.onload = () => {
+        if (img.naturalWidth < TILE_W) { done(false); return; }
+        // 9300 万像素大图：主动等解码完成，避免 onload 后首次绘制卡几百毫秒
+        const d = img.decode ? img.decode() : null;
+        if (d && d.then) d.then(() => { rememberSprite(c, img); done(true); })
+                         .catch(() => { rememberSprite(c, img); done(true); });
+        else { rememberSprite(c, img); done(true); }
+      };
+      img.onerror = () => done(false);
+      img.src = SPRITE[c];
+      // 30 秒兜底：本地 localhost 不可能这么久，超时按失败处理允许重试
+      setTimeout(() => { if (!spriteCache[c]) done(false); }, 30000);
+    });
+    return loadPromises[c];
+  }
+
+  function requestCitySprite(c) {
+    if (activateCity(c)) return;
+    ready = false;
+    showLoading(c);
+    const attempt = () => loadSprite(c).then(ok => {
+      if (city !== c || !panorama) { if (city === c) hideLoading(); return; }
+      if (activateCity(c)) return;
+      // 极端竞态：加载期间该城被 LRU 淘汰 —— 重新拉一次
+      forgetSprite(c);
+      loadSprite(c).then(() => { if (city === c && panorama) activateCity(c); });
+      if (!ok) { // 加载失败：退回静态图模式
+        hideLoading();
+        panorama = false;
+        hero.classList.remove('pano');
+        panoBtn.classList.remove('on');
+        panoBtn.setAttribute('aria-pressed', 'false');
+        resize();
+      }
+    });
+    attempt();
+  }
+
+  // 上下各10%渐隐到透明：直接在 canvas 里擦除，所有浏览器都生效（不依赖 CSS mask）
+  let fadeGrad = null;
+  function buildFade() {
+    fadeGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    fadeGrad.addColorStop(0.00, 'rgba(0,0,0,1)');  // 顶端完全擦除（透明）
+    fadeGrad.addColorStop(0.10, 'rgba(0,0,0,0)');  // 10%处完全保留
+    fadeGrad.addColorStop(0.90, 'rgba(0,0,0,0)');  // 90%处完全保留
+    fadeGrad.addColorStop(1.00, 'rgba(0,0,0,1)');  // 底端完全擦除（透明）
+  }
+
+  // 从 10×6 雪碧图取指定帧格（fFloat 可为小数/负数，内部归一化），按城市偏移绘制。
+  // 始终显示整帧：四舍五入到环帧，不做任何透明度混合。
+  function paintTile(img, fFloat, c, alpha) {
+    const fi = actualFrame(c, fFloat);
+    const col = fi % COLS, row = (fi / COLS) | 0;
+    const scale = canvas.width / TILE_W;
+    const dh = TILE_H * scale;
+    const dy = (canvas.height - dh) / 2 - canvas.height * FRAME_LIFTS[c];
+    if (alpha !== undefined) ctx.globalAlpha = alpha;
+    ctx.drawImage(img, col * TILE_W, row * TILE_H, TILE_W, TILE_H, 0, dy, canvas.width, dh);
+    if (alpha !== undefined) ctx.globalAlpha = 1;
+  }
+  function applyFade() {
+    if (!fadeGrad) buildFade();
+    ctx.save();
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = fadeGrad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.restore();
+  }
+
+  // —— whip pan 甩镜头转场：旧城慢→快甩出，切点直接换城，新城快→慢落稳（纯帧切换，无特效叠加） ——
+  let whip = null;        // 转场状态
+  let whipToken = 0;      // 加载代际：连续切城时旧回调作废
+  function startWhip(fromSpr, toSpr, fromCity, toCity) {
+    const dur = 1180;
+    whip = {
+      t0: performance.now(),
+      dur,
+      tAnt: 230 / dur,    // ① 蓄力（反向轻引，慢起、ease-out 柔停）结束
+      tHold: 295 / dur,   // ② 蓄力极点停顿结束（顿一下才有发力感）
+      tCut: 520 / dur,    // ③ 切点：旧城甩出 / 新城甩入
+      tOver: 745 / dur,   // ④ 新城柔停在过头点
+      ant: 7,             // 蓄力帧数（约行程 15%）
+      spinFrom: Math.round(0.77 * (CW_RING[fromCity] || CW_RING.nanjing).length),  // 旧城甩出帧数（占环 77%）
+      spinTo:   Math.round(0.77 * (CW_RING[toCity] || CW_RING.nanjing).length),    // 新城甩入帧数
+      over: 5,            // 过头帧数（约行程 11%）
+      fromSpr, toSpr, fromCity, toCity
+    };
+  }
+  // 全景模式下切城市：目标已缓存立即甩；未缓存则【完全不开始动画】——
+  // 若有进行中的 whip 立即取消并定格在其目标城市首帧，等目标图加载完成后才从头播放完整转场。
+  function enterCityPano(c) {
+    const fromCity = whip ? whip.toCity : (spriteCity || city);
+    const fromSpr = whip ? whip.toSpr : sprite;
+    city = c;
+    renderPins(c);
+    const my = ++whipToken;
+    if (spriteCache[c]) { startWhip(fromSpr, spriteCache[c], fromCity, c); return; }
+    // 目标未缓存：取消半截动画，画面定格在起点城市首帧（用起点城市自己的偏移/帧环）
+    if (whip) {
+      sprite = whip.toSpr;
+      spriteCity = whip.toCity;
+      whip = null;
+      ready = true;
+      showF = 0; accumulatedDelta = 0; lastAngle = null;
+    }
+    showLoading(c);
+    loadSprite(c).then(ok => {
+      hideLoading();
+      if (my !== whipToken || city !== c || !panorama) return;
+      if (ok) startWhip(fromSpr, spriteCache[c], fromCity, c);
+      else { // 加载失败退回静态图
+        panorama = false;
+        hero.classList.remove('pano');
+        panoBtn.classList.remove('on');
+        panoBtn.setAttribute('aria-pressed', 'false');
+        resize();
+      }
+    });
+  }
+
+  function drawWhip() {
+    const w = whip;
+    const p = Math.min(1, (performance.now() - w.t0) / w.dur);
+    const easeOut3 = q => 1 - Math.pow(1 - q, 3);
+    const easeInOut = q => q < .5 ? 2*q*q : 1 - Math.pow(-2*q + 2, 2)/2;
+    let img, cc, fFloat;
+    if (p < w.tAnt) {
+      // ① 蓄力：先快后慢（ease-out），身体轻轻引到反向极点并柔停（视觉帧空间，四城一致）
+      const q = p / w.tAnt;
+      fFloat = -w.ant * easeOut3(q);
+      img = w.fromSpr; cc = w.fromCity;
+    } else if (p < w.tHold) {
+      // ② 极点停顿：蓄力姿势站住 60ms，制造"发力前的静"
+      fFloat = -w.ant;
+      img = w.fromSpr; cc = w.fromCity;
+    } else if (p < w.tCut) {
+      // ③ 甩出：cubic ease-in，从静止爆发、越甩越快
+      const q = (p - w.tHold) / (w.tCut - w.tHold);
+      const e = q*q*q;
+      fFloat = -w.ant + (w.ant + w.spinFrom) * e;
+      img = w.fromSpr; cc = w.fromCity;
+    } else if (p < w.tOver) {
+      // ④ 甩入：新城同向急速进入，ease-out 柔停在越过正景 5 帧处
+      const q = (p - w.tCut) / (w.tOver - w.tCut);
+      fFloat = -w.spinTo + (w.spinTo + w.over) * easeOut3(q);
+      img = w.toSpr; cc = w.toCity;
+    } else {
+      // ⑤ 回弹：欠阻尼弹簧——从 +过头 收回、越过正景约 -2 帧、再小幅回摆落稳。
+      // 整帧量化下负侧必须穿过 2~3 个不同帧才看得见"越过再回正"，故阻尼比取 0.28（相邻极值比≈0.4）。
+      // b=σ/ω 保证起点速度为 0，与 ④ 的 ease-out 柔停无缝衔接。
+      const q = (p - w.tOver) / (1 - w.tOver);
+      const tau = q * 1.15; // 弹簧物理时间拉长映射，保证收尾完全静止
+      fFloat = w.over * Math.exp(-1.98 * tau) *
+        (Math.cos(6.787 * tau) + 0.292 * Math.sin(6.787 * tau));
+      img = w.toSpr; cc = w.toCity;
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (img && img.naturalWidth > 0) paintTile(img, fFloat, cc, 1);
+    applyFade();
+    if (p >= 1) { // 转场结束：落到新城首帧
+      whip = null;
+      sprite = w.toSpr;
+      spriteCity = w.toCity;
+      city = w.toCity;
+      ready = true;
+      showF = 0; accumulatedDelta = 0; lastAngle = null;
+    }
+  }
+
+  function draw() {
+    // 永不中断 rAF 链 —— 只是暂停时跳过绘制
+    if (!paused) {
+      if (whip) { drawWhip(); }
+      else {
+        let img = null, isSprite = false, lift = 0;
+        if (panorama && ready && sprite) {
+          // 全景模式：累积角度 → 视觉帧偏移（paintTile 内按城市帧环取实际帧，含广州反向）
+          // 注意：加载等待期间 city 已切到目标城，但画面仍是起点城，帧环/偏移必须用 spriteCity
+          const drawCity = spriteCity || city;
+          const steps = accumulatedDelta / RADIANS_PER_FRAME;
+          if (steps !== 0) {
+            showF += steps;
+            accumulatedDelta -= steps * RADIANS_PER_FRAME; // 消耗掉
+          }
+          img = sprite;
+          isSprite = true;
+          lift = FRAME_LIFTS[drawCity];
+        } else if (staticImg && staticImg.naturalWidth > 0) {
+          img = staticImg; // 默认/加载中：静态图，不偏移
+        }
+        if (img && img.naturalWidth > 0) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height); // 每帧清屏，杜绝上一城/上一帧残留
+          if (isSprite) {
+            paintTile(img, showF, spriteCity || city, 1);
+          } else {
+            drawCoverWidth(img, 0);
+          }
+          applyFade();
+        }
+      }
+    }
+    rafId = requestAnimationFrame(draw);
+  }
+
+  function selectCity(c) {
+    if (c === city) return;
+    if (panorama) { enterCityPano(c); return; } // 全景模式：whip pan 甩镜头转场
+    city = c;
+    renderPins(c);
+    showF = 0;
+    accumulatedDelta = 0;
+    lastAngle = null;
+    // 静态模式：先切静态图（已预载则瞬时切换；未预载也会兜底加载）
+    if (staticCache[c]) {
+      staticImg = staticCache[c];
+      resize();
+    } else {
+      loadStatic(c).then(img => {
+        staticCache[c] = img;
+        if (city === c) { staticImg = img; resize(); }
+      });
+    }
+  }
+
+  tabs.forEach(b => b.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('on'));
+    b.classList.add('on');
+    selectCity(b.dataset.city);
+  }));
+
+  panoBtn.addEventListener('click', () => {
+    panorama = !panorama;
+    panoBtn.classList.toggle('on', panorama);
+    panoBtn.setAttribute('aria-pressed', String(panorama));
+    hero.classList.toggle('pano', panorama); // 全景模式隐藏地标针
+    pinsEl.querySelectorAll('.pin.open').forEach(o => o.classList.remove('open'));
+    showF = 0; accumulatedDelta = 0; lastAngle = null;
+    if (panorama) {
+      // 雪碧图已缓存 → 瞬时进入；否则弹小卡片等一张图（本地亚秒级）
+      if (!activateCity(city)) requestCitySprite(city);
+    } else {
+      // 关闭全景：雪碧图缓存保留（下次秒开），画面回到【当前城市】静态图
+      // （全景内切城不会更新 staticImg，必须在此按 city 取回，否则会显示开全景时那座城）
+      ready = false;
+      sprite = null;
+      spriteCity = null;
+      whip = null; // 取消进行中的甩镜头，避免 drawWhip 继续画雪碧图帧
+      ++whipToken; // 作废进行中的加载回调（否则加载完会对已关闭的全景 startWhip）
+      hideLoading();
+      if (staticCache[city]) {
+        staticImg = staticCache[city];
+        resize();
+      } else {
+        const want = city;
+        loadStatic(want).then(img => {
+          staticCache[want] = img;
+          if (!panorama && city === want) { staticImg = img; resize(); }
+        });
+      }
+    }
+  });
+
+  // IntersectionObserver: 滚出视野暂停绘制（省 CPU），但不中断 rAF 链
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      paused = !en.isIntersecting;
+    });
+  }, { threshold: 0.5 }); // 改 threshold:0.5 —— 至少一半可见才继续
+  io.observe(hero);
+
+  (async () => {
+    // ① 先加载南京静态图并立即上屏
+    staticImg = await loadStatic('nanjing');
+    staticCache.nanjing = staticImg;
+    renderPins('nanjing');
+    resize();
+    rafId = requestAnimationFrame(draw);
+    // ② 顺序预载其余三城静态图（切 tab 时零等待）
+    for (const c of ['beijing','shanghai','guangzhou']) {
+      staticCache[c] = await loadStatic(c);
+    }
+    // ③ 后台预载南京雪碧图（首次开全景秒进）；其余城市按需加载，避免四张超大图同时占内存
+    loadSprite('nanjing');
+  })();
+})();
+</script>
+
+<!-- 窄屏（≤960px）：城市节点点击展开介绍卡片，叉号关闭；桌面端保持 hover -->
+<script>
+(function(){
+  var nodes = document.querySelectorAll('.city-map-stage .city-node');
+  if (!nodes.length) return;
+  var mq = window.matchMedia('(max-width:960px)');
+  function closeAll(except){
+    nodes.forEach(function(n){ if (n !== except) n.classList.remove('open'); });
+  }
+  nodes.forEach(function(node){
+    node.addEventListener('click', function(e){
+      if (!mq.matches) return;                       // 桌面端交给 hover
+      if (e.target.closest('.city-detail-link')) return; // 详情链接正常跳转
+      if (e.target.closest('.city-tooltip-close')) { node.classList.remove('open'); return; }
+      var willOpen = !node.classList.contains('open');
+      closeAll(node);
+      node.classList.toggle('open', willOpen);
+    });
+  });
+  // 拉宽回桌面布局时，清掉所有展开态
+  if (mq.addEventListener) mq.addEventListener('change', function(e){ if (!e.matches) closeAll(null); });
+  else if (mq.addListener) mq.addListener(function(e){ if (!e.matches) closeAll(null); });
 })();
 </script>
 </body>
