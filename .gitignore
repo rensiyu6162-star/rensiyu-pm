@@ -1,2 +1,10 @@
 # 旧版全景视频，站点已改用雪碧图，不再需要
 assets/*_60.mp4
+# 60 帧原始雪碧图本地备份（新站点用自适应帧数版），不部署
+assets/_src60/
+# 本地图片处理临时脚本/中间产物
+_bench.py
+_build30.py
+_build_adaptive.py
+_tile_maps.json
+tmp_shot.html
