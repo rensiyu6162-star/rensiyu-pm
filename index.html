@@ -10,8 +10,9 @@
 <meta name="theme-color" content="#f5f0f8" media="(prefers-color-scheme: light)"/>
 <link rel="preload" as="image" href="photo1.jpg"/>
 <link rel="preload" as="image" href="nanjing2.png"/>
-<link rel="preload" as="image" href="shenzhen2.png"/>
 <link rel="preload" as="image" href="beijing2.png"/>
+<link rel="preload" as="image" href="shanghai2.svg"/>
+<link rel="preload" as="image" href="guangzhou2.svg"/>
 <style>
 /* ===== CSS VARIABLES / THEME: CLASSIC CYBERPUNK NEON ===== */
 :root {
@@ -618,7 +619,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 .city-base{position:relative;width:8.8rem;height:5.4rem;border-radius:50%;background:linear-gradient(145deg,rgba(0,240,255,0.12),rgba(255,0,170,0.10));box-shadow:0 22px 45px rgba(0,0,0,0.24);transform:rotateX(58deg) rotateZ(-18deg);z-index:1}.city-model{position:absolute;bottom:3.3rem;left:50%;transform:translateX(-50%);width:7rem;height:7.4rem;filter:drop-shadow(0 18px 20px rgba(0,0,0,0.24))}.city-name-chip{position:absolute;left:50%;bottom:0.2rem;z-index:5;transform:translateX(-50%);border:1px solid rgba(0,240,255,0.12);border-radius:14px;padding:0.34rem 0.58rem;background:rgba(13,8,24,0.50);backdrop-filter:blur(10px);box-shadow:0 4px 12px rgba(0,0,0,0.10);text-align:center;min-width:5.4rem}.city-node[data-index="4"] .city-name-chip{bottom:-1.85rem}.city-name-chip strong{display:block;font-size:0.76rem;line-height:1.15}.city-name-chip span{display:block;font-size:0.62rem;color:var(--color-text-soft);margin-top:0.08rem}.city-landmark{position:absolute;left:50%;bottom:4.25rem;z-index:1;transform:translateX(-50%);width:17rem;height:12.2rem;opacity:1;filter:drop-shadow(0 12px 10px rgba(0,0,0,.15))}
 [data-theme="light"] .city-landmark{filter:drop-shadow(0 8px 8px rgba(0,0,0,.08))}.city-landmark::before{content:'';position:absolute;left:50%;bottom:0.2rem;width:11rem;height:4.8rem;transform:translateX(-50%);border-radius:999px;background:radial-gradient(ellipse,rgba(0,240,255,.12),transparent 68%);filter:blur(6px)}.city-landmark img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:normal;filter:saturate(1.08) contrast(1.0) brightness(1.0);opacity:1}.city-node[data-index="1"] .city-landmark{bottom:4.45rem;width:19rem;height:13.6rem}.city-node[data-index="3"] .city-landmark{bottom:4.6rem}.city-node[data-index="2"] .city-landmark,.city-node[data-index="4"] .city-landmark{bottom:3.4rem}
 .company-icon{position:absolute;inset:0;display:block;transform-style:preserve-3d}.company-icon::before,.company-icon::after,.icon-piece{content:'';position:absolute;display:block}.company-svg{position:absolute;inset:-0.15rem;width:100%;height:100%;display:block;overflow:visible}
-.brand-3d{position:absolute;bottom:3.3rem;left:50%;z-index:4;transform:translateX(-50%);width:7rem;height:7.4rem;opacity:1;filter:saturate(1.35) contrast(1.16) drop-shadow(0 0 0.9px rgba(255,255,255,0.9)) drop-shadow(0 0 3px rgba(0,240,255,0.32)) drop-shadow(0 18px 20px rgba(0,0,0,0.26))}.brand-3d::before{content:'';position:absolute;left:0.6rem;right:0.6rem;bottom:0.25rem;height:1rem;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.34),transparent 68%);filter:blur(3px)}.brand-3d .mark{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) rotateX(8deg) rotateZ(-6deg);width:5.7rem;height:5.7rem;border-radius:1.45rem;display:grid;place-items:center;box-shadow:inset -0.65rem -0.8rem 0 rgba(0,0,0,0.14),inset 0.35rem 0.35rem 0 rgba(255,255,255,0.16),0 1.1rem 1.8rem rgba(0,0,0,0.20)}.brand-3d .mark::after{content:'';position:absolute;right:-0.42rem;top:0.42rem;width:0.44rem;height:4.82rem;border-radius:0 0.9rem 0.9rem 0;background:rgba(0,0,0,0.24);clip-path:polygon(0 0,100% 10%,100% 100%,0 90%)}.brand-3d .shine{position:absolute;left:1.5rem;top:1.18rem;width:2.6rem;height:0.55rem;border-radius:999px;background:rgba(255,255,255,0.24);transform:rotate(-16deg)}.brand-3d .label{position:relative;z-index:2;font-weight:800;letter-spacing:-0.04em;text-shadow:0 2px 10px rgba(0,0,0,0.22)}.brand-cas .mark{background:linear-gradient(145deg,#62617d,#26243f 58%,#121020);border-radius:0.7rem 0.7rem 0.35rem 0.35rem;opacity:1}.brand-cas .mark::before{content:'';position:absolute;left:0.75rem;right:0.75rem;top:0.9rem;height:0.35rem;border-radius:999px;background:#8df7ff;box-shadow:0 0.85rem 0 rgba(141,247,255,.58),0 1.7rem 0 rgba(255,106,213,.48),0 2.55rem 0 rgba(141,247,255,.38)}.brand-cas .label{align-self:end;margin-bottom:0.75rem;font-family:var(--font-mono);font-size:0.78rem;color:#dffbff}.mascot-3d{position:absolute;bottom:3.2rem;left:50%;transform:translateX(-50%);width:7.5rem;height:7.8rem;display:grid;place-items:center;filter:saturate(1.04) contrast(1.18) drop-shadow(0 0 0.8px rgba(255,255,255,1)) drop-shadow(0 22px 26px rgba(0,0,0,0.42));z-index:3}.mascot-3d::before{content:'';position:absolute;left:0.9rem;right:0.9rem;bottom:0.25rem;height:1rem;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.36),transparent 68%);filter:blur(3px)}.mascot-3d img{position:relative;z-index:1;max-width:100%;max-height:100%;object-fit:contain}.mascot-3d--light img{mix-blend-mode:multiply;filter:saturate(1.08) contrast(1.18)}.mascot-3d--dark img{mix-blend-mode:screen;filter:saturate(1.04) contrast(1.18)}.city-node[data-index="1"] .brand-3d,.city-node[data-index="3"] .mascot-3d{bottom:4rem}.city-node[data-index="2"] .mascot-3d{bottom:2.5rem}.city-node[data-index="4"] .mascot-3d{bottom:3.2rem}
+.brand-3d{position:absolute;bottom:3.3rem;left:50%;z-index:4;transform:translateX(-50%);width:7rem;height:7.4rem;opacity:1;filter:saturate(1.35) contrast(1.16) drop-shadow(0 0 0.9px rgba(255,255,255,0.9)) drop-shadow(0 0 3px rgba(0,240,255,0.32)) drop-shadow(0 18px 20px rgba(0,0,0,0.26))}.brand-3d::before{content:'';position:absolute;left:0.6rem;right:0.6rem;bottom:0.25rem;height:1rem;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.34),transparent 68%);filter:blur(3px)}.brand-3d .mark{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) rotateX(8deg) rotateZ(-6deg);width:5.7rem;height:5.7rem;border-radius:1.45rem;display:grid;place-items:center;box-shadow:inset -0.65rem -0.8rem 0 rgba(0,0,0,0.14),inset 0.35rem 0.35rem 0 rgba(255,255,255,0.16),0 1.1rem 1.8rem rgba(0,0,0,0.20)}.brand-3d .mark::after{content:'';position:absolute;right:-0.42rem;top:0.42rem;width:0.44rem;height:4.82rem;border-radius:0 0.9rem 0.9rem 0;background:rgba(0,0,0,0.24);clip-path:polygon(0 0,100% 10%,100% 100%,0 90%)}.brand-3d .shine{position:absolute;left:1.5rem;top:1.18rem;width:2.6rem;height:0.55rem;border-radius:999px;background:rgba(255,255,255,0.24);transform:rotate(-16deg)}.brand-3d .label{position:relative;z-index:2;font-weight:800;letter-spacing:-0.04em;text-shadow:0 2px 10px rgba(0,0,0,0.22)}.brand-cas .mark{background:linear-gradient(145deg,#62617d,#26243f 58%,#121020);border-radius:0.7rem 0.7rem 0.35rem 0.35rem;opacity:1}.brand-cas .mark::before{content:'';position:absolute;left:0.75rem;right:0.75rem;top:0.9rem;height:0.35rem;border-radius:999px;background:#8df7ff;box-shadow:0 0.85rem 0 rgba(141,247,255,.58),0 1.7rem 0 rgba(255,106,213,.48),0 2.55rem 0 rgba(141,247,255,.38)}.brand-cas .label{align-self:end;margin-bottom:0.75rem;font-family:var(--font-mono);font-size:0.78rem;color:#dffbff}.mascot-3d{position:absolute;bottom:3.2rem;left:50%;transform:translateX(-50%);width:7.5rem;height:7.8rem;display:grid;place-items:center;filter:saturate(1.04) contrast(1.18) drop-shadow(0 0 0.8px rgba(255,255,255,1)) drop-shadow(0 22px 26px rgba(0,0,0,0.42));z-index:3}.mascot-3d::before{content:'';position:absolute;left:0.9rem;right:0.9rem;bottom:0.25rem;height:1rem;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.36),transparent 68%);filter:blur(3px)}.mascot-3d img{position:relative;z-index:1;max-width:100%;max-height:100%;object-fit:contain}.mascot-3d--light img{mix-blend-mode:multiply;filter:saturate(1.08) contrast(1.18)}.mascot-3d--dark img{mix-blend-mode:screen;filter:saturate(1.04) contrast(1.18)}.city-node[data-index="1"] .brand-3d,.city-node[data-index="3"] .mascot-3d{bottom:4rem}.city-node[data-index="2"] .mascot-3d{bottom:2.5rem}.city-node[data-index="4"] .mascot-3d{bottom:3.15rem;transform:translateX(-50%) scale(0.704);filter:saturate(1.42) contrast(0.86) brightness(1.06) drop-shadow(0 16px 20px rgba(0,0,0,0.28))}.city-node[data-index="4"] .mascot-3d--light img{filter:saturate(1.45) contrast(0.89)}
 .software-lab .monitor{left:1.25rem;top:0.75rem;width:4.25rem;height:5.35rem;border-radius:0.8rem 0.8rem 0.35rem 0.35rem;background:linear-gradient(145deg,#4b466f,#17152b 62%,#0b0a15);border:1px solid rgba(0,240,255,0.18);box-shadow:inset -0.65rem -0.85rem 0 rgba(0,0,0,0.18),0 1.1rem 1.4rem rgba(0,0,0,0.22)}.software-lab .monitor::before{content:'';position:absolute;left:0.62rem;right:0.62rem;top:0.72rem;height:0.26rem;border-radius:999px;background:rgba(0,240,255,0.42);box-shadow:0 0.9rem 0 rgba(0,240,255,0.22),0 1.8rem 0 rgba(255,0,170,0.20),0 2.7rem 0 rgba(255,255,255,0.10)}.software-lab .monitor::after{content:'';position:absolute;right:-0.82rem;top:0.62rem;width:0.82rem;height:4.8rem;background:linear-gradient(145deg,#2b2949,#0f0d1e);clip-path:polygon(0 0,100% 14%,100% 100%,0 88%)}.software-lab .chip{left:0.62rem;bottom:0.42rem;width:5.3rem;height:0.55rem;border-radius:50%;background:rgba(0,240,255,0.15);box-shadow:0 0 24px rgba(0,240,255,0.14)}.software-lab .orbit{right:0.5rem;top:1.15rem;width:1.5rem;height:1.5rem;border-radius:999px;background:linear-gradient(145deg,var(--color-cyan),#725cff);box-shadow:0 0 18px rgba(0,240,255,0.32)}
 .vivo-device .phone{left:0.85rem;top:1.05rem;width:5.3rem;height:4.35rem;border-radius:1.25rem;background:linear-gradient(145deg,#32b8ff,#1269ff 58%,#073690);border:1px solid rgba(255,255,255,0.20);box-shadow:inset -0.6rem -0.8rem 0 rgba(0,0,0,0.12),0 1.1rem 1.6rem rgba(0,70,255,0.24);transform:rotate(-8deg)}.vivo-device .phone::before{content:'vivo';position:absolute;inset:0;display:grid;place-items:center;font-size:1.55rem;font-weight:800;letter-spacing:0.02em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,0.18)}.vivo-device .phone::after{content:'';position:absolute;right:-0.62rem;top:0.52rem;width:0.62rem;height:3.6rem;background:linear-gradient(145deg,#0752d6,#03286d);clip-path:polygon(0 0,100% 14%,100% 100%,0 88%)}.vivo-device .web{right:0.35rem;bottom:0.8rem;width:3rem;height:2.1rem;border-radius:0.48rem;background:rgba(6,20,55,0.92);border:1px solid rgba(0,240,255,0.20);box-shadow:0 0 18px rgba(0,240,255,0.12)}.vivo-device .web::before{content:'';position:absolute;left:0.45rem;right:0.45rem;top:0.55rem;height:0.36rem;border-radius:999px;background:rgba(0,240,255,0.46);box-shadow:0 0.62rem 0 rgba(255,255,255,0.15)}.vivo-device .beam{left:3.1rem;top:4.45rem;width:2.3rem;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.7),transparent);transform:rotate(20deg);box-shadow:0 0 14px rgba(0,240,255,0.45)}
 .netease-media .logo{left:1.05rem;top:0.95rem;width:4.35rem;height:4.8rem;border-radius:2.2rem 2.2rem 1.4rem 1.4rem;background:linear-gradient(145deg,#ff4b4f,#b90f22 62%,#70101a);border:1px solid rgba(255,255,255,0.16);box-shadow:inset -0.55rem -0.75rem 0 rgba(0,0,0,0.14),0 1rem 1.5rem rgba(185,15,34,0.22)}.netease-media .logo::before{content:'';position:absolute;left:0.82rem;top:-0.25rem;width:0.9rem;height:1.25rem;border-radius:999px;background:#ff6468;transform:rotate(-28deg);box-shadow:1.8rem 0.05rem 0 #ff6468}.netease-media .logo::after{content:'';position:absolute;left:1.15rem;right:1.15rem;top:1.72rem;height:0.42rem;border-radius:999px;background:#fff;box-shadow:0 0.88rem 0 #fff}.netease-media .feed{right:0.4rem;bottom:0.92rem;width:2.3rem;height:1.55rem;border-radius:0.8rem;background:linear-gradient(145deg,#fff,#ffc7ca);border:1px solid rgba(255,255,255,0.28);box-shadow:0 0.9rem 1.3rem rgba(0,0,0,0.18)}.netease-media .feed::before{content:'';position:absolute;left:0.62rem;top:0.48rem;width:0.28rem;height:0.28rem;border-radius:999px;background:#8d0c18;box-shadow:0.78rem 0 0 #8d0c18}.netease-media .bubble{right:1.1rem;top:1.15rem;width:1.2rem;height:1.2rem;border-radius:999px;background:#ff9aa0;box-shadow:0 0 14px rgba(255,75,79,0.25)}
@@ -626,7 +627,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 .city-tooltip{position:absolute;left:50%;top:2.65rem;z-index:1000;width:min(20rem,84vw);transform:translate(-50%,0.8rem);opacity:0;pointer-events:none;border:1px solid rgba(0,240,255,0.16);border-radius:22px;background:rgba(15,10,28,0.86);backdrop-filter:blur(16px);box-shadow:0 24px 70px rgba(0,0,0,0.32);padding:1rem;transition:opacity .22s ease,transform .22s ease}.city-node[data-index="2"] .city-tooltip,.city-node[data-index="4"] .city-tooltip{top:2.85rem}.city-node[data-index="1"] .city-tooltip{top:-3.45rem}.city-node[data-index="3"] .city-tooltip{top:-5.25rem}.city-node:hover .city-tooltip,.city-node:focus-within .city-tooltip{opacity:1;transform:translate(-50%,0);pointer-events:auto}.city-tooltip-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid rgba(0,240,255,0.12);margin-bottom:0.85rem;box-shadow:0 14px 34px rgba(0,0,0,0.24)}.city-tooltip-title-row{display:flex;align-items:center;gap:0.5rem}.city-tooltip h3{font-size:1.04rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}.city-detail-link{flex:0 0 auto;display:inline-flex;align-items:center;border:1px solid rgba(0,240,255,0.22);border-radius:999px;padding:0.26rem 1.13rem;background:rgba(0,240,255,0.08);color:var(--color-cyan);font-size:0.68rem;font-weight:700;white-space:nowrap;width:auto}.city-detail-link:hover{background:rgba(0,240,255,0.15);border-color:rgba(0,240,255,0.34)}.city-tooltip dl{display:grid;gap:0.4rem;margin-top:0.65rem}.city-tooltip dl div{display:grid;grid-template-columns:3.7rem 1fr;gap:0.6rem}.city-tooltip dt{font-size:0.72rem;color:var(--color-text-soft)}.city-tooltip dd{font-size:0.78rem;color:var(--color-text-secondary);line-height:1.55}.city-tooltip p{font-size:0.8rem;color:var(--color-text-secondary);line-height:1.65;margin-top:0.65rem;border-top:1px solid var(--color-border);padding-top:0.65rem}.city-detail-link:hover{background:rgba(0,240,255,0.15);border-color:rgba(0,240,255,0.34)}
 .city-tooltip-close{display:none;position:absolute;top:0.55rem;right:0.55rem;z-index:3;width:1.75rem;height:1.75rem;place-items:center;padding:0;border:1px solid rgba(255,255,255,0.22);border-radius:999px;background:rgba(10,8,20,0.58);color:#fff;font-size:0.78rem;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .18s,border-color .18s}
 .city-tooltip-close:hover{background:rgba(255,72,110,0.85);border-color:rgba(255,140,165,0.7)}
-@media(max-width:960px){.experience-map-head{flex-direction:row;align-items:flex-start;gap:.6rem;padding-bottom:.8rem}.city-map-stage{height:auto;display:grid;gap:1rem;margin-top:1.2rem}.city-route,.map-cloud{display:none}.city-node{position:relative;left:auto!important;top:auto!important;transform:none;width:100%;min-height:13rem;cursor:pointer}.city-number{left:1rem;top:1rem;transform:none}.city-tooltip{position:relative;left:auto;top:auto;bottom:auto;transform:none;opacity:1;pointer-events:none;display:none;width:100%;margin-top:0.8rem}.city-node.open .city-tooltip{display:block;pointer-events:auto}.city-name-chip{left:1rem}.city-tooltip-close{display:grid}}
+@media(max-width:960px){.experience-map-head{flex-direction:row;align-items:flex-start;gap:.6rem;padding-bottom:.8rem}.city-map-stage{height:auto;display:grid;gap:1rem;margin-top:1.2rem}.city-route,.map-cloud{display:none}.city-node{position:relative;left:auto!important;top:auto!important;transform:none;width:100%;min-height:13rem;cursor:pointer}.city-number{left:1rem;top:1rem;transform:none}.city-tooltip{position:relative;left:auto;top:auto;bottom:auto;transform:none;opacity:1;pointer-events:none;display:none;width:100%;margin-top:0.8rem}.city-node.open .city-tooltip{display:block;pointer-events:auto}.city-node:hover .city-tooltip,.city-node:focus-within .city-tooltip{transform:none}.city-name-chip{left:1rem}.city-tooltip-close{display:grid}}
 .experience-detail-stack{display:grid;gap:1.2rem;margin-top:1.25rem}
 .intern-detail-card{position:relative;overflow:hidden;border:1px solid var(--color-border-strong);border-radius:26px;background:var(--color-surface);box-shadow:0 22px 72px rgba(0,0,0,0.10);padding:clamp(1.35rem,3vw,2.35rem)}
 [data-theme="dark"] .intern-detail-card{background:linear-gradient(135deg,rgba(18,10,32,0.76),rgba(13,8,24,0.58) 58%,rgba(22,13,38,0.72));border-color:rgba(255,0,170,0.12);box-shadow:inset 0 0 34px rgba(255,0,170,0.035),0 22px 72px rgba(0,0,0,0.22)}
@@ -1033,7 +1034,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
             <div class="education-point">
               <span class="education-point-num">03</span>
               <h3 data-i18n="edu_pt3_title">AI产品实战经验</h3>
-              <p data-i18n="edu_pt3_desc">叠加三段产品实习经历（包含AI产品专项实战），融合用户体验、产品策略与技术落地多元视角，成为我深耕AI产品赛道的核心竞争优势。</p>
+              <p data-i18n="edu_pt3_desc">叠加四段产品实习经历（包含AI产品专项实战），融合用户体验、产品策略与技术落地多元视角，成为我深耕AI产品赛道的核心竞争优势。</p>
             </div>
           </div>
         </div>
@@ -1091,33 +1092,33 @@ html[data-nav-mode="side"] .top-navbar{display:none}
         <span class="travel-icon travel-foot" aria-hidden="true"><svg viewBox="0 0 1024 1024" fill="currentColor"><path d="M426.80832 115.688702c27.197344-1.299873 48.195293-27.897276 45.795527-57.894346-2.499756-31.296944-29.997071-58.294307-58.394297-57.494385-28.497217 0.799922-46.095498 24.297627-43.395762 57.694365 2.899717 34.796602 26.497412 59.094229 55.994532 57.694366zM206.02988 141.586173c20.897959 7.299287 45.095596-5.899424 52.394883-28.597207 8.099209-25.197539-4.39957-52.294893-27.697295-60.294112-21.897862-7.499268-44.995606 4.699541-52.494874 27.697295-7.599258 23.497705 6.099404 53.594766 27.797286 61.194024zM300.120691 111.789083c22.597793 4.599551 45.895518-12.398789 50.295089-36.896397 4.899522-27.197344-11.798848-53.594766-37.096378-58.594278-23.697686-4.699541-45.995508 11.198906-50.595059 35.996485-4.699541 25.39752 13.798652 54.694659 37.396348 59.49419z"/><path d="M158.434528 191.981252c18.798164-0.699932 33.89669-18.698174 32.696807-38.896202-1.399863-22.497803-19.698076-40.096084-40.696026-39.196172-19.698076 0.899912-34.19666 17.698272-32.996778 38.29626 1.199883 20.897959 21.39791 40.496045 40.995997 39.796114zM148.935456 225.37799c-3.799629-18.598184-13.598672-35.196563-39.396153-32.896787-24.197637 2.099795-30.097061 19.298115-27.897276 37.696319 2.299775 18.798164 14.098623 33.296748 37.196368 32.296846 24.297627-1.099893 30.697002-17.798262 30.097061-37.096378zM367.6141 194.081047c12.59877 0 22.597793 2.399766 26.597403 6.499365 6.799336 6.799336 10.998926 27.397324 10.898935 39.196172v0.999903c-0.499951 8.59916-2.299775 17.19832-5.099502 24.897568-7.599258 20.997949-10.398984 28.897178-25.097549 55.694561-38.39625 70.193145-39.396153 142.786056-39.796113 173.783029-0.699932 51.09501-1.299873 91.491065 27.197344 133.087004 5.199492 7.499268 10.298994 13.598672 14.398594 18.398203 6.399375 7.499268 8.29919 9.999024 10.199004 15.098525 1.499854 4.29958 3.299678 13.098721 2.699736 18.398204-0.699932 5.799434-5.799434 15.598477-15.498487 24.297627-10.398984 9.299092-23.597696 14.998535-36.096474 15.598477-0.799922 0-1.599844 0.09999-2.399766 0.09999-24.097647 0-43.595743-18.898154-50.695049-31.596915-5.499463-9.699053-7.799238-22.897764-8.699151-27.797285-0.799922-4.29958-1.299873-8.49917-1.499853-12.59877-0.499951-9.899033 0-19.798067 1.599843-29.497119l0.099991-0.699932c8.899131-56.794454-24.297627-152.485109-61.693976-217.678742-1.299873-2.299775-2.699736-4.699541-3.999609-6.899326-9.999024-17.09833-18.598184-31.796895-19.098135-50.595059 0-2.299775 0.19998-8.099209 0.899912-13.198711 3.699639-27.897276 15.398496-50.495069 37.096377-71.193048 21.29792-20.398008 52.194903-38.796211 94.490773-56.294502 4.799531-2.199785 23.397715-7.999219 43.495752-7.999219m0-63.993751c-28.397227 0-55.19461 7.399277-68.09335 12.69876-88.791329 36.796407-158.684503 87.991407-170.483351 178.28259-1.499854 11.298897-1.399863 22.097842-1.399864 22.097842 0.699932 39.596133 18.898154 66.693487 31.596915 88.791329 37.096377 64.693682 59.094229 142.986037 53.994727 175.982814-0.599941 3.899619-3.499658 20.697979-2.399766 43.195781 0.299971 6.299385 0.999902 13.198711 2.399766 20.797969 1.399863 7.999219 5.199492 28.797188 15.998437 47.995313 16.79836 29.6971 55.594571 64.093741 106.489601 64.093741 1.799824 0 3.699639 0 5.499463-0.09999 57.994336-2.799727 106.28962-50.095108 111.989064-95.990626 2.799727-22.897764-4.999512-45.095596-5.999414-47.995313-8.59916-23.697686-21.497901-32.696807-31.996876-47.995313-16.99834-24.797578-16.598379-50.395079-15.998437-95.990626 0.399961-27.997266 1.199883-87.691436 31.996875-143.985939 16.99834-31.096963 21.09794-42.29587 29.097158-64.693682 2.899717-7.999219 7.599258-23.097744 8.699151-42.795821 0.09999-1.599844 0.09999-2.999707 0.09999-4.49956 0-4.999512-0.399961-55.594571-29.79709-84.79172-19.098135-19.098135-46.095498-25.097549-71.692999-25.097549zM653.186212 298.070892c2.699736-33.396739-14.898545-56.894444-43.395762-57.694366-28.397227-0.799922-55.894542 26.197442-58.394297 57.494385-2.399766 29.997071 18.598184 56.594473 45.795527 57.894346 29.497119 1.299873 53.094815-22.997754 55.994532-57.694365zM817.97012 381.562738c21.697881-7.599258 35.396543-37.696319 27.797286-61.094034-7.499268-22.997754-30.597012-35.196563-52.494874-27.697295-23.397715 7.999219-35.796504 35.096573-27.697295 60.294112 7.199297 22.597793 31.496924 35.796504 52.394883 28.497217zM723.979299 351.765648c23.597696-4.799531 41.995899-34.19666 37.396348-59.49419-4.599551-24.897569-26.897373-40.796016-50.595059-35.996485-25.29753 4.999512-41.995899 31.396934-37.096377 58.594278 4.29958 24.497608 27.597305 41.595938 50.295088 36.896397z"/><path d="M865.665462 431.957817c19.598086 0.699932 39.796114-18.898154 40.995997-39.796114 1.199883-20.497998-13.398692-37.396348-32.996778-38.29626-20.997949-0.899912-39.296162 16.698369-40.696026 39.196172-1.299873 20.198028 13.898643 38.19627 32.696807 38.896202zM875.064544 465.354555c-0.699932 19.198125 5.699443 35.996485 30.097061 36.996387 23.097744 0.999902 34.896592-13.498682 37.196368-32.296846 2.199785-18.398203-3.699639-35.596524-27.897276-37.696318-25.797481-2.199785-35.596524 14.398594-39.396153 32.996777zM894.962601 561.04521c-11.798848-90.191192-81.692022-141.386193-170.483351-178.282589-12.89874-5.299482-39.696123-12.69876-68.09335-12.69876-25.69749 0-52.594864 5.999414-71.792989 25.097549-29.397129 29.297139-29.79709 79.792208-29.79709 84.79172 0 1.399863 0 2.899717 0.09999 4.49956 1.199883 19.698076 5.799434 34.796602 8.69915 42.795821 8.099209 22.397813 12.098818 33.496729 29.097159 64.693682 30.796992 56.294502 31.596914 115.988673 31.996875 143.985939 0.599941 45.595547 0.999902 71.193048-15.998437 95.990626-10.498975 15.298506-23.397715 24.297627-31.996876 47.995313-0.999902 2.899717-8.799141 25.097549-5.999414 47.995313 5.699443 45.895518 53.994727 93.190899 111.989064 95.990626 1.899814 0.09999 3.699639 0.09999 5.499463 0.09999 50.89503 0 89.691241-34.396641 106.4896-64.093741 10.798945-19.198125 14.598574-39.996094 15.998438-47.995313 1.399863-7.599258 2.099795-14.398594 2.399766-20.797969 1.099893-22.497803-1.799824-39.396153-2.399766-43.195781-5.199492-32.996778 16.89835-111.289132 53.994727-175.982815 12.69876-22.097842 30.896983-49.195196 31.596914-88.791329 0.19998 0 0.19998-10.798945-1.299873-22.097842z m-81.592032 72.19295c-1.299873 2.299775-2.699736 4.599551-3.999609 6.899327-37.396348 65.193633-70.593106 160.884289-61.693975 217.678742l0.09999 0.699932c1.499854 9.699053 2.099795 19.598086 1.599844 29.497119-0.19998 4.0996-0.699932 8.29919-1.499854 12.59877-0.899912 4.999512-3.299678 18.098233-8.69915 27.797285-7.199297 12.69876-26.597403 31.596914-50.69505 31.596914-0.799922 0-1.599844 0-2.399765-0.09999-12.498779-0.599941-25.69749-6.299385-36.096475-15.598477-9.699053-8.69915-14.798555-18.498194-15.498487-24.297627-0.699932-5.299482 1.099893-13.998633 2.699737-18.398203 1.899814-5.199492 3.799629-7.599258 10.199004-15.098526 4.0996-4.899522 9.299092-10.898936 14.398594-18.498193 28.497217-41.495948 27.897276-81.892003 27.197344-133.087003-0.399961-30.996973-1.399863-103.589884-39.796114-173.783029-14.698565-26.797383-17.498291-34.696612-25.097549-55.694561-2.799727-7.799238-4.499561-16.398399-5.099502-24.897569v-0.999902c0-11.798848 4.0996-32.396836 10.898935-39.196173 3.999609-3.999609 13.998633-6.499365 26.597403-6.499365 20.098037 0 38.696221 5.799434 43.595743 7.899229 42.195879 17.498291 73.092862 35.896494 94.390782 56.294502 21.697881 20.697979 33.496729 43.295772 37.096377 71.193048 0.699932 5.099502 0.899912 10.898936 0.899912 13.198711-0.499951 18.998145-9.199102 33.696709-19.098135 50.795039z"/></svg></span>
         <span class="travel-dot travel-dot-a"></span><span class="travel-dot travel-dot-b"></span><span class="travel-dot travel-dot-c"></span>
 
-        <div class="city-node" data-index="1" aria-label="中国科学院软件研究所">
+        <div class="city-node" data-index="1" aria-label="vivo（维沃通信）">
           <span class="city-number">01</span>
           <span class="city-landmark"><img src="nanjing2.png" alt="南京城市建筑" loading="eager"></span>
-          <span class="brand-3d brand-cas"><span class="mark"><span class="shine"></span><span class="label">LAB</span></span></span>
-          <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip1_name">中科院软件所</strong><span data-i18n="tt1_city">南京</span></span>
-          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="cas.jpg" alt="中国科学院软件研究所配图" loading="lazy"><h3 data-i18n="tt1_name">中国科学院软件研究所</h3><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt1_city">南京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt1_role">AI设计师</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.03 - 2025.06</dd></div></dl><p data-i18n="tt1_desc">在软件部门参与 AI 设计相关工作，围绕智能产品体验与设计落地积累第一段 AI 实操经验。</p></div>
-        </div>
-        <div class="city-node" data-index="2" aria-label="vivo（维沃通信）">
-          <span class="city-number">02</span>
-          <span class="city-landmark"><img src="shenzhen2.png" alt="深圳城市建筑" loading="eager"></span>
           <span class="mascot-3d mascot-3d--light"><img src="vivo-mascot.png" alt="vivo 吉祥物" loading="eager"></span>
-          <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip2_name">vivo互联网</strong><span data-i18n="tt2_city">深圳</span></span>
-          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="vivo.jpg" alt="vivo 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt2_name">vivo（维沃通信）互联网</h3><a class="city-detail-link" href="#intern-vivo" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt2_city">深圳</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt2_role">中后台数据产品</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.06 - 2025.10</dd></div></dl><p data-i18n="tt2_desc">参与用户&amp;内容双圈选分析平台等数据产品工作，推进 0-1 数据工具与业务提效。</p></div>
+          <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip1_name">vivo 互联网</strong><span data-i18n="tt1_city">南京</span></span>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="vivo.jpg" alt="vivo 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt1_name">vivo（维沃通信）互联网</h3><a class="city-detail-link" href="#intern-vivo" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt1_city">南京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt1_role">中后台数据产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.06 - 2025.10</dd></div></dl><p data-i18n="tt1_desc">参与用户&amp;内容双圈选分析平台等数据产品工作，推进 0-1 数据工具与业务提效。</p></div>
         </div>
-        <div class="city-node" data-index="3" aria-label="网易传媒">
-          <span class="city-number">03</span>
-<span class="city-landmark"><img src="beijing2.png" alt="北京城市建筑" loading="eager"></span>
-          <span class="mascot-3d mascot-3d--light"><img src="netease-mascot.png" alt="网易吉祥物" loading="eager"></span>
-          <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip3_name">网易传媒</strong><span data-i18n="tt3_city">北京</span></span>
-          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="netease.jpg" alt="网易传媒配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt3_name">网易传媒北京有限公司</h3><a class="city-detail-link" href="#intern-netease" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt3_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt3_role">AI 产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.10 - 2026.01</dd></div></dl><p data-i18n="tt3_desc">围绕网易小蜜蜂 AI 记录项目，推进端云协同、多模态 AI 与社区产品的 0-1 落地。</p></div>
-        </div>
-        <div class="city-node" data-index="4" aria-label="美团 Keeta">
-          <span class="city-number">04</span>
+        <div class="city-node" data-index="2" aria-label="网易传媒">
+          <span class="city-number">02</span>
           <span class="city-landmark"><img src="beijing2.png" alt="北京城市建筑" loading="eager"></span>
+          <span class="mascot-3d mascot-3d--light"><img src="netease-mascot.png" alt="网易吉祥物" loading="eager"></span>
+          <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip2_name">网易传媒</strong><span data-i18n="tt2_city">北京</span></span>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="netease.jpg" alt="网易传媒配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt2_name">网易传媒（北京）有限公司</h3><a class="city-detail-link" href="#intern-netease" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt2_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt2_role">AI 产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2025.10 - 2026.01</dd></div></dl><p data-i18n="tt2_desc">围绕网易小蜜蜂 AI 记录项目，推进端云协同、多模态 AI 与社区产品的 0-1 落地。</p></div>
+        </div>
+        <div class="city-node" data-index="3" aria-label="美团 Keeta">
+          <span class="city-number">03</span>
+          <span class="city-landmark"><img src="shanghai2.svg" alt="上海城市建筑" loading="eager"></span>
           <span class="mascot-3d mascot-3d--light"><img src="meituan-mascot.png" alt="美团吉祥物" loading="eager"></span>
-          <span class="city-base"></span><span class="city-name-chip"><strong>美团 Keeta</strong><span data-i18n="tt4_city">北京</span></span>
-          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="meituan.jpg" alt="美团 Keeta 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt4_name">美团Keeta（出海外卖）</h3><a class="city-detail-link" href="#intern-keeta" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt4_city">北京</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt4_role">产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2026.02 - 2026.05</dd></div></dl><p data-i18n="tt4_desc">负责营销优惠券配置端、C 端交易侧、兑换码风控需求及营销平台搭建工作。</p></div>
+          <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip3_name">美团 Keeta</strong><span data-i18n="tt3_city">上海</span></span>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="meituan.jpg" alt="美团 Keeta 配图" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt3_name">美团Keeta（出海外卖）</h3><a class="city-detail-link" href="#intern-keeta" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt3_city">上海</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt3_role">产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2026.02 - 2026.05</dd></div></dl><p data-i18n="tt3_desc">负责营销优惠券配置端、C 端交易侧、兑换码风控需求及营销平台搭建工作。</p></div>
+        </div>
+        <div class="city-node" data-index="4" aria-label="百度 YRstar">
+          <span class="city-number">04</span>
+          <span class="city-landmark"><img src="guangzhou2.svg" alt="广州城市建筑" loading="eager"></span>
+          <span class="mascot-3d mascot-3d--light"><img src="baidu-mascot.png" alt="百度熊小度熊" loading="eager"></span>
+          <span class="city-base"></span><span class="city-name-chip"><strong data-i18n="chip4_name">百度 YRstar</strong><span data-i18n="tt4_city">广州</span></span>
+          <div class="city-tooltip"><button type="button" class="city-tooltip-close" aria-label="关闭">✕</button><img class="city-tooltip-img" src="baidu.jpg" alt="百度 YRstar 工牌照" loading="lazy"><div class="city-tooltip-title-row"><h3 data-i18n="tt4_name">百度 · YY直播海外团播</h3><a class="city-detail-link" href="#intern-baidu" data-i18n="tt_detail">查看详情</a></div><dl><div><dt data-i18n="tt_city">城市</dt><dd data-i18n="tt4_city">广州</dd></div><div><dt data-i18n="tt_role">岗位</dt><dd data-i18n="tt4_role">产品经理</dd></div><div><dt data-i18n="tt_time">时间</dt><dd>2026.06 - 至今</dd></div></dl><p data-i18n="tt4_desc">负责一体化团播软件 YRstar 的玩法模块，0-1 设计「攻守擂 PK」团内对战玩法。</p></div>
         </div>
       </div>
     </div>
@@ -1125,11 +1126,28 @@ html[data-nav-mode="side"] .top-navbar{display:none}
 </section>
 
 <div class="experience-detail-stack" data-reveal>
+  <article class="intern-detail-card" id="intern-baidu">
+    <a href="#selected-project-baidu-pk" style="position:absolute;top:1.35rem;right:1.35rem;z-index:2;display:inline-flex;align-items:center;gap:0.38rem;border:1px solid rgba(0,240,255,0.22);border-radius:999px;padding:0.28rem 0.9rem;background:rgba(0,240,255,0.08);color:var(--color-cyan);font-size:0.68rem;font-weight:700;white-space:nowrap;text-decoration:none;" onmouseover="this.style.background='rgba(0,240,255,0.15)'" onmouseout="this.style.background='rgba(0,240,255,0.08)'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span data-i18n="view_rep">查看代表项目</span></a>
+    <p class="intern-detail-date" data-i18n="bd_date">2026.06 - 至今</p>
+    <h3 class="intern-detail-title" data-i18n="bd_company">百度 · YY直播 海外团播 YRstar</h3>
+    <p class="intern-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span data-i18n="bd_role">产品经理</span></p>
+    <div class="intern-tags"><span class="intern-tag" data-i18n="bd_tag1">海外团播</span><span class="intern-tag" data-i18n="bd_tag2">玩法状态机</span><span class="intern-tag" data-i18n="bd_tag3">实时互动特效</span><span class="intern-tag" data-i18n="bd_tag4">0-1 落地</span></div>
+    <p class="intern-project-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>Projects</p>
+    <div class="intern-project-name" data-i18n="bd_proj_name">YRstar｜团播玩法「攻守擂 PK」</div>
+    <p class="intern-detail-desc" data-i18n="bd_desc">面向东南亚团播市场，0-1 设计一体化团播软件 YRstar 的核心对战玩法「攻守擂 PK」，覆盖后台配置、主播端流程与 C 端特效规范。</p>
+    <div class="intern-bullets">
+      <div class="intern-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span data-i18n="bd_b1">玩法状态机：定义编辑、预备页、进行中、暂停/继续、轮次结算到本场结束的完整生命周期，明确攻守位切换时机，并设计异常心跳下的快照恢复与按团草稿缓存。</span></div>
+      <div class="intern-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span data-i18n="bd_b2">礼物与计票规则：拆解「礼物跟随 / 单礼物绑定」强联动关系（仅 3 种有效组合，无效组合置灰），设计按得票、平分、全归防守方 3 种票权归属模式，适配不同公会的计票与分成习惯。</span></div>
+      <div class="intern-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span data-i18n="bd_b3">复活机制与出场调度：定义连胜准入（默认 3 连胜，3-99 可配）、MC 10 秒确认弹窗、目标票数与倒计时、Reach% 延时；设计 30 人出场队列排序权限、上场互斥勾选与 1-99999 改票失焦校验。</span></div>
+      <div class="intern-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span data-i18n="bd_b4">输出可直接排期的 C 端特效规范：领先方人字脉冲光条（280px、1.5 秒扫过、2 秒间隔）、大额礼物彗星冲击波三层结构、倒计时剩 1 分钟变黄 / 剩 10 秒变红、胜利皇冠翅膀；YRstar Q3 月均活跃公会 500+，营收 30w+。</span></div>
+    </div>
+  </article>
+
   <article class="intern-detail-card" id="intern-keeta">
-    <a href="#selected-project-keeta-coupon" style="position:absolute;top:1.35rem;right:1.35rem;z-index:2;display:inline-flex;align-items:center;gap:0.38rem;border:1px solid rgba(0,240,255,0.22);border-radius:999px;padding:0.28rem 0.9rem;background:rgba(0,240,255,0.08);color:var(--color-cyan);font-size:0.68rem;font-weight:700;white-space:nowrap;text-decoration:none;" onmouseover="this.style.background='rgba(0,240,255,0.15)'" onmouseout="this.style.background='rgba(0,240,255,0.08)'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>查看代表项目</a>
+    <a href="#selected-project-keeta-coupon" style="position:absolute;top:1.35rem;right:1.35rem;z-index:2;display:inline-flex;align-items:center;gap:0.38rem;border:1px solid rgba(0,240,255,0.22);border-radius:999px;padding:0.28rem 0.9rem;background:rgba(0,240,255,0.08);color:var(--color-cyan);font-size:0.68rem;font-weight:700;white-space:nowrap;text-decoration:none;" onmouseover="this.style.background='rgba(0,240,255,0.15)'" onmouseout="this.style.background='rgba(0,240,255,0.08)'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span data-i18n="view_rep">查看代表项目</span></a>
     <p class="intern-detail-date">2026.02 - 2026.05</p>
-    <h3 class="intern-detail-title" data-i18n="tt4_name">美团Keeta（出海外卖）</h3>
-    <p class="intern-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span data-i18n="tt4_role">产品经理</span></p>
+    <h3 class="intern-detail-title" data-i18n="k_company">美团Keeta（出海外卖）</h3>
+    <p class="intern-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span data-i18n="k_role">产品经理</span></p>
     <div class="intern-tags"><span class="intern-tag" data-i18n="k_tag1">营销平台</span><span class="intern-tag" data-i18n="k_tag2">优惠券系统</span><span class="intern-tag" data-i18n="k_tag3">风控策略</span><span class="intern-tag" data-i18n="k_tag4">多语种适配</span></div>
     <p class="intern-project-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>Projects</p>
     <div class="intern-project-name" data-i18n="k_proj_name">美团Keeta｜营销平台优惠券系统</div>
@@ -1142,10 +1160,10 @@ html[data-nav-mode="side"] .top-navbar{display:none}
   </article>
 
   <article class="intern-detail-card" id="intern-netease">
-    <a href="#selected-project-netease-bee" style="position:absolute;top:1.35rem;right:1.35rem;z-index:2;display:inline-flex;align-items:center;gap:0.38rem;border:1px solid rgba(0,240,255,0.22);border-radius:999px;padding:0.28rem 0.9rem;background:rgba(0,240,255,0.08);color:var(--color-cyan);font-size:0.68rem;font-weight:700;white-space:nowrap;text-decoration:none;" onmouseover="this.style.background='rgba(0,240,255,0.15)'" onmouseout="this.style.background='rgba(0,240,255,0.08)'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>查看代表项目</a>
+    <a href="#selected-project-netease-bee" style="position:absolute;top:1.35rem;right:1.35rem;z-index:2;display:inline-flex;align-items:center;gap:0.38rem;border:1px solid rgba(0,240,255,0.22);border-radius:999px;padding:0.28rem 0.9rem;background:rgba(0,240,255,0.08);color:var(--color-cyan);font-size:0.68rem;font-weight:700;white-space:nowrap;text-decoration:none;" onmouseover="this.style.background='rgba(0,240,255,0.15)'" onmouseout="this.style.background='rgba(0,240,255,0.08)'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span data-i18n="view_rep">查看代表项目</span></a>
     <p class="intern-detail-date">2025.10 - 2026.01</p>
-    <h3 class="intern-detail-title" data-i18n="tt3_name">网易传媒北京有限公司</h3>
-    <p class="intern-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span data-i18n="tt3_role">AI 产品经理</span></p>
+    <h3 class="intern-detail-title" data-i18n="n_company">网易传媒北京有限公司</h3>
+    <p class="intern-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span data-i18n="n_role">AI 产品经理</span></p>
     <div class="intern-tags"><span class="intern-tag" data-i18n="n_tag1">端云协同</span><span class="intern-tag" data-i18n="n_tag2">多模态 AI</span><span class="intern-tag" data-i18n="n_tag3">0-1 落地</span><span class="intern-tag" data-i18n="n_tag4">社区产品</span></div>
     <p class="intern-project-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>Projects</p>
     <div class="intern-project-name" data-i18n="n_proj_name">网易小蜜蜂｜AI记录</div>
@@ -1160,7 +1178,7 @@ html[data-nav-mode="side"] .top-navbar{display:none}
   <article class="intern-detail-card" id="intern-vivo">
     <p class="intern-detail-date">2025.06 - 2025.10</p>
     <h3 class="intern-detail-title" data-i18n="v_title">vivo（维沃通信）互联网内容分发事业部</h3>
-    <p class="intern-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span data-i18n="tt2_role">中后台数据产品</span></p>
+    <p class="intern-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span data-i18n="v_role">中后台数据产品</span></p>
     <div class="intern-tags"><span class="intern-tag" data-i18n="v_tag1">用户&amp;内容双圈选分析平台</span><span class="intern-tag" data-i18n="v_tag2">0-1 数据工具</span><span class="intern-tag" data-i18n="v_tag3">业务提效</span><span class="intern-tag" data-i18n="v_tag4">内容质量提升</span></div>
     <p class="intern-project-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>Projects</p>
     <div class="intern-project-name" data-i18n="v_proj_name">用户&amp;内容双圈选分析平台｜数据自助分析工具</div>
@@ -1180,8 +1198,8 @@ html[data-nav-mode="side"] .top-navbar{display:none}
     <div style="display:flex;flex-direction:column;gap:1rem">
       <span class="eyebrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"></path></svg>Selected Projects</span>
       <div style="max-width:72ch">
-        <h2 class="section-title" data-i18n="proj_title">代表性的三类项目实践</h2>
-        <p class="body-copy" style="max-width:60ch;margin-top:0.75rem" data-i18n="proj_sub">覆盖出海营销平台、AI 记录工具与无障碍体验策划，呈现从平台搭建到用户体验落地的多类实践。</p>
+        <h2 class="section-title" data-i18n="proj_title">代表性的四类项目实践</h2>
+        <p class="body-copy" style="max-width:60ch;margin-top:0.75rem" data-i18n="proj_sub">覆盖海外团播玩法、出海营销平台、AI 记录工具与无障碍体验策划，呈现从 0-1 玩法设计到用户体验落地的多类实践。</p>
       </div>
     </div>
     <div style="display:grid;gap:1rem">
@@ -1241,6 +1259,36 @@ html[data-nav-mode="side"] .top-navbar{display:none}
               <span class="pill" data-i18n="n_tag4">社区产品</span>
             </div>
             <button class="ui-button ui-button-secondary ui-button-compact" onclick="window.open('netease-ai-record.html','_blank')" data-i18n="btn_view_case">查看完整案例</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Baidu YRstar Duel Dance PK -->
+      <div class="ui-card" id="selected-project-baidu-pk">
+        <div style="display:grid;gap:1.5rem">
+          <div class="ui-panel-muted2" style="display:inline-flex;align-items:center;gap:0.5rem;align-self:start;padding:0.3rem 0.8rem;border-radius:999px">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            <span class="meta-label" data-i18n="proj4_badge">出海团播玩法</span>
+          </div>
+          <div>
+            <p class="meta-label meta-label-accent" data-i18n="proj4_meta">百度 · YY直播 YRstar｜2026.06 - 至今</p>
+            <h3 style="font-size:var(--text-card-title);font-weight:600;margin-top:0.25rem" data-i18n="bd_proj_name">YRstar｜团播玩法「攻守擂 PK」</h3>
+            <p class="body-copy" style="margin-top:0.5rem" data-i18n="proj4_lead">一体化团播软件 YRstar 的核心对战玩法，覆盖后台配置、主播端流程与 C 端特效规范，服务东南亚团播市场。</p>
+          </div>
+          <div style="display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+            <div><p class="meta-label" style="margin-bottom:0.3rem" data-i18n="proj_bg_label">项目背景</p><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_bg">东南亚团播一场直播要在 6-7 个割裂系统间切换，计票依赖第三方工具、礼物归属混乱，主播与公会上手成本高。</p></div>
+            <div><p class="meta-label" style="margin-bottom:0.3rem" data-i18n="proj_role_label">我的职责</p><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_role">作为产品经理，0-1 负责「攻守擂 PK」玩法设计，输出 PRD、交互规则与可实现级特效规范，并与研发、设计及海外公会对齐。</p></div>
+            <div><p class="meta-label" style="margin-bottom:0.3rem" data-i18n="proj_action_label">关键动作</p><div style="display:grid;gap:0.3rem"><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_a1">设计玩法全生命周期状态机，明确攻守位切换时机、异常心跳快照恢复与按团草稿缓存。</p><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_a2">拆解礼物跟随 / 单礼物绑定强联动与 3 种票权归属，定义复活机制、30 人出场队列与改票校验规则。</p><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_a3">定义领先光条、彗星冲击波、倒计时变色、胜利结算等 C 端特效参数，可直接交付研发排期。</p></div></div>
+            <div><p class="meta-label" style="margin-bottom:0.3rem" data-i18n="proj_result_label">阶段结果</p><div style="display:grid;gap:0.3rem"><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_r1">攻守擂成为 YRstar 单直播间最常用的团内对战玩法之一。</p><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_r2">All-in-One 工作台替代多系统切换，降低主播与公会的操作成本。</p><p class="body-copy" style="font-size:var(--text-small)" data-i18n="proj4_r3">YRstar Q3 月均活跃公会 500+，营收 30w+。</p></div></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;justify-content:space-between">
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+              <span class="pill" style="background:var(--color-accent);color:var(--color-bg);border-color:var(--color-accent)" data-i18n="bd_tag1">海外团播</span>
+              <span class="pill" style="background:var(--color-accent);color:var(--color-bg);border-color:var(--color-accent)" data-i18n="bd_tag2">玩法状态机</span>
+              <span class="pill" data-i18n="bd_tag3">实时互动特效</span>
+              <span class="pill" data-i18n="bd_tag4">0-1 落地</span>
+            </div>
+            <button class="ui-button ui-button-secondary ui-button-compact" onclick="window.open('baidu-duel-pk.html','_blank')" data-i18n="btn_view_case">查看完整案例</button>
           </div>
         </div>
       </div>
@@ -1659,11 +1707,11 @@ const translations = {
     edu_pt2_title: '交互用户洞察',
     edu_pt2_desc: '研究生深耕交互体验打磨用户洞察能力，持续强化需求分析、体验表达与方案推演。',
     edu_pt3_title: 'AI产品实战经验',
-    edu_pt3_desc: '叠加三段产品实习经历（包含AI产品专项实战），融合用户体验、产品策略与技术落地多元视角，成为我深耕AI产品赛道的核心竞争优势。',
+    edu_pt3_desc: '叠加四段产品实习经历（包含AI产品专项实战），融合用户体验、产品策略与技术落地多元视角，成为我深耕AI产品赛道的核心竞争优势。',
     exp_title: '实习成长轨迹',
     exp_sub: '四座实习城市 · 四段企业经历',
-    proj_title: '代表性的三类项目实践',
-    proj_sub: '覆盖出海营销平台、AI 记录工具与无障碍体验策划，呈现从平台搭建到用户体验落地的多类实践。',
+    proj_title: '代表性的四类项目实践',
+    proj_sub: '覆盖海外团播玩法、出海营销平台、AI 记录工具与无障碍体验策划，呈现从 0-1 玩法设计到用户体验落地的多类实践。',
     skills_title: '能力结构',
     skills_sub: '当前能力组合主要围绕产品、AI、数据、设计与协作工具五个维度展开。',
     awards_title: '部分奖项与认可',
@@ -1718,7 +1766,7 @@ const translations = {
     pf3_project: 'ICU 模块化转运系统设计',
     pf_view_btn: '查看资料',
     // city chip
-    chip1_name: '中科院软件研究所',
+    chip1_name: 'vivo 互联网',
     // built with comate section
     bwc_title: '个人品牌网站设计思路',
     bwc_btn: '查看设计思路 →',
@@ -1824,18 +1872,31 @@ const translations = {
     sp_tag1: '无障碍体验',
     sp_tag2: '品牌叙事',
     sp_tag3: '多方协同',
+    // selected projects - proj4 (baidu YRstar)
+    proj4_badge: '出海团播玩法',
+    proj4_meta: '百度 · YY直播 YRstar｜2026.06 - 至今',
+    proj4_lead: '一体化团播软件 YRstar 的核心对战玩法，覆盖后台配置、主播端流程与 C 端特效规范，服务东南亚团播市场。',
+    proj4_bg: '东南亚团播一场直播要在 6-7 个割裂系统间切换，计票依赖第三方工具、礼物归属混乱，主播与公会上手成本高。',
+    proj4_role: '作为产品经理，0-1 负责「攻守擂 PK」玩法设计，输出 PRD、交互规则与可实现级特效规范，并与研发、设计及海外公会对齐。',
+    proj4_a1: '设计玩法全生命周期状态机，明确攻守位切换时机、异常心跳快照恢复与按团草稿缓存。',
+    proj4_a2: '拆解礼物跟随 / 单礼物绑定强联动与 3 种票权归属，定义复活机制、30 人出场队列与改票校验规则。',
+    proj4_a3: '定义领先光条、彗星冲击波、倒计时变色、胜利结算等 C 端特效参数，可直接交付研发排期。',
+    proj4_r1: '攻守擂成为 YRstar 单直播间最常用的团内对战玩法之一。',
+    proj4_r2: 'All-in-One 工作台替代多系统切换，降低主播与公会的操作成本。',
+    proj4_r3: 'YRstar Q3 月均活跃公会 500+，营收 30w+。',
     // section headers shared
     proj_bg_label: '项目背景',
     proj_role_label: '我的职责',
     proj_action_label: '关键动作',
     proj_result_label: '阶段结果',
     n_proj_name: '网易小蜜蜂｜AI记录',
-    // experience - vivo
-    tt2_name: 'vivo（维沃通信）互联网',
-    tt2_city: '深圳',
-    tt2_role: '中后台数据产品经理',
-    tt2_desc: '负责用户与内容双选平台及数据工具，推动 0-1 数据工具搭建与运营效率提升。',
-    chip2_name: 'vivo 互联网',
+    // city tooltip - netease (beijing)
+    tt2_name: '网易传媒（北京）有限公司',
+    tt2_city: '北京',
+    tt2_role: 'AI 产品经理',
+    tt2_desc: '主导网易小蜜蜂 AI 记录工具 0-1 交付，结合端侧小模型与云端大模型实现结构化照片整理与社区增长。',
+    chip2_name: '网易传媒',
+    v_role: '中后台数据产品经理',
     v_title: 'vivo（维沃通信）互联网内容分发事业部',
     v_tag1: '用户与内容分析平台',
     v_tag2: '0-1 数据工具',
@@ -1847,21 +1908,41 @@ const translations = {
     v_b2: '内容侧：批量 ID 与补货订单圈选模式；搭建「入库→分发→冷启→爆款」全链路漏斗与内容质量评分。',
     v_b3: '设计异步任务处理降低服务器负载；统一各业务线指标；新增通知、自定义报告模板与批量下架功能。',
     v_b4: '分析周期从数天压缩至分钟级；手工取数减少 80%+；年化 ROI 56%+；爆款内容率提升 18%。',
-    // experience - netease
-    tt3_name: '网易传媒（北京）有限公司',
-    tt3_city: '北京',
-    tt3_role: 'AI 产品经理',
-    tt3_desc: '主导网易蜂巢 AI 记录工具 0-1 交付，结合端侧小模型与云端大模型实现结构化照片整理与社区增长。',
-    chip3_name: '网易传媒',
+    // city tooltip - keeta (shanghai)
+    tt3_name: '美团Keeta（出海外卖）',
+    tt3_city: '上海',
+    tt3_role: '产品经理',
+    tt3_desc: '负责海外外卖优惠券后台配置、C 端交易侧、兑换码风控与营销平台搭建。',
+    chip3_name: '美团 Keeta',
+    n_company: '网易传媒（北京）有限公司',
+    n_role: 'AI 产品经理',
     n_desc: '为降低内容流失、提升留存——打造核心 AI 记录工具。端侧小模型 + 云端大模型混合架构，实现结构化照片整理、轻量发布与基于标签的内容分发。',
     n_b1: '搭建全链路数据监控；上线勋章与抽奖激励，驱动用户活跃与内容创作。',
     n_b2: '设计兼顾轻量记录体验与数据合规要求的隐私授权流程。',
     n_b3: '月功能渗透 28%，曝光发布率 22%，月留存 +40%，带动 APP 大盘留存上涨 21 个百分点。',
-    // city tooltip - keeta
-    tt4_name: '美团 Keeta（海外外卖）',
-    tt4_city: '北京',
+    // city tooltip - baidu (guangzhou)
+    tt4_name: '百度 · YY直播海外团播',
+    tt4_city: '广州',
     tt4_role: '产品经理',
-    tt4_desc: '负责海外外卖优惠券后台配置、C 端核销流程、兑换码风控与营销平台搭建。',
+    tt4_desc: '负责一体化团播软件 YRstar 的玩法模块，0-1 设计「攻守擂 PK」团内对战玩法。',
+    chip4_name: '百度 YRstar',
+    k_company: '美团Keeta（出海外卖）',
+    k_role: '产品经理',
+    // experience - baidu
+    view_rep: '查看代表项目',
+    bd_company: '百度 · YY直播 海外团播 YRstar',
+    bd_date: '2026.06 - 至今',
+    bd_role: '产品经理',
+    bd_tag1: '海外团播',
+    bd_tag2: '玩法状态机',
+    bd_tag3: '实时互动特效',
+    bd_tag4: '0-1 落地',
+    bd_proj_name: 'YRstar｜团播玩法「攻守擂 PK」',
+    bd_desc: '面向东南亚团播市场，0-1 设计一体化团播软件 YRstar 的核心对战玩法「攻守擂 PK」，覆盖后台配置、主播端流程与 C 端特效规范。',
+    bd_b1: '玩法状态机：定义编辑、预备页、进行中、暂停/继续、轮次结算到本场结束的完整生命周期，明确攻守位切换时机，并设计异常心跳下的快照恢复与按团草稿缓存。',
+    bd_b2: '礼物与计票规则：拆解「礼物跟随 / 单礼物绑定」强联动关系（仅 3 种有效组合，无效组合置灰），设计按得票、平分、全归防守方 3 种票权归属模式，适配不同公会的计票与分成习惯。',
+    bd_b3: '复活机制与出场调度：定义连胜准入（默认 3 连胜，3-99 可配）、MC 10 秒确认弹窗、目标票数与倒计时、Reach% 延时；设计 30 人出场队列排序权限、上场互斥勾选与 1-99999 改票失焦校验。',
+    bd_b4: '输出可直接排期的 C 端特效规范：领先方人字脉冲光条（280px、1.5 秒扫过、2 秒间隔）、大额礼物彗星冲击波三层结构、倒计时剩 1 分钟变黄 / 剩 10 秒变红、胜利皇冠翅膀；YRstar Q3 月均活跃公会 500+，营收 30w+。',
     // education
     edu1_school: '江南大学',
     edu1_major: '设计学院 · 交互与体验设计 · 研究生',
@@ -1870,11 +1951,11 @@ const translations = {
     edu2_tag: '双一流',
     edu2_major: '家居与工业设计学院 · 工业设计（工学）· 本科',
     edu2_course: '主修：智能交互设计，人机工程学，设计调研，Java，Arduino',
-    // city tooltip - CAS
-    tt1_name: '中国科学院软件研究所',
+    // city tooltip - vivo (nanjing)
+    tt1_name: 'vivo（维沃通信）互联网',
     tt1_city: '南京',
-    tt1_role: 'AI 设计师',
-    tt1_desc: '在软件部门参与 AI 设计相关工作，围绕智能产品体验与设计落地积累第一段 AI 实操经验。',
+    tt1_role: '中后台数据产品经理',
+    tt1_desc: '负责用户与内容双选平台及数据工具，推动 0-1 数据工具搭建与运营效率提升。',
     // city tooltip labels (shared)
     tt_city: '城市',
     tt_role: '岗位',
@@ -1915,11 +1996,11 @@ const translations = {
     edu_pt2_title: 'Interaction & User Insight',
     edu_pt2_desc: 'Graduate HCI studies deepened user insight, continuously strengthening requirements analysis, experience articulation, and solution reasoning.',
     edu_pt3_title: 'AI Product Experience',
-    edu_pt3_desc: 'Three internships (including AI product specialization) blend UX, product strategy, and tech delivery—my core competitive edge in the AI PM track.',
+    edu_pt3_desc: 'Four internships (including AI product specialization) blend UX, product strategy, and tech delivery—my core competitive edge in the AI PM track.',
     exp_title: 'Internship Journey',
     exp_sub: '4 Cities · 4 Companies',
-    proj_title: 'Three Representative Project Types',
-    proj_sub: 'Spanning overseas marketing platforms, AI recording tools, and inclusive experience design—from platform building to UX delivery.',
+    proj_title: 'Four Representative Project Types',
+    proj_sub: 'Spanning overseas group-live gameplay, global marketing platforms, AI recording tools, and inclusive experience design—from 0-to-1 gameplay to UX delivery.',
     skills_title: 'Skill Overview',
     skills_sub: 'My current skill set spans five dimensions: Product, AI, Data, Design, and Collaboration Tools.',
     awards_title: 'Selected Awards',
@@ -1974,7 +2055,7 @@ const translations = {
     pf3_project: 'ICU Modular Transport System Design',
     pf_view_btn: 'View Materials',
     // city chip
-    chip1_name: 'CAS Software Institute',
+    chip1_name: 'vivo Internet',
     // built with comate section
     bwc_title: 'Personal Brand Site Design Rationale',
     bwc_btn: 'View Design Rationale →',
@@ -2080,18 +2161,31 @@ const translations = {
     sp_tag1: 'Accessible Design',
     sp_tag2: 'Brand Storytelling',
     sp_tag3: 'Cross-party Coordination',
+    // selected projects - proj4 (baidu YRstar)
+    proj4_badge: 'Overseas Group-Live Gameplay',
+    proj4_meta: 'Baidu · YY Live YRstar｜Jun 2026 - Present',
+    proj4_lead: 'Core battle gameplay for the all-in-one group-live app YRstar, covering backend config, host-side flows, and C-side effect specs for the Southeast Asian market.',
+    proj4_bg: 'A single group-live stream in Southeast Asia requires switching across 6–7 disconnected systems; vote counting relies on third-party tools and gift ownership is messy, making onboarding costly for hosts and guilds.',
+    proj4_role: 'As PM, owned the 0-to-1 design of "Duel Dance PK"—PRD, interaction rules, implementation-ready effect specs—aligning engineering, design, and overseas guilds.',
+    proj4_a1: 'Designed the full-lifecycle state machine with attack/defend switch timing, heartbeat-failure snapshot recovery, and per-guild draft caching.',
+    proj4_a2: 'Untangled gift-follow/binding coupling and 3 vote ownership modes; defined revival mechanics, the 30-person queue, and vote-edit validation.',
+    proj4_a3: 'Specified C-side effects (lead bar, comet shockwave, countdown colors, victory settlement) with concrete parameters ready for engineering.',
+    proj4_r1: 'Duel Dance became one of the most frequently played intra-guild battle modes in a single YRstar live room.',
+    proj4_r2: 'The all-in-one workspace replaced multi-system switching, cutting operating effort for hosts and guilds.',
+    proj4_r3: 'YRstar Q3: 500+ monthly active guilds and 300k+ revenue.',
     // section headers shared
     proj_bg_label: 'Background',
     proj_role_label: 'My Role',
     proj_action_label: 'Key Actions',
     proj_result_label: 'Outcomes',
     n_proj_name: 'NetEase Bee · AI Recording',
-    // experience - vivo
-    tt2_name: 'vivo (Vivo Communication) Internet',
-    tt2_city: 'Shenzhen',
-    tt2_role: 'Mid-Backend Data PM',
-    tt2_desc: 'Worked on user & content dual-selection analytics platform and data tools, driving 0-to-1 data tooling and operational efficiency.',
-    chip2_name: 'vivo Internet',
+    // city tooltip - netease (beijing)
+    tt2_name: 'NetEase Media Beijing Co., Ltd.',
+    tt2_city: 'Beijing',
+    tt2_role: 'AI Product Manager',
+    tt2_desc: 'Led 0-to-1 delivery of an AI recording tool on NetEase Bee, combining on-device small models and cloud LLMs for structured photo organization and community growth.',
+    chip2_name: 'NetEase Media',
+    v_role: 'Mid-Backend Data PM',
     v_title: 'vivo (Vivo Communication) · Internet Content Distribution BU',
     v_tag1: 'User & Content Analytics Platform',
     v_tag2: '0-to-1 Data Tools',
@@ -2103,21 +2197,46 @@ const translations = {
     v_b2: 'Content side: Bulk ID and restocking order selection modes; built a full-chain funnel (ingest → distribute → cold-start → viral) with content quality scoring.',
     v_b3: 'Designed async task processing to reduce server load; unified metrics across all business lines; added notifications, custom report templates, and bulk takedown.',
     v_b4: 'Compressed analysis cycles from days to minutes; reduced manual data work by 80%+; annualized ROI 56%+; viral content rate up 18%.',
-    // experience - netease
-    tt3_name: 'NetEase Media Beijing Co., Ltd.',
-    tt3_city: 'Beijing',
-    tt3_role: 'AI Product Manager',
-    tt3_desc: 'Led 0-to-1 delivery of an AI recording tool on NetEase Bee, combining on-device small models and cloud LLMs for structured photo organization and community growth.',
-    chip3_name: 'NetEase Media',
+    // city tooltip - keeta (shanghai)
+    tt3_name: 'Meituan Keeta (Overseas Food Delivery)',
+    tt3_city: 'Shanghai',
+    tt3_role: 'Product Manager',
+    tt3_desc: 'Owned coupon admin configuration, C-side transaction flow, redemption code risk control, and marketing platform build for overseas food delivery.',
+    chip3_name: 'Meituan Keeta',
+    n_company: 'NetEase Media Beijing Co., Ltd.',
+    n_role: 'AI Product Manager',
     n_desc: 'To reduce content drop-off and improve retention—built a core AI recording tool. Hybrid on-device small model + cloud LLM architecture for structured photo organization, lightweight publishing, and tag-based content distribution.',
     n_b1: 'Built full-chain data monitoring; shipped badge and lottery incentives to drive user activity and content creation.',
     n_b2: 'Designed privacy consent flow balancing lightweight recording UX with data compliance requirements.',
     n_b3: 'Monthly feature penetration 28%, exposure-to-publish rate 22%, monthly retention +40%, driving overall APP retention +21 percentage points.',
-    // city tooltip - keeta
-    tt4_name: 'Meituan Keeta (Overseas Food Delivery)',
-    tt4_city: 'Beijing',
+    // city tooltip - baidu (guangzhou)
+    tt4_name: 'Baidu · YY Group-Live',
+    tt4_city: 'Guangzhou',
     tt4_role: 'Product Manager',
-    tt4_desc: 'Owned coupon admin configuration, C-side transaction flow, redemption code risk control, and marketing platform build for overseas food delivery.',
+    tt4_desc: 'Owns gameplay modules of the all-in-one group-live app YRstar, including the 0-to-1 "Duel Dance PK" intra-guild battle mode.',
+    chip4_name: 'Baidu YRstar',
+    k_company: 'Meituan Keeta (Overseas Food Delivery)',
+    k_role: 'Product Manager',
+    // experience - baidu
+    view_rep: 'View Featured Project',
+    bd_company: 'Baidu · YY Live Overseas Group-Live YRstar',
+    bd_date: '2026.06 - Present',
+    bd_role: 'Product Manager',
+    bd_tag1: 'Overseas Group-Live',
+    bd_tag2: 'Gameplay State Machine',
+    bd_tag3: 'Real-Time Effects',
+    bd_tag4: '0-to-1 Delivery',
+    bd_proj_name: 'YRstar · Group-Live Gameplay "Duel Dance PK"',
+    bd_desc: 'Built the core battle gameplay "Duel Dance PK" for the all-in-one group-live app YRstar targeting the Southeast Asian market, covering backend config, host-side flows, and C-side effect specs.',
+    bd_b1: 'Gameplay state machine: defined the full lifecycle—edit, prep page, live, paused/resumed, round settlement, session end—with explicit attack/defend switch timing, heartbeat-failure snapshot recovery, and per-guild draft caching.',
+    bd_b2: 'Gift & vote rules: untangled the hard coupling between gift follow and single-gift binding (only 3 valid combos; invalid combos greyed out), plus 3 vote ownership modes (by votes / equal split / all to defender) fitting different guild habits.',
+    bd_b3: 'Revival & queue: win-streak gating (default 3, configurable 3–99), MC 10-second confirmation popup, target votes and countdown, Reach% extensions; a 30-person queue with order permissions, mutually exclusive on-stage selection, and 1–99999 vote-edit validation.',
+    bd_b4: 'Shipped implementation-ready C-side effect specs—leading chevron pulse bar (280px, 1.5s sweep, 2s interval), three-layer comet shockwave for big gifts, countdown yellow at 1 min / red at 10 sec, victory crown & wings. YRstar Q3: 500+ monthly active guilds, 300k+ revenue.',
+    // city tooltip - vivo (nanjing)
+    tt1_name: 'vivo (Vivo Communication) Internet',
+    tt1_city: 'Nanjing',
+    tt1_role: 'Mid-Backend Data Product Manager',
+    tt1_desc: 'Worked on the user & content dual-selection analytics platform and data tools, driving 0-to-1 data tooling and operational efficiency.',
     // education
     edu1_school: 'Jiangnan University',
     edu1_major: 'School of Design · Interaction & Experience Design · Graduate',

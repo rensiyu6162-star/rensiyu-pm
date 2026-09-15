@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" width="1000" height="760">
+  <defs>
+    <linearGradient id="gzTower" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8fd2d2"/><stop offset=".5" stop-color="#58a9bd"/><stop offset="1" stop-color="#3f8ea6"/>
+    </linearGradient>
+    <linearGradient id="gzGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9d5e8"/><stop offset="1" stop-color="#7fa6c9"/>
+    </linearGradient>
+    <clipPath id="gzClip">
+      <path d="M173 648 C200 520 225 430 243 382 C222 332 208 220 224 118 L306 118 C322 220 308 332 287 382 C305 430 330 520 357 648 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- 远山 -->
+  <path d="M300 648 C400 470 560 430 700 440 C820 448 900 520 970 648 Z" fill="#c7e0a6" opacity=".7"/>
+  <path d="M60 652 C170 540 300 500 420 514 C540 528 660 580 760 652 Z" fill="#b3d690" opacity=".55"/>
+
+  <!-- 远景小楼 -->
+  <g fill="#e2d2e4" opacity=".8">
+    <rect x="392" y="470" width="60" height="178" rx="8"/>
+    <rect x="455" y="500" width="44" height="148" rx="8"/>
+    <rect x="770" y="492" width="54" height="156" rx="8"/>
+  </g>
+
+  <!-- 猎德大桥（白色贝壳拱桥） -->
+  <g>
+    <rect x="706" y="596" width="280" height="16" rx="6" fill="#f3f6f8"/>
+    <path d="M772 598 Q880 332 988 598" fill="none" stroke="#bcd2dd" stroke-width="14" stroke-linecap="round"/>
+    <path d="M772 598 Q880 332 988 598" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+    <g stroke="#dfe9ee" stroke-width="3.5">
+      <path d="M800 524 L800 600"/>
+      <path d="M822 472 L822 600"/>
+      <path d="M844 432 L844 600"/>
+      <path d="M866 402 L866 600"/>
+      <path d="M888 390 L888 600"/>
+      <path d="M910 402 L910 600"/>
+      <path d="M932 432 L932 600"/>
+      <path d="M954 472 L954 600"/>
+      <path d="M976 524 L976 600"/>
+    </g>
+  </g>
+
+  <!-- 周大福金融中心（东塔） -->
+  <g>
+    <path d="M486 648 L486 236 Q486 208 514 208 Q520 180 528 208 Q556 208 556 236 L556 648 Z" fill="url(#gzGlass)"/>
+    <g stroke="#dcebf4" stroke-width="3" opacity=".7">
+      <path d="M486 300h70M486 360h70M486 420h70M486 480h70M486 540h70M486 600h70"/>
+    </g>
+    <rect x="518" y="150" width="8" height="60" fill="#7ea9cb"/>
+  </g>
+
+  <!-- 广州国际金融中心（西塔，菱形网格） -->
+  <g>
+    <path d="M630 648 L630 300 Q630 268 662 268 L716 268 Q748 268 748 300 L748 648 Z" fill="#a8c6dd"/>
+    <g clip-path="url(#gzClip)" opacity="0"></g>
+    <g stroke="#dcebf4" stroke-width="2.4" opacity=".75">
+      <path d="M630 340h118M630 400h118M630 460h118M630 520h118M630 580h118"/>
+      <path d="M642 268 L718 648 M738 268 L662 648" opacity=".8"/>
+      <path d="M630 320 L748 430 M630 400 L748 510 M630 480 L748 590"/>
+      <path d="M748 320 L630 430 M748 400 L630 510 M748 480 L630 590"/>
+    </g>
+  </g>
+
+  <!-- 陈家祠（岭南宗祠，灰塑屋脊） -->
+  <g>
+    <rect x="30" y="560" width="196" height="88" fill="#efe2cd"/>
+    <path d="M18 566 Q128 508 238 566 Z" fill="#43606b"/>
+    <path d="M30 566 Q128 528 226 566 L214 578 Q128 544 42 578 Z" fill="#354f5a"/>
+    <rect x="58" y="586" width="30" height="62" rx="4" fill="#7a5238"/>
+    <rect x="104" y="586" width="40" height="62" rx="4" fill="#a4473f"/>
+    <rect x="162" y="586" width="30" height="62" rx="4" fill="#7a5238"/>
+    <rect x="30" y="556" width="196" height="10" rx="4" fill="#354f5a"/>
+  </g>
+
+  <!-- 广州塔（小蛮腰 + 网格） -->
+  <path d="M173 648 C200 520 225 430 243 382 C222 332 208 220 224 118 L306 118 C322 220 308 332 287 382 C305 430 330 520 357 648 Z" fill="url(#gzTower)"/>
+  <g clip-path="url(#gzClip)" stroke="#e8f6f8" stroke-width="2.6" opacity=".85" fill="none">
+    <ellipse cx="265" cy="130" rx="42" ry="8"/>
+    <ellipse cx="265" cy="180" rx="33" ry="7"/>
+    <ellipse cx="265" cy="232" rx="27" ry="6"/>
+    <ellipse cx="265" cy="284" rx="23" ry="6"/>
+    <ellipse cx="265" cy="336" rx="21" ry="6"/>
+    <ellipse cx="265" cy="388" rx="24" ry="6"/>
+    <ellipse cx="265" cy="440" rx="31" ry="7"/>
+    <ellipse cx="265" cy="492" rx="41" ry="8"/>
+    <ellipse cx="265" cy="544" rx="55" ry="9"/>
+    <ellipse cx="265" cy="596" rx="72" ry="10"/>
+    <ellipse cx="265" cy="636" rx="90" ry="11"/>
+    <path d="M224 120 C252 280 282 420 352 646"/>
+    <path d="M306 120 C278 280 248 420 178 646"/>
+  </g>
+  <rect x="259" y="44" width="12" height="80" rx="5" fill="#3f8ea6"/>
+  <circle cx="265" cy="42" r="7" fill="#58a9bd"/>
+  <ellipse cx="265" cy="118" rx="44" ry="9" fill="#3f8ea6"/>
+  <ellipse cx="265" cy="648" rx="100" ry="14" fill="#5d7d8c" opacity=".55"/>
+
+  <!-- 前景灌木与地面 -->
+  <ellipse cx="90" cy="672" rx="110" ry="44" fill="#a4cc6c"/>
+  <ellipse cx="260" cy="682" rx="150" ry="48" fill="#8fbf5a"/>
+  <ellipse cx="470" cy="676" rx="160" ry="50" fill="#a4cc6c"/>
+  <ellipse cx="690" cy="682" rx="150" ry="48" fill="#8fbf5a"/>
+  <ellipse cx="900" cy="672" rx="120" ry="44" fill="#a4cc6c"/>
+</svg>

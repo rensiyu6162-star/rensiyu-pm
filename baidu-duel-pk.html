@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>攻守擂 PK · 百度 YRstar 团播玩法 | 任思雨</title>
+<meta name="description" content="百度 YY直播 海外团播 YRstar「攻守擂 PK」玩法完整复盘：东南亚团播市场背景、玩法状态机、礼物联动与票权归属、复活机制、出场队列与 C 端特效规范。"/>
+<style>
+:root{--color-bg:#0d0818;--color-text:#e8e4f0;--color-text-soft:#8a80a8;--color-text-secondary:#b0a8c8;--color-border:rgba(0,240,255,.13);--color-cyan:#00f0ff;--color-magenta:#ff00aa;--color-blue:#4d8dff;--radius-sm:6px;--radius-lg:18px;--radius-xl:24px}
+[data-theme="light"]{--color-bg:#f5f4ff;--color-text:#1a1333;--color-text-soft:#6b5fa8;--color-text-secondary:#4a3f7a;--color-border:rgba(77,61,200,.14);--color-cyan:#3a3acb;--color-magenta:#b0006a;--color-blue:#2255cc}
+[data-theme="light"] body{background:#f5f4ff;color:#1a1333}
+[data-theme="light"] body::before{background-image:linear-gradient(rgba(77,61,200,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(77,61,200,.03) 1px,transparent 1px)}
+[data-theme="light"] body::after{background:radial-gradient(circle at 8% 10%,rgba(77,61,200,.08),transparent 28%),radial-gradient(circle at 90% 20%,rgba(34,85,204,.06),transparent 30%),radial-gradient(circle at 50% 92%,rgba(176,0,106,.05),transparent 34%)}
+[data-theme="light"] .ui-button{background:rgba(255,255,255,.82);border-color:rgba(77,61,200,.22);color:#1a1333}
+[data-theme="light"] .ui-button:hover{background:rgba(77,61,200,.07);border-color:rgba(77,61,200,.40);color:var(--color-cyan)}
+[data-theme="light"] .eyebrow{background:rgba(255,255,255,.6);border-color:rgba(77,61,200,.14)}
+[data-theme="light"] .meta-chip{background:rgba(77,61,200,.07);border-color:rgba(77,61,200,.16);color:var(--color-text-soft)}
+[data-theme="light"] .card{background:linear-gradient(135deg,rgba(255,255,255,.90),rgba(240,238,255,.78));border-color:rgba(77,61,200,.12);box-shadow:0 4px 24px rgba(77,61,200,.08)}
+[data-theme="light"] .card::before{background:linear-gradient(90deg,var(--color-cyan),var(--color-blue),transparent)}
+[data-theme="light"] .section-num{background:linear-gradient(135deg,rgba(77,61,200,.18),rgba(34,85,204,.14));color:var(--color-cyan)}
+[data-theme="light"] .gap-box{background:linear-gradient(135deg,rgba(176,0,106,.06),rgba(77,61,200,.04));border-color:rgba(176,0,106,.18)}
+[data-theme="light"] .path-step{background:rgba(255,255,255,.7);border-color:rgba(77,61,200,.10)}
+[data-theme="light"] .pipe-node{background:rgba(255,255,255,.72);border-color:rgba(77,61,200,.12)}
+[data-theme="light"] .pipe-node::after{color:rgba(77,61,200,.4)}
+[data-theme="light"] .model-row{background:rgba(255,255,255,.68);border-color:rgba(77,61,200,.09)}
+[data-theme="light"] .tag{background:rgba(77,61,200,.07);border-color:rgba(77,61,200,.16);color:var(--color-cyan)}
+[data-theme="light"] .tag-pink{background:rgba(176,0,106,.06);border-color:rgba(176,0,106,.18);color:var(--color-magenta)}
+[data-theme="light"] .divider{border-color:rgba(77,61,200,.10)}
+[data-theme="light"] .insight-dot{background:var(--color-cyan);box-shadow:none}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--color-bg);color:var(--color-text);line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,240,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(176,0,255,.035) 1px,transparent 1px);background-size:48px 48px}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 8% 10%,rgba(0,240,255,.14),transparent 28%),radial-gradient(circle at 90% 20%,rgba(77,141,255,.13),transparent 30%),radial-gradient(circle at 50% 92%,rgba(255,0,170,.09),transparent 34%)}
+a{color:inherit;text-decoration:none}
+
+/* Layout */
+.page{position:relative;z-index:1;min-height:100vh;padding:1rem 0 4rem}
+.topbar{display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:0 auto 1.5rem;padding:0 clamp(1rem,4vw,3rem)}
+.content{max-width:900px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)}
+
+/* UI */
+.ui-button{display:inline-flex;align-items:center;justify-content:center;gap:.42rem;border:1px solid rgba(0,240,255,.22);border-radius:var(--radius-sm);padding:.46rem .88rem;background:rgba(18,10,32,.58);color:var(--color-text);font-size:.78rem;transition:all .2s ease;cursor:pointer}
+.ui-button:hover{border-color:rgba(0,240,255,.42);color:var(--color-cyan);background:rgba(0,240,255,.08)}
+.eyebrow{display:inline-flex;align-items:center;gap:.42rem;border:1px solid var(--color-border);border-radius:999px;padding:.32rem .72rem;background:rgba(28,18,48,.46);color:var(--color-text-soft);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase}
+.eyebrow::before{content:'';width:.36rem;height:.36rem;border-radius:999px;background:var(--color-cyan);box-shadow:0 0 12px var(--color-cyan)}
+
+/* Hero */
+.hero{margin-bottom:2.5rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.meta-chip{border:1px solid rgba(0,240,255,.16);border-radius:999px;padding:.24rem .64rem;background:rgba(0,240,255,.06);color:var(--color-text-soft);font-size:.72rem}
+h1{margin-top:.75rem;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.03em}
+.lead{max-width:72ch;margin-top:.85rem;color:var(--color-text-secondary);font-size:clamp(.9rem,1.05vw,1rem);line-height:1.8}
+
+/* Section */
+.section{margin-top:2.4rem}
+.section-label{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.section-num{display:grid;place-items:center;width:1.8rem;height:1.8rem;border-radius:999px;background:linear-gradient(135deg,rgba(0,240,255,.22),rgba(77,141,255,.18));color:var(--color-cyan);font-size:.7rem;font-weight:800;flex-shrink:0}
+.section-title-text{font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:600;letter-spacing:-.01em}
+.section-sub{margin-top:.2rem;color:var(--color-text-soft);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* Card */
+.card{position:relative;overflow:hidden;border:1px solid rgba(0,240,255,.10);border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(18,10,32,.72),rgba(13,8,24,.48));box-shadow:0 16px 48px rgba(0,0,0,.18);padding:1.2rem 1.35rem;margin-top:.85rem}
+.card::before{content:'';position:absolute;left:1.2rem;right:1.2rem;top:0;height:1px;background:linear-gradient(90deg,var(--color-cyan),var(--color-blue),transparent);opacity:.65}
+.card p{color:var(--color-text-secondary);font-size:.9rem;line-height:1.78}
+.card p+p{margin-top:.6rem}
+.card-title{font-size:clamp(.92rem,1.3vw,1.05rem);font-weight:600;margin-bottom:.6rem}
+
+/* Two-col cards */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:.85rem}
+
+/* Insight rows */
+.insight-row{display:grid;grid-template-columns:2rem 1fr;gap:.6rem;align-items:start;margin-top:.65rem}
+.insight-dot{width:.42rem;height:.42rem;margin-top:.56rem;border-radius:999px;background:var(--color-cyan);box-shadow:0 0 10px rgba(0,240,255,.45);justify-self:center}
+.insight-row p{color:var(--color-text-secondary);font-size:.88rem;line-height:1.7}
+
+/* Gap highlight */
+.gap-box{border:1px solid rgba(255,0,170,.2);border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,0,170,.08),rgba(0,240,255,.05));padding:1rem 1.1rem;margin-top:.85rem}
+.gap-box .gap-label{color:var(--color-magenta);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.gap-box p{margin-top:.35rem;color:var(--color-text-secondary);font-size:.88rem;line-height:1.72}
+
+/* User path steps */
+.path-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.65rem;margin-top:.85rem}
+.path-step{border:1px solid rgba(0,240,255,.10);border-radius:var(--radius-lg);background:rgba(13,8,24,.38);padding:.8rem .9rem}
+.path-step-num{color:var(--color-cyan);font-size:.7rem;font-weight:800;letter-spacing:.1em}
+.path-step b{display:block;font-size:.86rem;margin-top:.2rem}
+.path-step span{display:block;margin-top:.32rem;color:var(--color-text-soft);font-size:.78rem;line-height:1.5}
+
+/* Model pipeline */
+.pipeline{display:flex;align-items:stretch;gap:0;margin-top:.85rem;overflow-x:auto;padding-bottom:.5rem}
+.pipe-node{flex:1;min-width:130px;border:1px solid rgba(0,240,255,.12);border-radius:var(--radius-lg);background:rgba(18,10,32,.6);padding:.75rem .85rem;position:relative}
+.pipe-node+.pipe-node{margin-left:.5rem}
+.pipe-node::after{content:'→';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);color:rgba(0,240,255,.4);font-size:.9rem;z-index:2}
+.pipe-node:last-child::after{display:none}
+.pipe-node-label{color:var(--color-cyan);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.pipe-node p{margin-top:.32rem;color:var(--color-text-soft);font-size:.78rem;line-height:1.52}
+
+/* Model detail table-like */
+.model-grid{display:grid;gap:.65rem;margin-top:.85rem}
+.model-row{display:grid;grid-template-columns:9rem 1fr;gap:.8rem;border:1px solid rgba(0,240,255,.09);border-radius:var(--radius-lg);background:rgba(13,8,24,.36);padding:.8rem 1rem;align-items:start}
+.model-row-label{color:var(--color-cyan);font-size:.78rem;font-weight:700;padding-top:.1rem}
+.model-row-body{color:var(--color-text-secondary);font-size:.86rem;line-height:1.7}
+.model-row-body b{color:var(--color-text);font-weight:600}
+
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.tag{border:1px solid rgba(0,240,255,.16);border-radius:999px;padding:.22rem .52rem;background:rgba(0,240,255,.06);color:var(--color-cyan);font-size:.7rem}
+.tag-pink{border-color:rgba(255,0,170,.2);background:rgba(255,0,170,.06);color:var(--color-magenta)}
+
+/* Divider */
+.divider{border:none;border-top:1px solid rgba(0,240,255,.08);margin:2rem 0}
+
+@media(max-width:700px){
+  .two-col{grid-template-columns:1fr}
+  .path-steps{grid-template-columns:1fr 1fr}
+  .pipeline{flex-direction:column}
+  .pipe-node::after{display:none}
+  .model-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .path-steps{grid-template-columns:1fr}
+  .topbar,.content{padding-left:.9rem;padding-right:.9rem}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <a class="ui-button" href="index.html">← 返回主页</a>
+    <span class="eyebrow">CASE STUDY · 完整案例</span>
+  </header>
+
+  <main class="content">
+
+    <!-- Hero -->
+    <section class="hero" aria-label="案例标题">
+      <span class="eyebrow">百度 · YY直播 海外团播 YRstar · 产品经理 · 2026.06–至今</span>
+      <h1>团播玩法「攻守擂 PK」<br/>一体化团播软件 YRstar</h1>
+      <p class="lead">东南亚团播市场里，一场直播往往要在 6-7 个割裂系统之间来回切换。YRstar 要做 All-in-One 的团播工作台，而「攻守擂 PK」是单直播间最高频的团内对战玩法：守擂方持续在场，攻擂方依次上场，粉丝送礼累计票数决定胜负。</p>
+      <div class="hero-meta">
+        <span class="meta-chip">海外直播</span>
+        <span class="meta-chip">团播玩法</span>
+        <span class="meta-chip">复杂状态机</span>
+        <span class="meta-chip">实时互动特效</span>
+        <span class="meta-chip">0→1 落地</span>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <!-- 01 项目背景 -->
+    <section class="section" id="background">
+      <div class="section-label">
+        <div class="section-num">01</div>
+        <div>
+          <div class="section-title-text">项目背景：一场直播，6-7 个系统</div>
+          <div class="section-sub">BACKGROUND</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">越南 / 印尼公会实地调研</div>
+          <p>团队对越南、印尼两地公会做了为期一周的调研。当地团播生态成熟，一个直播间由主播、MC、运营多人协同：排麦靠直播伴侣，计票靠 MCAStar（约 500 元/月）、淘乐（约 599 元/月）等第三方工具，礼物归属记在表格里，沟通散落在多个聊天软件。</p>
+          <p>一场攻守擂直播，MC 平均要在 6-7 个系统之间来回切换。</p>
+        </div>
+        <div class="card">
+          <div class="card-title">YRstar 的产品机会</div>
+          <p>YRstar 定位 All-in-One 团播工作台，把排麦、计票、礼物、特效、结算收进同一个直播间。</p>
+          <p>「攻守擂」是东南亚团播最常见、最能拉动打赏的团内对战玩法，因此成为玩法模块里优先级最高的一个，由我从 0 到 1 负责产品设计。</p>
+        </div>
+      </div>
+
+      <div class="gap-box">
+        <div class="gap-label">核心痛点</div>
+        <p>切屏打断直播节奏；票数靠人工核对，出错后要在直播间公开更正；礼物打赏在攻守方轮换、复活等场景下归属规则混乱；不同公会计票与分成习惯不同，第三方工具改造成本高。</p>
+      </div>
+    </section>
+
+    <!-- 02 玩法定义 -->
+    <section class="section" id="definition">
+      <div class="section-label">
+        <div class="section-num">02</div>
+        <div>
+          <div class="section-title-text">玩法定义：什么是攻守擂</div>
+          <div class="section-sub">GAMEPLAY DEFINITION</div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">角色</div>
+          <p><b>守擂方</b>：上一轮胜者，整场持续在场接受挑战。</p>
+          <p><b>攻擂方</b>：从出场队列依次上场，与守擂方进行限时对战，胜者继续守擂。</p>
+        </div>
+        <div class="card">
+          <div class="card-title">胜负与复活</div>
+          <p>粉丝送礼折算成票数，倒计时结束后票高者胜。</p>
+          <p>落后一方满足准入条件时可以触发「复活（拯救）」，经 MC 确认后进入加时，给粉丝留出逆转打赏的窗口。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 状态机 -->
+    <section class="section" id="state-machine">
+      <div class="section-label">
+        <div class="section-num">03</div>
+        <div>
+          <div class="section-title-text">玩法状态机：把一场直播拆成确定的状态</div>
+          <div class="section-sub">STATE MACHINE</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">完整玩法生命周期</div>
+        <p>攻守擂规则多、角色多、现场操作密集，最容易出问题的是"谁在什么时候能做什么"。我把整场玩法拆成一条明确的状态链路，每个状态约定可执行操作与切换条件：</p>
+      </div>
+      <div class="pipeline">
+        <div class="pipe-node"><div class="pipe-node-label">01 编辑</div><p>MC/运营配置攻守位、礼物、复活、队列；按团缓存草稿</p></div>
+        <div class="pipe-node"><div class="pipe-node-label">02 保存</div><p>数值失焦校验，非法配置不可保存</p></div>
+        <div class="pipe-node"><div class="pipe-node-label">03 开启校验</div><p>校验人数、互斥、礼物绑定，不满足给就近提示</p></div>
+        <div class="pipe-node"><div class="pipe-node-label">04 预备页</div><p>开播前最后确认，仍可调整 30 人队列顺序</p></div>
+      </div>
+      <div class="pipeline">
+        <div class="pipe-node"><div class="pipe-node-label">05 进行中</div><p>计票、特效、复活触发；配置锁定</p></div>
+        <div class="pipe-node"><div class="pipe-node-label">06 暂停 / 继续</div><p>处理设备、网络等突发情况</p></div>
+        <div class="pipe-node"><div class="pipe-node-label">07 本轮结束</div><p>结算票权归属、展示胜负特效</p></div>
+        <div class="pipe-node"><div class="pipe-node-label">08 下一轮 / 结束</div><p>胜者守擂进入下一轮，或结束本场</p></div>
+      </div>
+
+      <div class="gap-box">
+        <div class="gap-label">异常分支：心跳丢失与草稿</div>
+        <p>海外直播网络不稳定。心跳中断恢复时，以最近一次服务端快照恢复攻守位、票数与倒计时，不允许客户端自行续算；编辑配置按团维度缓存草稿，重开一场不用全部重填。</p>
+      </div>
+    </section>
+
+    <!-- 04 礼物联动与票权归属 -->
+    <section class="section" id="gifts">
+      <div class="section-label">
+        <div class="section-num">04</div>
+        <div>
+          <div class="section-title-text">礼物联动与票权归属：最绕的规则</div>
+          <div class="section-sub">GIFT LOGIC &amp; VOTE OWNERSHIP</div>
+        </div>
+      </div>
+      <div class="model-grid">
+        <div class="model-row">
+          <div class="model-row-label">强联动</div>
+          <div class="model-row-body"><b>礼物跟随 → 单礼物绑定</b>：跟随开启时，绑定强制开启；绑定关闭时，跟随强制关闭。两个开关组合下来只有 3 种有效状态，其余组合在界面上直接置灰——不允许用户先提交、再等报错。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">票权归属</div>
+          <div class="model-row-body">提供 <b>3 种归属模式</b>：按得票分配（各归各）、攻守双方平分、全部归防守方。由团管理侧配置，适配不同公会与主播之间的计票、分成习惯。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">全局互斥</div>
+          <div class="model-row-body">同一个礼物同一时间只能绑定一种玩法，避免一票多计；玩法关闭后才释放绑定。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">校验时机</div>
+          <div class="model-row-body">票数类输入（1-99999）<b>失焦即校验</b>，非法态下保存按钮置灰，并在输入框就近提示，避免开播前才集中报错。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 复活机制 -->
+    <section class="section" id="revival">
+      <div class="section-label">
+        <div class="section-num">05</div>
+        <div>
+          <div class="section-title-text">复活（拯救）机制：把"逆转"做成规则</div>
+          <div class="section-sub">REVIVAL MECHANICS</div>
+        </div>
+      </div>
+      <div class="model-grid">
+        <div class="model-row">
+          <div class="model-row-label">准入条件</div>
+          <div class="model-row-body">连胜准入：默认 <b>3 连胜</b>可触发，可配范围 <b>3-99</b>，保证复活机会不廉价。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">MC 确认</div>
+          <div class="model-row-body">触发后弹出 <b>10 秒确认窗</b>，由现场 MC 手动确认，超时自动取消，避免误触打断节奏。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">目标票数</div>
+          <div class="model-row-body">复活需要追到的票数，可配范围 <b>1-99999</b>，失焦校验。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">倒计时</div>
+          <div class="model-row-body">默认 <b>30 秒</b>加时。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">Reach% 延时</div>
+          <div class="model-row-body">最多配置 <b>3 条</b>进度节点，如达到 50% 延时 30 秒、80% 延时 15 秒、90% 延时 15 秒——节点卡在粉丝最容易连续打赏的临界点。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 出场队列 -->
+    <section class="section" id="queue">
+      <div class="section-label">
+        <div class="section-num">06</div>
+        <div>
+          <div class="section-title-text">30 人出场队列调度</div>
+          <div class="section-sub">LINEUP QUEUE</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="insight-row"><div class="insight-dot"></div><p>队列支持最多 <b>30 人</b>，预备页可拖拽调整攻位 / 守位顺序；玩法一旦开启，顺序锁定，现场不能再改。</p></div>
+        <div class="insight-row"><div class="insight-dot"></div><p>上场编辑互斥勾选：同一人不能同时处于两个互斥位置，勾选一个后其余不可选位置直接置灰。</p></div>
+        <div class="insight-row"><div class="insight-dot"></div><p>改票弹窗同样限定 <b>1-99999</b>，失焦即提示，非法值无法提交。</p></div>
+        <div class="insight-row"><div class="insight-dot"></div><p>队列与排麦联动，有人临时下麦时后续自动顺延，不需要 MC 手动补位。</p></div>
+      </div>
+    </section>
+
+    <!-- 07 C端特效规范 -->
+    <section class="section" id="effects">
+      <div class="section-label">
+        <div class="section-num">07</div>
+        <div>
+          <div class="section-title-text">C 端特效规范：写到可实现级</div>
+          <div class="section-sub">C-SIDE EFFECT SPEC</div>
+        </div>
+      </div>
+      <div class="card">
+        <p>特效不再写"要有紧张感、要有冲击力"，而是写明触发时机、尺寸、时长、层级与颜色，研发可以直接排期，设计、客户端、服务端对齐成本最低。</p>
+      </div>
+      <div class="model-grid">
+        <div class="model-row">
+          <div class="model-row-label">领先光条</div>
+          <div class="model-row-body">白色人字（箭头）脉冲光条，宽 <b>280px</b>，<b>1.5 秒</b>从落后方扫向领先方，每 <b>2 秒</b>一次，持续强化"谁在领先"。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">大额礼物</div>
+          <div class="model-row-body">彗星冲击波，三层结构：<b>拖尾 + 头光 + 呼吸灯</b>，三层分别给时长与透明度参数。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">倒计时变色</div>
+          <div class="model-row-body">剩余 <b>1 分钟变黄</b>，剩余 <b>10 秒变红</b>，用颜色逐级抬高紧迫感。</div>
+        </div>
+        <div class="model-row">
+          <div class="model-row-label">胜利结算</div>
+          <div class="model-row-body"><b>皇冠 + 翅膀</b>落在胜方角色上，作为一轮结束的明确视觉信号。</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag">触发时机</span>
+        <span class="tag">尺寸 / 时长</span>
+        <span class="tag">层级 / 颜色</span>
+        <span class="tag tag-pink">跨端一致</span>
+      </div>
+    </section>
+
+    <!-- 08 结果与复盘 -->
+    <section class="section" id="outcome">
+      <div class="section-label">
+        <div class="section-num">08</div>
+        <div>
+          <div class="section-title-text">结果与复盘</div>
+          <div class="section-sub">OUTCOME &amp; TAKEAWAYS</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="insight-row"><div class="insight-dot"></div><p><b>YRstar Q3 月均活跃公会数 500+，营收 30w+。</b></p></div>
+        <div class="insight-row"><div class="insight-dot"></div><p>攻守擂成为单直播间最常用的团内对战玩法之一，礼物、计票、队列、特效在一个系统内闭环，MC 不再需要跨 6-7 个工具操作。</p></div>
+        <div class="insight-row"><div class="insight-dot"></div><p>复盘：团播玩法产品设计的主要工作量，是把直播间里"只可意会"的潜规则翻译成确定的状态、开关组合与校验规则；特效写到参数级，则是跨端协作中最省沟通成本的做法。</p></div>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+    <div style="display:flex;justify-content:center">
+      <a class="ui-button" href="index.html#experience">← 返回实习成长轨迹</a>
+    </div>
+  </main>
+</div>
+</body>
+</html>
